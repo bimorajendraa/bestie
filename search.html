@@ -1,0 +1,670 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BESTIE | Advanced Grid Pencarian</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1d",
+              "on-tertiary-container": "#5c9af8",
+              background: "#f8f9fa",
+              "tertiary-fixed": "#d6e3ff",
+              "outline-variant": "#c4c6d2",
+              "on-primary-fixed-variant": "#224583",
+              "on-primary-container": "#7999dc",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#edeeef",
+              "surface-dim": "#d9dadb",
+              "tertiary-fixed-dim": "#a9c7ff",
+              "surface-variant": "#e1e3e4",
+              "secondary-fixed-dim": "#9dcaff",
+              "on-primary-fixed": "#001a42",
+              "on-surface-variant": "#434750",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-container": "#002f6c",
+              "on-secondary-container": "#075084",
+              "primary-fixed-dim": "#aec6ff",
+              "on-tertiary-fixed-variant": "#00468c",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#8ec2fe",
+              "on-tertiary-fixed": "#001b3d",
+              "inverse-primary": "#aec6ff",
+              error: "#ba1a1a",
+              outline: "#747781",
+              "secondary-fixed": "#d1e4ff",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#001d35",
+              secondary: "#266197",
+              "primary-fixed": "#d8e2ff",
+              "surface-container-low": "#f3f4f5",
+              tertiary: "#001c3f",
+              "surface-tint": "#3c5d9c",
+              "on-background": "#191c1d",
+              primary: "#001b44",
+              "on-secondary-fixed-variant": "#00497c",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-bright": "#f8f9fa",
+              "tertiary-container": "#003165",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#e7e8e9",
+              "error-container": "#ffdad6",
+              surface: "#f8f9fa",
+              "surface-container-highest": "#e1e3e4",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Inter"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .tonal-shift-right-edge {
+        border-right: 1px solid rgba(196, 198, 210, 0.2);
+      }
+          @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out both; }
+      .animate-fade-in { animation: fadeIn 0.4s ease-out both; }
+      tbody tr { animation: fadeInUp 0.4s ease-out both; }
+      tbody tr:nth-child(1) { animation-delay: 0.05s; }
+      tbody tr:nth-child(2) { animation-delay: 0.1s; }
+      tbody tr:nth-child(3) { animation-delay: 0.15s; }
+      tbody tr:nth-child(4) { animation-delay: 0.2s; }
+      tbody tr:nth-child(5) { animation-delay: 0.25s; }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface">
+    <!-- SideNavBar -->
+    <aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-slate-50/90 backdrop-blur-xl border-r border-slate-200/20 flex flex-col p-4 space-y-2 font-['Inter'] text-[0.875rem] leading-relaxed">
+      <div class="px-2 py-3 mb-4 flex flex-col items-center">
+        <img src="logo-bestie.jpg" alt="Bestie Logo" class="w-16 h-16 object-contain mb-1" />
+        <p class="text-[0.5rem] text-on-surface-variant font-medium text-center leading-tight opacity-70">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="dashboard.html">
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="data-pelanggan.html">
+          <span class="material-symbols-outlined">database</span>
+          <span>Database</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 bg-white text-[#002F6C] font-bold shadow-sm rounded-lg transition-all duration-200" href="search.html">
+          <span class="material-symbols-outlined">search</span>
+          <span>Pencarian</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="watchlist.html">
+          <span class="material-symbols-outlined">visibility</span>
+          <span>Watchlist</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          <span>Laporan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="profile-pelanggan.html">
+          <span class="material-symbols-outlined">person_search</span>
+          <span>Profiling</span>
+        </a>
+      </nav>
+      <div class="pt-4 border-t border-slate-200/50 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">settings</span>
+          <span>Pengaturan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">help_outline</span>
+          <span>Bantuan</span>
+        </a>
+      </div>
+    </aside>
+
+
+    <!-- Main Content Stage -->
+    <main class="ml-64 min-h-screen flex flex-col">
+      <!-- TopAppBar (Authority Source: JSON) -->
+      <!-- TopNavBar -->
+      <header class="flex justify-between items-center w-full px-8 h-16 bg-white/80 backdrop-blur-md z-40 shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] sticky top-0">
+        <div class="flex items-center gap-6">
+          <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+            <input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-80 focus:ring-2 focus:ring-primary-container transition-all" placeholder="Pencarian pelanggan..." type="text" />
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors relative">
+            <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+            <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+          </button>
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant">apps</span>
+          </button>
+          <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="Profil Analis" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUFkR74HRuGXAdKAy7qQsLITuIYB20nMHZ3Afli235xyII9vM_xHE9eraL_etCfkLy5wJcvTdDpaiIQ3S_VkmCrku32KEKoIEY5qKWire4ya2Zn6d1sHKcmI4oDObfN1lysq9LIJdN8ifNPcXJw1CdTJ1GzvYO6wezFWskAuaCeuZ3gkmFu8mQmilOGPA7IGkMIYZXZddc3qBcEbeMavvtVmMMvEy-4uH-GeP1OwXlFOcFJEiR7be78W0Xi5YzI93XoujZIFRqBU" />
+          </div>
+        </div>
+      </header>
+
+      <!-- Pencarian Canvas -->
+      <section class="flex-1 p-8 lg:p-12 bg-surface-container-low">
+        <div class="max-w-6xl mx-auto space-y-12">
+          <!-- Central Pencarian Module -->
+          <div class="flex flex-col items-center text-center space-y-8 py-12">
+            <div class="space-y-2">
+              <h2
+                class="text-display-md font-extrabold tracking-tighter text-primary leading-none"
+              >
+                Global Grid Explorer
+              </h2>
+              <p class="text-on-surface-variant font-medium">
+                Query customer metadata across all regional grid clusters.
+              </p>
+            </div>
+            <div class="w-full max-w-3xl relative group">
+              <!-- Glassmorphic Pencarian Bar -->
+              <div
+                class="absolute inset-y-0 left-6 flex items-center pointer-events-none"
+              >
+                <span class="material-symbols-outlined text-primary/40 text-3xl"
+                  >search</span
+                >
+              </div>
+              <input
+                class="w-full h-20 pl-20 pr-8 bg-surface-container-lowest/80 backdrop-blur-xl border-none rounded-full text-xl font-medium text-primary shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] focus:ring-4 focus:ring-primary/5 transition-all placeholder:text-on-surface-variant/40"
+                placeholder="Cari ID Pelanggan, Nama, atau Lokasi..."
+                type="text"
+              />
+              <button
+                class="absolute right-4 inset-y-4 px-8 bg-gradient-to-br from-primary to-primary-container text-white rounded-full font-bold text-sm tracking-tight hover:shadow-lg transition-all active:scale-95"
+              >
+                EXECUTE QUERY
+              </button>
+            </div>
+            <!-- Filter Clusters -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl">
+              <div
+                class="bg-surface-container-lowest p-4 rounded-xl text-left space-y-3"
+              >
+                <label
+                  class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest"
+                  >ID Pelanggan</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-surface-container-low border-none rounded-lg text-sm p-2.5 focus:ring-2 focus:ring-secondary/20"
+                    placeholder="12 Digit ID"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="bg-surface-container-lowest p-4 rounded-xl text-left space-y-3"
+              >
+                <label
+                  class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest"
+                  >Nama</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-surface-container-low border-none rounded-lg text-sm p-2.5 focus:ring-2 focus:ring-secondary/20"
+                    placeholder="Nama Lengkap"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                class="bg-surface-container-lowest p-4 rounded-xl text-left space-y-3"
+              >
+                <label
+                  class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest"
+                  >Tarif/Daya</label
+                >
+                <select
+                  class="w-full bg-surface-container-low border-none rounded-lg text-sm p-2.5 focus:ring-2 focus:ring-secondary/20"
+                >
+                  <option>Semua Tarif</option>
+                  <option>R1 / 450 VA</option>
+                  <option>R1 / 900 VA</option>
+                  <option>B1 / 2200 VA</option>
+                </select>
+              </div>
+              <div
+                class="bg-surface-container-lowest p-4 rounded-xl text-left space-y-3"
+              >
+                <label
+                  class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest"
+                  >Status</label
+                >
+                <select
+                  class="w-full bg-surface-container-low border-none rounded-lg text-sm p-2.5 focus:ring-2 focus:ring-secondary/20"
+                >
+                  <option>Active Only</option>
+                  <option>Suspended</option>
+                  <option>Terminated</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Results Section -->
+          <div class="space-y-6">
+            <div
+              class="flex justify-between items-end border-b border-outline-variant/15 pb-4"
+            >
+              <div>
+                <h3 class="text-headline-sm font-bold text-primary">
+                  Pencarian Results
+                </h3>
+                <p class="text-label-md text-on-surface-variant">
+                  Displaying 142 records matching current criteria.
+                </p>
+              </div>
+              <div class="flex gap-2">
+                <button
+                  class="px-4 py-2 bg-surface-container-high rounded-lg text-xs font-bold text-primary flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >filter_list</span
+                  >
+                  SORT BY DATE
+                </button>
+                <button
+                  class="px-4 py-2 bg-primary-container text-white rounded-lg text-xs font-bold flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >download</span
+                  >
+                  EXPORT CSV
+                </button>
+              </div>
+            </div>
+            <!-- Clean Table Pattern -->
+            <div
+              class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm"
+            >
+              <table class="w-full text-left">
+                <thead class="bg-surface-container-low">
+                  <tr>
+                    <th
+                      class="px-6 py-4 text-label-md font-black text-on-surface-variant uppercase tracking-[0.05em]"
+                    >
+                      ID Pelanggan
+                    </th>
+                    <th
+                      class="px-6 py-4 text-label-md font-black text-on-surface-variant uppercase tracking-[0.05em]"
+                    >
+                      Nama Pelanggan
+                    </th>
+                    <th
+                      class="px-6 py-4 text-label-md font-black text-on-surface-variant uppercase tracking-[0.05em]"
+                    >
+                      Tarif/Daya
+                    </th>
+                    <th
+                      class="px-6 py-4 text-label-md font-black text-on-surface-variant uppercase tracking-[0.05em]"
+                    >
+                      Area Cluster
+                    </th>
+                    <th
+                      class="px-6 py-4 text-label-md font-black text-on-surface-variant uppercase tracking-[0.05em]"
+                    >
+                      Status
+                    </th>
+                    <th
+                      class="px-6 py-4 text-label-md font-black text-on-surface-variant uppercase tracking-[0.05em] text-right"
+                    >
+                      Aksi
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-outline-variant/10">
+                  <tr
+                    class="hover:bg-surface transition-colors cursor-pointer group"
+                  >
+                    <td
+                      class="px-6 py-5 font-mono text-sm font-bold text-secondary"
+                    >
+                      534410992381
+                    </td>
+                    <td class="px-6 py-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded-full bg-tertiary-fixed text-primary flex items-center justify-center font-bold text-xs"
+                        >
+                          AS
+                        </div>
+                        <span class="text-sm font-semibold">Andi Saputra</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm text-on-surface-variant"
+                        >R1 / 900 VA</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm text-on-surface-variant"
+                        >Menteng Central</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center px-2 py-1 bg-tertiary-container/10 text-on-tertiary-container text-[10px] font-bold rounded uppercase"
+                        >Active</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <button
+                        class="material-symbols-outlined text-outline group-hover:text-primary transition-colors"
+                      >
+                        open_in_new
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="bg-surface-container-low/30 hover:bg-surface transition-colors cursor-pointer group"
+                  >
+                    <td
+                      class="px-6 py-5 font-mono text-sm font-bold text-secondary"
+                    >
+                      534410992455
+                    </td>
+                    <td class="px-6 py-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded-full bg-secondary-fixed text-primary flex items-center justify-center font-bold text-xs"
+                        >
+                          BK
+                        </div>
+                        <span class="text-sm font-semibold">Budi Kusuma</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm text-on-surface-variant"
+                        >B1 / 2200 VA</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm text-on-surface-variant"
+                        >Sudirman Hub</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center px-2 py-1 bg-error-container text-on-error-container text-[10px] font-bold rounded uppercase"
+                        >Suspended</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <button
+                        class="material-symbols-outlined text-outline group-hover:text-primary transition-colors"
+                      >
+                        open_in_new
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="hover:bg-surface transition-colors cursor-pointer group"
+                  >
+                    <td
+                      class="px-6 py-5 font-mono text-sm font-bold text-secondary"
+                    >
+                      534410992501
+                    </td>
+                    <td class="px-6 py-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-xs"
+                        >
+                          CD
+                        </div>
+                        <span class="text-sm font-semibold">Citra Dewi</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm text-on-surface-variant"
+                        >R1 / 450 VA</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm text-on-surface-variant"
+                        >Kebun Jeruk</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center px-2 py-1 bg-tertiary-container/10 text-on-tertiary-container text-[10px] font-bold rounded uppercase"
+                        >Active</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <button
+                        class="material-symbols-outlined text-outline group-hover:text-primary transition-colors"
+                      >
+                        open_in_new
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="bg-surface-container-low/30 hover:bg-surface transition-colors cursor-pointer group"
+                  >
+                    <td
+                      class="px-6 py-5 font-mono text-sm font-bold text-secondary"
+                    >
+                      534410992990
+                    </td>
+                    <td class="px-6 py-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded-full bg-surface-variant text-primary flex items-center justify-center font-bold text-xs"
+                        >
+                          EM
+                        </div>
+                        <span class="text-sm font-semibold">Eka Mahendra</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm text-on-surface-variant"
+                        >R1 / 900 VA</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <span class="text-sm text-on-surface-variant"
+                        >Kemang North</span
+                      >
+                    </td>
+                    <td class="px-6 py-5">
+                      <span
+                        class="inline-flex items-center px-2 py-1 bg-tertiary-container/10 text-on-tertiary-container text-[10px] font-bold rounded uppercase"
+                        >Active</span
+                      >
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                      <button
+                        class="material-symbols-outlined text-outline group-hover:text-primary transition-colors"
+                      >
+                        open_in_new
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div
+                class="px-6 py-4 bg-surface-container-low flex justify-between items-center"
+              >
+                <span class="text-xs text-on-surface-variant font-medium"
+                  >Page 1 of 12</span
+                >
+                <div class="flex gap-1">
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded bg-white text-on-surface-variant shadow-sm"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >chevron_left</span
+                    >
+                  </button>
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white shadow-sm font-bold text-xs"
+                  >
+                    1
+                  </button>
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded bg-white text-on-surface-variant shadow-sm font-bold text-xs"
+                  >
+                    2
+                  </button>
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded bg-white text-on-surface-variant shadow-sm font-bold text-xs"
+                  >
+                    3
+                  </button>
+                  <button
+                    class="w-8 h-8 flex items-center justify-center rounded bg-white text-on-surface-variant shadow-sm"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >chevron_right</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Auxiliary Data Insights (Asymmetric Bento) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div
+              class="md:col-span-2 bg-white p-6 rounded-xl shadow-sm space-y-4"
+            >
+              <div class="flex items-center justify-between">
+                <h4 class="font-bold text-primary">Recent Global Activity</h4>
+                <span
+                  class="text-[10px] text-on-surface-variant font-bold px-2 py-1 bg-surface-container rounded"
+                  >LIVE DATA</span
+                >
+              </div>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="space-y-1">
+                  <p class="text-display-sm font-black text-secondary">2.4k</p>
+                  <p
+                    class="text-[10px] font-bold text-on-surface-variant uppercase"
+                  >
+                    Queries Today
+                  </p>
+                </div>
+                <div class="space-y-1">
+                  <p class="text-display-sm font-black text-secondary">18ms</p>
+                  <p
+                    class="text-[10px] font-bold text-on-surface-variant uppercase"
+                  >
+                    Avg Latency
+                  </p>
+                </div>
+                <div class="space-y-1">
+                  <p class="text-display-sm font-black text-secondary">99.9%</p>
+                  <p
+                    class="text-[10px] font-bold text-on-surface-variant uppercase"
+                  >
+                    Data Fidelity
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gradient-to-br from-primary to-primary-container p-6 rounded-xl shadow-lg relative overflow-hidden"
+            >
+              <div class="relative z-10 space-y-4">
+                <h4 class="font-bold text-white">Need Advanced Training?</h4>
+                <p class="text-xs text-white/70 leading-relaxed">
+                  Access the analyst portal for complex geospatial queries and
+                  deep database indexing protocols.
+                </p>
+                <button
+                  class="w-full py-2 bg-white text-primary rounded-lg text-xs font-bold hover:bg-blue-50 transition-colors"
+                >
+                  Open Documentation
+                </button>
+              </div>
+              <div class="absolute -right-4 -bottom-4 opacity-10">
+                <span
+                  class="material-symbols-outlined text-9xl text-white"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >terminal</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer Info -->
+      <footer
+        class="px-8 py-6 bg-surface-container border-t border-outline-variant/10"
+      >
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+          <p class="text-label-md text-on-surface-variant">
+            © 2024 BESTIE Infrastructure. Jakarta Manajemen Jaringan
+            Authority.
+          </p>
+          <div class="flex gap-6">
+            <a
+              class="text-label-md text-on-surface-variant hover:text-primary"
+              href="#"
+              >System Status</a
+            >
+            <a
+              class="text-label-md text-on-surface-variant hover:text-primary"
+              href="#"
+              >API Docs</a
+            >
+            <a
+              class="text-label-md text-on-surface-variant hover:text-primary"
+              href="#"
+              >Security Protocol</a
+            >
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

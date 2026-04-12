@@ -1,0 +1,684 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BESTIE | Key Statistics - Profiling</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1d",
+              "on-tertiary-container": "#5c9af8",
+              background: "#f8f9fa",
+              "tertiary-fixed": "#d6e3ff",
+              "outline-variant": "#c4c6d2",
+              "on-primary-fixed-variant": "#224583",
+              "on-primary-container": "#7999dc",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#edeeef",
+              "surface-dim": "#d9dadb",
+              "tertiary-fixed-dim": "#a9c7ff",
+              "surface-variant": "#e1e3e4",
+              "secondary-fixed-dim": "#9dcaff",
+              "on-primary-fixed": "#001a42",
+              "on-surface-variant": "#434750",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-container": "#002f6c",
+              "on-secondary-container": "#075084",
+              "primary-fixed-dim": "#aec6ff",
+              "on-tertiary-fixed-variant": "#00468c",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#8ec2fe",
+              "on-tertiary-fixed": "#001b3d",
+              "inverse-primary": "#aec6ff",
+              error: "#ba1a1a",
+              outline: "#747781",
+              "secondary-fixed": "#d1e4ff",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#001d35",
+              secondary: "#266197",
+              "primary-fixed": "#d8e2ff",
+              "surface-container-low": "#f3f4f5",
+              tertiary: "#001c3f",
+              "surface-tint": "#3c5d9c",
+              "on-background": "#191c1d",
+              primary: "#001b44",
+              "on-secondary-fixed-variant": "#00497c",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-bright": "#f8f9fa",
+              "tertiary-container": "#003165",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#e7e8e9",
+              "error-container": "#ffdad6",
+              surface: "#f8f9fa",
+              "surface-container-highest": "#e1e3e4",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Inter"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass-search {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(24px);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #001b44 0%, #002f6c 100%);
+      }
+      .tonal-shift-right-edge {
+        border-right: 1px solid rgba(196, 198, 210, 0.15);
+      }
+          @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out both; }
+      .animate-fade-in { animation: fadeIn 0.4s ease-out both; }
+      tbody tr { animation: fadeInUp 0.4s ease-out both; }
+      tbody tr:nth-child(1) { animation-delay: 0.05s; }
+      tbody tr:nth-child(2) { animation-delay: 0.1s; }
+      tbody tr:nth-child(3) { animation-delay: 0.15s; }
+      tbody tr:nth-child(4) { animation-delay: 0.2s; }
+      tbody tr:nth-child(5) { animation-delay: 0.25s; }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface">
+    <!-- SideNavBar -->
+    <aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-slate-50/90 backdrop-blur-xl border-r border-slate-200/20 flex flex-col p-4 space-y-2 font-['Inter'] text-[0.875rem] leading-relaxed">
+      <div class="px-2 py-3 mb-4 flex flex-col items-center">
+        <img src="logo-bestie.jpg" alt="Bestie Logo" class="w-16 h-16 object-contain mb-1" />
+        <p class="text-[0.5rem] text-on-surface-variant font-medium text-center leading-tight opacity-70">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="dashboard.html">
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="data-pelanggan.html">
+          <span class="material-symbols-outlined">database</span>
+          <span>Database</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="search.html">
+          <span class="material-symbols-outlined">search</span>
+          <span>Pencarian</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="watchlist.html">
+          <span class="material-symbols-outlined">visibility</span>
+          <span>Watchlist</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          <span>Laporan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 bg-white text-[#002F6C] font-bold shadow-sm rounded-lg transition-all duration-200" href="profile-pelanggan.html">
+          <span class="material-symbols-outlined">person_search</span>
+          <span>Profiling</span>
+        </a>
+      </nav>
+      <div class="pt-4 border-t border-slate-200/50 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">settings</span>
+          <span>Pengaturan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">help_outline</span>
+          <span>Bantuan</span>
+        </a>
+      </div>
+    </aside>
+
+
+    <!-- Main Content Stage -->
+    <main class="ml-64 min-h-screen">
+      <!-- TopNavBar -->
+      <header class="flex justify-between items-center w-full px-8 h-16 bg-white/80 backdrop-blur-md z-40 shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] sticky top-0">
+        <div class="flex items-center gap-6">
+          <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+            <input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-80 focus:ring-2 focus:ring-primary-container transition-all" placeholder="Pencarian pelanggan..." type="text" />
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors relative">
+            <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+            <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+          </button>
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant">apps</span>
+          </button>
+          <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="Profil Analis" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUFkR74HRuGXAdKAy7qQsLITuIYB20nMHZ3Afli235xyII9vM_xHE9eraL_etCfkLy5wJcvTdDpaiIQ3S_VkmCrku32KEKoIEY5qKWire4ya2Zn6d1sHKcmI4oDObfN1lysq9LIJdN8ifNPcXJw1CdTJ1GzvYO6wezFWskAuaCeuZ3gkmFu8mQmilOGPA7IGkMIYZXZddc3qBcEbeMavvtVmMMvEy-4uH-GeP1OwXlFOcFJEiR7be78W0Xi5YzI93XoujZIFRqBU" />
+          </div>
+        </div>
+      </header>
+
+      <div class="p-8 space-y-8">
+                        <!-- Header Section -->
+        <div class="flex justify-between items-end animate-fade-in">
+          <div>
+            <nav class="flex items-center gap-2 text-label-md text-on-surface-variant mb-2">
+              <span>Database</span>
+              <span class="material-symbols-outlined text-sm">chevron_right</span>
+              <span>Profiling</span>
+            </nav>
+            <h2 class="text-3xl font-extrabold tracking-tight text-primary">PT. Sumber Energi Nusantara</h2>
+            <p class="text-on-surface-variant">Pelanggan Korporat Tier-1 &bull; Surabaya Barat, ID</p>
+          </div>
+          <div class="flex gap-3">
+            <button class="px-4 py-2 bg-surface-container-high text-primary rounded-md text-sm font-semibold hover:bg-surface-variant transition-all">Buat Laporan</button>
+            <button class="px-4 py-2 bg-gradient-to-br from-primary to-primary-container text-white rounded-md text-sm font-semibold shadow-lg hover:opacity-90 transition-all">Perbarui Profiling</button>
+          </div>
+        </div>
+        <!-- Custom Tabbed Interface -->
+        <div class="bg-surface-container-low p-1 rounded-xl flex w-max">
+          <a href="profile-pelanggan.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Key Statistik</a>
+          <a href="analisis.html" class="px-6 py-2 text-sm font-bold bg-white text-primary rounded-lg shadow-sm inline-block">Analisis</a>
+          <a href="ai-based.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">AI Based</a>
+          <a href="news.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Berita</a>
+          <a href="#" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Detail Statistik</a>
+          <a href="profile.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Profil</a>
+        </div>
+        <!-- KPI Cards Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Penjualan Listrik per Periode -->
+          <div
+            class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/15 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start">
+              <span
+                class="text-[0.75rem] font-bold text-on-surface-variant uppercase tracking-wider"
+                >Penjualan Listrik per Periode</span
+              >
+              <span
+                class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded-sm text-[0.625rem] font-bold"
+                >+12.4%</span
+              >
+            </div>
+            <div class="mt-4 flex flex-col">
+              <span class="text-3xl font-black text-primary tracking-tighter"
+                >482.1 GWh</span
+              >
+              <span class="text-[0.75rem] text-on-surface-variant mt-1 italic"
+                >Target: 450.0 GWh</span
+              >
+            </div>
+            <div
+              class="mt-4 h-1 bg-surface-container rounded-full overflow-hidden"
+            >
+              <div class="h-full bg-secondary w-4/5"></div>
+            </div>
+          </div>
+          <!-- KVA Pemakaian -->
+          <div
+            class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/15 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start">
+              <span
+                class="text-[0.75rem] font-bold text-on-surface-variant uppercase tracking-wider"
+                >KVA Pemakaian</span
+              >
+              <span
+                class="bg-secondary-container/30 text-secondary-container text-on-secondary-container px-2 py-0.5 rounded-sm text-[0.625rem] font-bold"
+                >Stable</span
+              >
+            </div>
+            <div class="mt-4 flex flex-col">
+              <span class="text-3xl font-black text-primary tracking-tighter"
+                >1,240.5 MVA</span
+              >
+              <span class="text-[0.75rem] text-on-surface-variant mt-1 italic"
+                >Peak usage at 14:00 WIB</span
+              >
+            </div>
+            <div class="mt-4 flex items-end gap-1 h-8">
+              <div class="w-full bg-secondary-fixed-dim h-4 rounded-t-sm"></div>
+              <div class="w-full bg-secondary-fixed-dim h-6 rounded-t-sm"></div>
+              <div class="w-full bg-secondary h-8 rounded-t-sm"></div>
+              <div class="w-full bg-secondary-fixed-dim h-5 rounded-t-sm"></div>
+            </div>
+          </div>
+          <!-- Gangguan Listrik -->
+          <div
+            class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/15 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start">
+              <span
+                class="text-[0.75rem] font-bold text-on-surface-variant uppercase tracking-wider"
+                >Gangguan Listrik</span
+              >
+              <span
+                class="bg-error-container text-on-error-container px-2 py-0.5 rounded-sm text-[0.625rem] font-bold"
+                >-5% Improve</span
+              >
+            </div>
+            <div class="mt-4 flex flex-col">
+              <span class="text-3xl font-black text-primary tracking-tighter"
+                >14 Incidents</span
+              >
+              <span class="text-[0.75rem] text-on-surface-variant mt-1 italic"
+                >Avg Recovery: 18.5 min</span
+              >
+            </div>
+            <div class="mt-4 flex gap-2 overflow-hidden">
+              <span
+                class="material-symbols-outlined text-error"
+                data-icon="bolt"
+                >bolt</span
+              >
+              <span
+                class="material-symbols-outlined text-error/40"
+                data-icon="bolt"
+                >bolt</span
+              >
+              <span
+                class="material-symbols-outlined text-error/40"
+                data-icon="bolt"
+                >bolt</span
+              >
+            </div>
+          </div>
+          <!-- Kapasitas Supply -->
+          <div
+            class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/15 flex flex-col justify-between"
+          >
+            <div class="flex justify-between items-start">
+              <span
+                class="text-[0.75rem] font-bold text-on-surface-variant uppercase tracking-wider"
+                >Kapasitas Supply</span
+              >
+              <span
+                class="bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded-sm text-[0.625rem] font-bold"
+                >Healthy</span
+              >
+            </div>
+            <div class="mt-4 flex flex-col">
+              <span class="text-3xl font-black text-primary tracking-tighter"
+                >2,100 MW</span
+              >
+              <span class="text-[0.75rem] text-on-surface-variant mt-1 italic"
+                >Reserved: 350 MW</span
+              >
+            </div>
+            <div class="mt-4 flex items-center justify-center">
+              <div
+                class="relative w-full h-2 bg-surface-container rounded-full"
+              >
+                <div
+                  class="absolute left-0 top-0 h-full bg-primary-container w-3/4 rounded-full"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Detailed Charts Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Historical Sales Trend (Line Chart Container) -->
+          <div
+            class="lg:col-span-2 bg-surface-container-low p-8 rounded-xl space-y-6"
+          >
+            <div class="flex justify-between items-center">
+              <div>
+                <h3 class="text-lg font-bold text-primary tracking-tight">
+                  Detailed Historical Trends
+                </h3>
+                <p class="text-xs text-on-surface-variant font-medium">
+                  Electricity Sales &amp; Consumption (2023-2024)
+                </p>
+              </div>
+              <div class="flex gap-2">
+                <button
+                  class="px-4 py-1.5 bg-surface-container-highest text-primary text-xs font-bold rounded-lg hover:bg-slate-200 transition-all"
+                >
+                  Monthly
+                </button>
+                <button
+                  class="px-4 py-1.5 bg-primary text-white text-xs font-bold rounded-lg"
+                >
+                  Quarterly
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-80 w-full flex items-end justify-between px-4 pb-8 relative"
+            >
+              <!-- Simulated Chart Grid Lines -->
+              <div
+                class="absolute inset-x-0 bottom-8 h-px bg-outline-variant/30"
+              ></div>
+              <div
+                class="absolute inset-x-0 top-1/4 h-px bg-outline-variant/10"
+              ></div>
+              <div
+                class="absolute inset-x-0 top-1/2 h-px bg-outline-variant/10"
+              ></div>
+              <div
+                class="absolute inset-x-0 top-3/4 h-px bg-outline-variant/10"
+              ></div>
+              <!-- Data Points & Path (Visual representation) -->
+              <div
+                class="relative flex-1 flex flex-col items-center group h-full justify-end"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-primary-container z-10 mb-[-4px]"
+                ></div>
+                <div
+                  class="w-1 bg-primary-container h-32 rounded-t-full opacity-20"
+                ></div>
+                <span
+                  class="absolute bottom-0 text-[0.625rem] text-on-surface-variant font-bold mt-2"
+                  >JAN</span
+                >
+              </div>
+              <div
+                class="relative flex-1 flex flex-col items-center group h-full justify-end"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-primary-container z-10 mb-[-4px]"
+                ></div>
+                <div
+                  class="w-1 bg-primary-container h-40 rounded-t-full opacity-20"
+                ></div>
+                <span
+                  class="absolute bottom-0 text-[0.625rem] text-on-surface-variant font-bold mt-2"
+                  >FEB</span
+                >
+              </div>
+              <div
+                class="relative flex-1 flex flex-col items-center group h-full justify-end"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-primary-container z-10 mb-[-4px]"
+                ></div>
+                <div
+                  class="w-1 bg-primary-container h-36 rounded-t-full opacity-20"
+                ></div>
+                <span
+                  class="absolute bottom-0 text-[0.625rem] text-on-surface-variant font-bold mt-2"
+                  >MAR</span
+                >
+              </div>
+              <div
+                class="relative flex-1 flex flex-col items-center group h-full justify-end"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-primary-container z-10 mb-[-4px]"
+                ></div>
+                <div
+                  class="w-1 bg-primary-container h-52 rounded-t-full opacity-20"
+                ></div>
+                <span
+                  class="absolute bottom-0 text-[0.625rem] text-on-surface-variant font-bold mt-2"
+                  >APR</span
+                >
+              </div>
+              <div
+                class="relative flex-1 flex flex-col items-center group h-full justify-end"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-primary-container z-10 mb-[-4px]"
+                ></div>
+                <div
+                  class="w-1 bg-primary-container h-48 rounded-t-full opacity-20"
+                ></div>
+                <span
+                  class="absolute bottom-0 text-[0.625rem] text-on-surface-variant font-bold mt-2"
+                  >MAY</span
+                >
+              </div>
+              <div
+                class="relative flex-1 flex flex-col items-center group h-full justify-end"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-primary z-10 mb-[-4px] scale-125 ring-4 ring-primary-fixed-dim/30"
+                ></div>
+                <div
+                  class="w-1 bg-primary h-60 rounded-t-full opacity-40"
+                ></div>
+                <span
+                  class="absolute bottom-0 text-[0.625rem] text-primary font-black mt-2"
+                  >JUN</span
+                >
+              </div>
+              <div
+                class="relative flex-1 flex flex-col items-center group h-full justify-end"
+              >
+                <div
+                  class="w-2 h-2 rounded-full bg-primary-container z-10 mb-[-4px]"
+                ></div>
+                <div
+                  class="w-1 bg-primary-container h-56 rounded-t-full opacity-20"
+                ></div>
+                <span
+                  class="absolute bottom-0 text-[0.625rem] text-on-surface-variant font-bold mt-2"
+                  >JUL</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Secondary Data (Bar Chart Container) -->
+          <div
+            class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] border border-outline-variant/15 flex flex-col gap-6"
+          >
+            <div>
+              <h3 class="text-lg font-bold text-primary tracking-tight">
+                Usage Distribution
+              </h3>
+              <p class="text-xs text-on-surface-variant font-medium">
+                By Consumer Category
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="space-y-1">
+                <div class="flex justify-between text-[0.75rem] font-bold">
+                  <span class="text-on-surface-variant">Industrial</span>
+                  <span class="text-primary">45%</span>
+                </div>
+                <div class="w-full h-3 bg-surface-container-low rounded-full">
+                  <div
+                    class="h-full primary-gradient w-[45%] rounded-full"
+                  ></div>
+                </div>
+              </div>
+              <div class="space-y-1">
+                <div class="flex justify-between text-[0.75rem] font-bold">
+                  <span class="text-on-surface-variant">Residensial</span>
+                  <span class="text-primary">32%</span>
+                </div>
+                <div class="w-full h-3 bg-surface-container-low rounded-full">
+                  <div class="h-full bg-secondary w-[32%] rounded-full"></div>
+                </div>
+              </div>
+              <div class="space-y-1">
+                <div class="flex justify-between text-[0.75rem] font-bold">
+                  <span class="text-on-surface-variant">Komersial</span>
+                  <span class="text-primary">18%</span>
+                </div>
+                <div class="w-full h-3 bg-surface-container-low rounded-full">
+                  <div
+                    class="h-full bg-secondary-fixed-dim w-[18%] rounded-full"
+                  ></div>
+                </div>
+              </div>
+              <div class="space-y-1">
+                <div class="flex justify-between text-[0.75rem] font-bold">
+                  <span class="text-on-surface-variant">Others</span>
+                  <span class="text-primary">5%</span>
+                </div>
+                <div class="w-full h-3 bg-surface-container-low rounded-full">
+                  <div
+                    class="h-full bg-outline-variant w-[5%] rounded-full"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-auto p-4 bg-primary-fixed rounded-xl flex items-center gap-4"
+            >
+              <span
+                class="material-symbols-outlined text-primary text-3xl"
+                data-icon="lightbulb"
+                >lightbulb</span
+              >
+              <div>
+                <p
+                  class="text-[0.625rem] font-bold text-on-primary-fixed-variant uppercase tracking-wider"
+                >
+                  Insight
+                </p>
+                <p
+                  class="text-xs font-medium text-on-primary-fixed leading-tight"
+                >
+                  Industrial consumption increased by 8.2% since last reporting
+                  cycle.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Additional Detail Table -->
+        <div class="bg-surface-container-low rounded-xl overflow-hidden">
+          <div
+            class="px-8 py-4 bg-surface-container flex justify-between items-center"
+          >
+            <h4
+              class="text-sm font-black text-primary tracking-tighter uppercase"
+            >
+              Recent Disturbance Logs
+            </h4>
+            <button
+              class="text-xs font-bold text-secondary flex items-center gap-1"
+            >
+              View Full History
+              <span
+                class="material-symbols-outlined text-sm"
+                data-icon="arrow_forward"
+                >arrow_forward</span
+              >
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-surface-container-high">
+                  <th
+                    class="px-8 py-3 label-md text-[0.7rem] font-bold uppercase tracking-widest text-on-surface-variant"
+                  >
+                    Timestamp
+                  </th>
+                  <th
+                    class="px-8 py-3 label-md text-[0.7rem] font-bold uppercase tracking-widest text-on-surface-variant"
+                  >
+                    Region
+                  </th>
+                  <th
+                    class="px-8 py-3 label-md text-[0.7rem] font-bold uppercase tracking-widest text-on-surface-variant"
+                  >
+                    Nature of Gangguan
+                  </th>
+                  <th
+                    class="px-8 py-3 label-md text-[0.7rem] font-bold uppercase tracking-widest text-on-surface-variant"
+                  >
+                    Duration
+                  </th>
+                  <th
+                    class="px-8 py-3 label-md text-[0.7rem] font-bold uppercase tracking-widest text-on-surface-variant"
+                  >
+                    Impact (KVA)
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-sm font-medium">
+                <tr
+                  class="bg-surface hover:bg-surface-container-high transition-colors"
+                >
+                  <td class="px-8 py-4">24 Oct 2023, 14:02</td>
+                  <td class="px-8 py-4">Substation A12</td>
+                  <td class="px-8 py-4">
+                    <span class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-error"></span>
+                      Feeder Overload
+                    </span>
+                  </td>
+                  <td class="px-8 py-4">12m 45s</td>
+                  <td class="px-8 py-4 font-bold">4,200</td>
+                </tr>
+                <tr
+                  class="bg-surface-container-low hover:bg-surface-container-high transition-colors border-t border-outline-variant/10"
+                >
+                  <td class="px-8 py-4">24 Oct 2023, 11:15</td>
+                  <td class="px-8 py-4">Industrial Zone North</td>
+                  <td class="px-8 py-4">
+                    <span class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                      Scheduled Maintenance
+                    </span>
+                  </td>
+                  <td class="px-8 py-4">45m 00s</td>
+                  <td class="px-8 py-4 font-bold">12,500</td>
+                </tr>
+                <tr
+                  class="bg-surface hover:bg-surface-container-high transition-colors border-t border-outline-variant/10"
+                >
+                  <td class="px-8 py-4">23 Oct 2023, 22:30</td>
+                  <td class="px-8 py-4">Residensial District 4</td>
+                  <td class="px-8 py-4">
+                    <span class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-error"></span>
+                      Transformer Fault
+                    </span>
+                  </td>
+                  <td class="px-8 py-4">1h 22m</td>
+                  <td class="px-8 py-4 font-bold">850</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

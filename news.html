@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BESTIE - Profiling Berita</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#8ec2fe",
+                        "outline-variant": "#c4c6d2",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary-fixed-dim": "#a9c7ff",
+                        "secondary": "#266197",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#001d35",
+                        "primary-container": "#002f6c",
+                        "on-secondary-fixed-variant": "#00497c",
+                        "surface-bright": "#f8f9fa",
+                        "outline": "#747781",
+                        "on-surface-variant": "#434750",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed": "#d6e3ff",
+                        "primary-fixed-dim": "#aec6ff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#003165",
+                        "surface-dim": "#d9dadb",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#001b3d",
+                        "secondary-fixed": "#d1e4ff",
+                        "on-primary-fixed-variant": "#224583",
+                        "on-background": "#191c1d",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#00468c",
+                        "surface-container-high": "#e7e8e9",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary-container": "#075084",
+                        "tertiary": "#001c3f",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#5c9af8",
+                        "surface": "#f8f9fa",
+                        "primary": "#001b44",
+                        "surface-container": "#edeeef",
+                        "on-surface": "#191c1d",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#7999dc",
+                        "surface-tint": "#3c5d9c",
+                        "surface-container-low": "#f3f4f5",
+                        "inverse-surface": "#2e3132",
+                        "inverse-primary": "#aec6ff",
+                        "background": "#f8f9fa",
+                        "secondary-fixed-dim": "#9dcaff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-right-edge {
+            box-shadow: 1px 0 0 0 rgba(196, 198, 210, 0.2);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+          @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out both; }
+      .animate-fade-in { animation: fadeIn 0.4s ease-out both; }
+      tbody tr { animation: fadeInUp 0.4s ease-out both; }
+      tbody tr:nth-child(1) { animation-delay: 0.05s; }
+      tbody tr:nth-child(2) { animation-delay: 0.1s; }
+      tbody tr:nth-child(3) { animation-delay: 0.15s; }
+      tbody tr:nth-child(4) { animation-delay: 0.2s; }
+      tbody tr:nth-child(5) { animation-delay: 0.25s; }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+    <!-- SideNavBar -->
+    <aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-slate-50/90 backdrop-blur-xl border-r border-slate-200/20 flex flex-col p-4 space-y-2 font-['Inter'] text-[0.875rem] leading-relaxed">
+      <div class="px-2 py-3 mb-4 flex flex-col items-center">
+        <img src="logo-bestie.jpg" alt="Bestie Logo" class="w-16 h-16 object-contain mb-1" />
+        <p class="text-[0.5rem] text-on-surface-variant font-medium text-center leading-tight opacity-70">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="dashboard.html">
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="data-pelanggan.html">
+          <span class="material-symbols-outlined">database</span>
+          <span>Database</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="search.html">
+          <span class="material-symbols-outlined">search</span>
+          <span>Pencarian</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="watchlist.html">
+          <span class="material-symbols-outlined">visibility</span>
+          <span>Watchlist</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          <span>Laporan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 bg-white text-[#002F6C] font-bold shadow-sm rounded-lg transition-all duration-200" href="profile-pelanggan.html">
+          <span class="material-symbols-outlined">person_search</span>
+          <span>Profiling</span>
+        </a>
+      </nav>
+      <div class="pt-4 border-t border-slate-200/50 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">settings</span>
+          <span>Pengaturan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">help_outline</span>
+          <span>Bantuan</span>
+        </a>
+      </div>
+    </aside>
+
+<!-- Main Stage -->
+<main class="flex-1 ml-64 flex flex-col min-h-screen">
+      <!-- TopNavBar -->
+      <header class="flex justify-between items-center w-full px-8 h-16 bg-white/80 backdrop-blur-md z-40 shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] sticky top-0">
+        <div class="flex items-center gap-6">
+          <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+            <input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-80 focus:ring-2 focus:ring-primary-container transition-all" placeholder="Pencarian pelanggan..." type="text" />
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors relative">
+            <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+            <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+          </button>
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant">apps</span>
+          </button>
+          <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="Profil Analis" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUFkR74HRuGXAdKAy7qQsLITuIYB20nMHZ3Afli235xyII9vM_xHE9eraL_etCfkLy5wJcvTdDpaiIQ3S_VkmCrku32KEKoIEY5qKWire4ya2Zn6d1sHKcmI4oDObfN1lysq9LIJdN8ifNPcXJw1CdTJ1GzvYO6wezFWskAuaCeuZ3gkmFu8mQmilOGPA7IGkMIYZXZddc3qBcEbeMavvtVmMMvEy-4uH-GeP1OwXlFOcFJEiR7be78W0Xi5YzI93XoujZIFRqBU" />
+          </div>
+        </div>
+      </header>
+
+<!-- Content Area -->
+<div class="p-8 space-y-8">
+        <!-- Header Section -->
+        <div class="flex justify-between items-end animate-fade-in">
+          <div>
+            <nav class="flex items-center gap-2 text-label-md text-on-surface-variant mb-2">
+              <span>Database</span>
+              <span class="material-symbols-outlined text-sm">chevron_right</span>
+              <span>Profiling</span>
+            </nav>
+            <h2 class="text-3xl font-extrabold tracking-tight text-primary">PT. Sumber Energi Nusantara</h2>
+            <p class="text-on-surface-variant">Pelanggan Korporat Tier-1 &bull; Surabaya Barat, ID</p>
+          </div>
+          <div class="flex gap-3">
+            <button class="px-4 py-2 bg-surface-container-high text-primary rounded-md text-sm font-semibold hover:bg-surface-variant transition-all">Buat Laporan</button>
+            <button class="px-4 py-2 bg-gradient-to-br from-primary to-primary-container text-white rounded-md text-sm font-semibold shadow-lg hover:opacity-90 transition-all">Perbarui Profiling</button>
+          </div>
+        </div>
+        <!-- Custom Tabbed Interface -->
+        <div class="bg-surface-container-low p-1 rounded-xl flex w-max">
+          <a href="profile-pelanggan.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Key Statistik</a>
+          <a href="analisis.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Analisis</a>
+          <a href="ai-based.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">AI Based</a>
+          <a href="news.html" class="px-6 py-2 text-sm font-bold bg-white text-primary rounded-lg shadow-sm inline-block">Berita</a>
+          <a href="#" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Detail Statistik</a>
+          <a href="profile.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Profil</a>
+        </div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Main Berita Feed -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="feed">feed</span>
+                            Update Terbaru
+                        </h3>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 text-xs font-semibold bg-primary text-white rounded-lg">Semua</button>
+<button class="px-3 py-1.5 text-xs font-semibold bg-surface-container-high text-on-surface-variant rounded-lg">Internal</button>
+<button class="px-3 py-1.5 text-xs font-semibold bg-surface-container-high text-on-surface-variant rounded-lg">External</button>
+</div>
+</div>
+<!-- Berita Card 1: Internal Policy -->
+<article class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-l-4 border-primary group hover:shadow-md transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary-fixed text-on-primary-fixed rounded">Policy Update</span>
+<time class="text-xs text-on-surface-variant">24 Okt 2023 • 09:15 WIB</time>
+</div>
+<h4 class="text-xl font-bold text-primary mb-2 group-hover:underline decoration-secondary-container underline-offset-4">Penyesuaian Tarif Dasar Listrik Sektor Industri Q4 2023</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">PLN mengumumkan penyesuaian struktur tarif untuk pelanggan industri guna mendukung efisiensi energi nasional. Kebijakan ini mencakup insentif bagi perusahaan yang menerapkan sistem Grid Pintar.</p>
+<div class="mt-4 flex items-center gap-4 text-xs font-medium text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="person">person</span> Humas Pusat</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="forum">forum</span> 12 Komentar</span>
+</div>
+</article>
+<!-- Berita Card 2: Infrastructure -->
+<article class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-l-4 border-secondary group hover:shadow-md transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-secondary-fixed text-on-secondary-fixed rounded">Infrastructure</span>
+<time class="text-xs text-on-surface-variant">22 Okt 2023 • 14:30 WIB</time>
+</div>
+<h4 class="text-xl font-bold text-primary mb-2 group-hover:underline decoration-secondary-container underline-offset-4">Digitalisasi Gardu Induk di Wilayah Operasional Jakarta Barat</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">Implementasi sensor IoT pada 15 gardu induk utama telah selesai dilakukan. Hal ini diharapkan dapat mengurangi durasi pemadaman tidak terencana hingga 40% bagi pelanggan prioritas.</p>
+<div class="mt-4 flex items-center gap-4 text-xs font-medium text-secondary">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="engineering">engineering</span> Ops Technical</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="share">share</span> 5 Shares</span>
+</div>
+</article>
+<!-- Sentiment Feed - Social Card Style -->
+<div class="pt-4">
+<h3 class="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+                            Sentimen Publik &amp; Feedback
+                        </h3>
+<div class="space-y-4">
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-300 shrink-0 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Portrait of a young smiling man wearing a neutral shirt against a light grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlWOjaCXFy7OEIoK_kfCdMcAMxgaRvyAE8J2-TMZtE7pmjVIBnjlaXTByVpoYGbPZeuTWXWMjybfeOrw-mo6lxL6Y8UdFer8AHaTtwNecKBTfMVz_mqwmNeLpnveZ2tWqzjAU-AHDYtyTIgK4x0Olj8_XIs22wDOZVTm9IqZRkY64W5tdz_0EPfqwuMJrkIT2G7jhHiey_r0S8zdCIQW26NtjuxGYCeOZIAzcKWGOv1TjvYP8aSpDcBinSUtKdzKbPe0RnGpwjjSY"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-sm">@IndahLestari</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-tertiary-container text-on-tertiary-container font-bold">Positif</span>
+</div>
+<p class="text-sm text-on-surface mt-1 italic">"Terima kasih @pln_id, laporan gangguan di pabrik kami ditanggapi sangat cepat hari ini. Tim teknis sangat profesional!"</p>
+<div class="flex items-center gap-3 mt-2 text-[10px] text-on-surface-variant">
+<span>2 jam yang lalu via Twitter</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]" data-icon="thumb_up">thumb_up</span> 42</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-xl border border-outline-variant/10">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-300 shrink-0 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Close up of a middle-aged man with glasses and a friendly expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAQxv5XJdCfNhLZujNPDMFUgWaOgfNILCiB34vy9yvuJrPq7UNzkUEwFwumvhwnvgghmMY_9G-KIhUPo3D0s5hikH0VCn8ScWcVcZaj4P_BuMePmBfCLIgWFmA2oN_T5RZNHwf5wX2qmEJxXCr9aVWUECcWQgsllevYPbnutvnjyUrFTTUIsS05KDMLT1gQBMOZt5mvnT82zf19_HdHZrJABj8-SYnpSBTXuw0KV18Z1y2aq1MlR93wOE11SD2EjRP_6rxNOShjSg"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-sm">@BudiKusuma</span>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-error-container text-on-error-container font-bold">Isu Teknis</span>
+</div>
+<p class="text-sm text-on-surface mt-1 italic">"Tagihan bulan ini kok melonjak drastis ya padahal pemakaian normal? Ada yang ngalamin hal yang sama?"</p>
+<div class="flex items-center gap-3 mt-2 text-[10px] text-on-surface-variant">
+<span>5 jam yang lalu via Facebook</span>
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]" data-icon="warning">warning</span> 18 Comments</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Content (Bento Style) -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Sentiment Dashboard Widget -->
+<div class="bg-primary text-white p-6 rounded-2xl shadow-xl relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="text-sm font-medium opacity-80 mb-6 uppercase tracking-widest">Skor Sentimen</h4>
+<div class="flex items-end gap-3">
+<span class="text-5xl font-black tracking-tight">84.2</span>
+<span class="text-secondary-container font-bold mb-2 flex items-center gap-1">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+                                    +4.1%
+                                </span>
+</div>
+<p class="text-xs mt-4 opacity-70">Berdasarkan analisis AI terhadap 1,240 interaksi sosial dalam 7 hari terakhir.</p>
+</div>
+<!-- Abstract Background Decoration -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-primary-container rounded-full opacity-50 blur-3xl"></div>
+</div>
+<!-- Category Cloud -->
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<h4 class="text-sm font-bold text-primary mb-4 uppercase tracking-tighter">Topik Terhangat</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-container text-xs font-semibold rounded-full hover:bg-secondary-container transition-colors cursor-pointer">#NetZero2060</span>
+<span class="px-3 py-1.5 bg-surface-container text-xs font-semibold rounded-full hover:bg-secondary-container transition-colors cursor-pointer">#SmartGrid</span>
+<span class="px-3 py-1.5 bg-surface-container text-xs font-semibold rounded-full hover:bg-secondary-container transition-colors cursor-pointer">#PLNMobile</span>
+<span class="px-3 py-1.5 bg-surface-container text-xs font-semibold rounded-full hover:bg-secondary-container transition-colors cursor-pointer">#TarifIndustri</span>
+<span class="px-3 py-1.5 bg-surface-container text-xs font-semibold rounded-full hover:bg-secondary-container transition-colors cursor-pointer">#HematEnergi</span>
+<span class="px-3 py-1.5 bg-surface-container text-xs font-semibold rounded-full hover:bg-secondary-container transition-colors cursor-pointer">#GreenEnergy</span>
+</div>
+</div>
+<!-- Pinned Berita -->
+<div class="bg-surface-container-lowest p-6 rounded-xl">
+<h4 class="text-sm font-bold text-primary mb-4 uppercase tracking-tighter">Berita Penting</h4>
+<div class="space-y-4">
+<div class="flex gap-3 group cursor-pointer">
+<div class="w-16 h-16 bg-slate-200 rounded-lg shrink-0 overflow-hidden">
+<img alt="Berita Thumbnail" class="w-full h-full object-cover" data-alt="High angle view of a team of diverse engineers analyzing data on tablets in a modern energy control room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIVv3f4bn7k9ySeWuxVYzy1L6GaS2KWuqFosr-KkhFalm6YsVue6v_DocPI-jQhVKjyk51oM1MttVB-HPGB-xbvE4sYVpd-lHWi_9ClJbhbxtMh6xjbYKC9yEhGwizfss-PRGqNUcWazKmHBvrhUM7zTLWocWPe9-HriD2Y0MeSFa706VDFiWJv_bR5nkAzjchfGxFwUGVWWDupUABGC9HWX_EKdEhCd5e6UxVLDMsn5zDhsYbM80ac5-_xDL44WNkzxOJda7ckpw"/>
+</div>
+<div>
+<h5 class="text-sm font-bold text-primary line-clamp-2 group-hover:text-secondary transition-colors">Panduan Mitigasi Resiko Gangguan Musim Hujan 2024</h5>
+<span class="text-[10px] text-on-surface-variant font-medium">Internal • 2 hari yang lalu</span>
+</div>
+</div>
+<div class="flex gap-3 group cursor-pointer">
+<div class="w-16 h-16 bg-slate-200 rounded-lg shrink-0 overflow-hidden">
+<img alt="Berita Thumbnail" class="w-full h-full object-cover" data-alt="Stylized representation of a global digital network showing connections over a simplified world map in dark blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCED9cN7wTfFzTLy3t4Lgf4CGs5j0A3QRY172uESvy5GRqwuhcXWqTxrZoOsTaFyI8ylFreoWWqALD8r_X0g8Xb3KeHPde-jyXLQUZNayZHFcHW98U9lzkbl2fBEVL51H_VgEY9wfalPDYHGc1w_BiEPeVSczxocmr507bA67v_9Egd_cU4nSc5I_XURYmSJ4Nj9JTAiSSe24o2ufO3t9ziBd9ugH2nIItiIaZ21TH8xIEFhAwuCRRj3WNVafweHVx4dHB4u9QINw0"/>
+</div>
+<div>
+<h5 class="text-sm font-bold text-primary line-clamp-2 group-hover:text-secondary transition-colors">Perluasan Jaringan Fiber Optik untuk Monitoring Grid</h5>
+<span class="text-[10px] text-on-surface-variant font-medium">Technical • 3 hari yang lalu</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2.5 text-xs font-bold text-primary border border-outline-variant rounded-lg hover:bg-surface-container transition-colors">Lihat Semua Arsip</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Action (Suppressed on this deep detail page per instructions, but placeholder logic included if needed) -->
+<!-- The FAB is suppressed because this is a deep detail/profiling screen as per the "Contextual FAB Suppression" rule -->
+</body></html>

@@ -1,0 +1,713 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BESTIE | Database Pelanggan</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1d",
+              "on-tertiary-container": "#5c9af8",
+              background: "#f8f9fa",
+              "tertiary-fixed": "#d6e3ff",
+              "outline-variant": "#c4c6d2",
+              "on-primary-fixed-variant": "#224583",
+              "on-primary-container": "#7999dc",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#edeeef",
+              "surface-dim": "#d9dadb",
+              "tertiary-fixed-dim": "#a9c7ff",
+              "surface-variant": "#e1e3e4",
+              "secondary-fixed-dim": "#9dcaff",
+              "on-primary-fixed": "#001a42",
+              "on-surface-variant": "#434750",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-container": "#002f6c",
+              "on-secondary-container": "#075084",
+              "primary-fixed-dim": "#aec6ff",
+              "on-tertiary-fixed-variant": "#00468c",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#8ec2fe",
+              "on-tertiary-fixed": "#001b3d",
+              "inverse-primary": "#aec6ff",
+              error: "#ba1a1a",
+              outline: "#747781",
+              "secondary-fixed": "#d1e4ff",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#001d35",
+              secondary: "#266197",
+              "primary-fixed": "#d8e2ff",
+              "surface-container-low": "#f3f4f5",
+              tertiary: "#001c3f",
+              "surface-tint": "#3c5d9c",
+              "on-background": "#191c1d",
+              primary: "#001b44",
+              "on-secondary-fixed-variant": "#00497c",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-bright": "#f8f9fa",
+              "tertiary-container": "#003165",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#e7e8e9",
+              "error-container": "#ffdad6",
+              surface: "#f8f9fa",
+              "surface-container-highest": "#e1e3e4",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Inter"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .scale-active-98:active {
+        transform: scale(0.98);
+      }
+      .tonal-shift-right-edge {
+        border-right: 1px solid rgba(196, 198, 210, 0.2);
+      }
+          @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out both; }
+      .animate-fade-in { animation: fadeIn 0.4s ease-out both; }
+      tbody tr { animation: fadeInUp 0.4s ease-out both; }
+      tbody tr:nth-child(1) { animation-delay: 0.05s; }
+      tbody tr:nth-child(2) { animation-delay: 0.1s; }
+      tbody tr:nth-child(3) { animation-delay: 0.15s; }
+      tbody tr:nth-child(4) { animation-delay: 0.2s; }
+      tbody tr:nth-child(5) { animation-delay: 0.25s; }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface antialiased flex overflow-hidden">
+    <!-- SideNavBar -->
+    <aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-slate-50/90 backdrop-blur-xl border-r border-slate-200/20 flex flex-col p-4 space-y-2 font-['Inter'] text-[0.875rem] leading-relaxed">
+      <div class="px-2 py-3 mb-4 flex flex-col items-center">
+        <img src="logo-bestie.jpg" alt="Bestie Logo" class="w-16 h-16 object-contain mb-1" />
+        <p class="text-[0.5rem] text-on-surface-variant font-medium text-center leading-tight opacity-70">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="dashboard.html">
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 bg-white text-[#002F6C] font-bold shadow-sm rounded-lg transition-all duration-200" href="data-pelanggan.html">
+          <span class="material-symbols-outlined">database</span>
+          <span>Database</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="search.html">
+          <span class="material-symbols-outlined">search</span>
+          <span>Pencarian</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="watchlist.html">
+          <span class="material-symbols-outlined">visibility</span>
+          <span>Watchlist</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          <span>Laporan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="profile-pelanggan.html">
+          <span class="material-symbols-outlined">person_search</span>
+          <span>Profiling</span>
+        </a>
+      </nav>
+      <div class="pt-4 border-t border-slate-200/50 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">settings</span>
+          <span>Pengaturan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">help_outline</span>
+          <span>Bantuan</span>
+        </a>
+      </div>
+    </aside>
+
+
+    <!-- Main Canvas -->
+    <main class="flex-1 ml-64 flex flex-col h-screen overflow-hidden">
+      <!-- TopNavBar -->
+      <header class="flex justify-between items-center w-full px-8 h-16 bg-white/80 backdrop-blur-md z-40 shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] sticky top-0">
+        <div class="flex items-center gap-6">
+          <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+            <input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-80 focus:ring-2 focus:ring-primary-container transition-all" placeholder="Pencarian pelanggan..." type="text" />
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors relative">
+            <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+            <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+          </button>
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant">apps</span>
+          </button>
+          <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="Profil Analis" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUFkR74HRuGXAdKAy7qQsLITuIYB20nMHZ3Afli235xyII9vM_xHE9eraL_etCfkLy5wJcvTdDpaiIQ3S_VkmCrku32KEKoIEY5qKWire4ya2Zn6d1sHKcmI4oDObfN1lysq9LIJdN8ifNPcXJw1CdTJ1GzvYO6wezFWskAuaCeuZ3gkmFu8mQmilOGPA7IGkMIYZXZddc3qBcEbeMavvtVmMMvEy-4uH-GeP1OwXlFOcFJEiR7be78W0Xi5YzI93XoujZIFRqBU" />
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="flex-1 overflow-auto p-8 bg-surface-container-low">
+        <div class="max-w-7xl mx-auto flex gap-6 h-full">
+          <!-- Table Section -->
+          <div class="flex-1 flex flex-col gap-6">
+            <!-- Page Header -->
+            <div class="flex justify-between items-end">
+              <div>
+                <h2
+                  class="text-headline-sm font-bold tracking-tight text-primary"
+                >
+                  Database Pelanggan
+                </h2>
+                <p class="text-on-surface-variant text-label-md">
+                  Menampilkan 2.492 koneksi terdaftar
+                </p>
+              </div>
+              <button
+                class="bg-gradient-to-tr from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-md flex items-center gap-2 text-sm font-medium shadow-lg hover:opacity-90 transition-all scale-active-98"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >person_add</span
+                >
+                Daftarkan Pelanggan Baru
+              </button>
+            </div>
+            <!-- Filter Bar -->
+            <div
+              class="bg-surface-container-lowest rounded-xl p-4 flex flex-wrap items-center gap-4 shadow-sm border border-outline-variant/10"
+            >
+              <div
+                class="flex items-center gap-2 bg-surface-container rounded-lg px-3 py-2 border border-outline-variant/10"
+              >
+                <span
+                  class="text-xs font-bold text-on-surface-variant uppercase tracking-wider"
+                  >Tarif:</span
+                >
+                <select
+                  class="bg-transparent border-none text-sm pl-1 pr-6 py-0 focus:ring-0 text-primary font-medium appearance-none cursor-pointer"
+                >
+                  <option>Semua Kategori</option>
+                  <option>R1 - Residensial</option>
+                  <option>B2 - Business</option>
+                  <option>I3 - Industrial</option>
+                </select>
+              </div>
+              <div
+                class="flex items-center gap-2 bg-surface-container rounded-lg px-3 py-2 border border-outline-variant/10"
+              >
+                <span
+                  class="text-xs font-bold text-on-surface-variant uppercase tracking-wider"
+                  >Wilayah:</span
+                >
+                <select
+                  class="bg-transparent border-none text-sm pl-1 pr-6 py-0 focus:ring-0 text-primary font-medium appearance-none cursor-pointer"
+                >
+                  <option>Tandes, Surabaya Barat</option>
+                  <option>Benowo, Surabaya Barat</option>
+                  <option>Pakal, Surabaya Barat</option>
+                </select>
+              </div>
+              <div class="flex-1"></div>
+              <div class="flex items-center gap-2">
+                <button
+                  class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors"
+                >
+                  <span class="material-symbols-outlined">filter_list</span>
+                </button>
+                <button
+                  class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-colors"
+                >
+                  <span class="material-symbols-outlined">download</span>
+                </button>
+              </div>
+            </div>
+            <!-- Data Table -->
+            <div
+              class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/10 overflow-hidden flex flex-col flex-1"
+            >
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead>
+                    <tr class="bg-surface-container-low">
+                      <th
+                        class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-[0.05em] border-b border-outline-variant/10"
+                      >
+                        <div class="flex items-center gap-1 cursor-pointer">
+                          ID
+                          <span class="material-symbols-outlined text-xs"
+                            >unfold_more</span
+                          >
+                        </div>
+                      </th>
+                      <th
+                        class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-[0.05em] border-b border-outline-variant/10"
+                      >
+                        <div class="flex items-center gap-1 cursor-pointer">
+                          Nama
+                          <span class="material-symbols-outlined text-xs"
+                            >unfold_more</span
+                          >
+                        </div>
+                      </th>
+                      <th
+                        class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-[0.05em] border-b border-outline-variant/10"
+                      >
+                        Tarif
+                      </th>
+                      <th
+                        class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-[0.05em] border-b border-outline-variant/10"
+                      >
+                        Daya
+                      </th>
+                      <th
+                        class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-[0.05em] border-b border-outline-variant/10"
+                      >
+                        Lokasi
+                      </th>
+                      <th
+                        class="px-6 py-4 text-label-md font-bold text-on-surface-variant uppercase tracking-[0.05em] border-b border-outline-variant/10"
+                      >
+                        Status
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-outline-variant/5">
+                    <tr
+                      class="hover:bg-primary-fixed-dim/10 transition-colors cursor-pointer group"
+                    >
+                      <td
+                        class="px-6 py-4 font-mono text-sm text-secondary font-bold"
+                      >
+                        #PLN-4921-001
+                      </td>
+                      <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold text-xs"
+                          >
+                            AS
+                          </div>
+                          <a href="profile-pelanggan.html" class="font-medium text-primary hover:underline">Aditya Saputra</a>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="bg-surface-container px-2 py-1 rounded text-xs font-semibold"
+                          >R1/450VA</span
+                        >
+                      </td>
+                      <td class="px-6 py-4 text-sm">450 VA</td>
+                      <td class="px-6 py-4 text-sm text-on-surface-variant">
+                        Tandes, Surabaya Barat
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-container text-on-tertiary-container"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"
+                          ></span>
+                          Active
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="bg-surface-container-low hover:bg-primary-fixed-dim/10 transition-colors cursor-pointer group"
+                    >
+                      <td
+                        class="px-6 py-4 font-mono text-sm text-secondary font-bold"
+                      >
+                        #PLN-4921-002
+                      </td>
+                      <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs"
+                          >
+                            BM
+                          </div>
+                          <a href="profile-pelanggan.html" class="font-medium text-primary hover:underline">Budi Mulia Corp</a>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="bg-surface-container px-2 py-1 rounded text-xs font-semibold"
+                          >B2/2200VA</span
+                        >
+                      </td>
+                      <td class="px-6 py-4 text-sm">2,200 VA</td>
+                      <td class="px-6 py-4 text-sm text-on-surface-variant">
+                        Benowo, Surabaya Barat
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-container text-on-tertiary-container"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"
+                          ></span>
+                          Active
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="hover:bg-primary-fixed-dim/10 transition-colors cursor-pointer group"
+                    >
+                      <td
+                        class="px-6 py-4 font-mono text-sm text-secondary font-bold"
+                      >
+                        #PLN-4921-003
+                      </td>
+                      <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="w-8 h-8 rounded-full bg-outline-variant flex items-center justify-center text-on-surface-variant font-bold text-xs"
+                          >
+                            CN
+                          </div>
+                          <a href="profile-pelanggan.html" class="font-medium text-primary hover:underline">Citra Nuraini</a>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="bg-surface-container px-2 py-1 rounded text-xs font-semibold"
+                          >R1M/900VA</span
+                        >
+                      </td>
+                      <td class="px-6 py-4 text-sm">900 VA</td>
+                      <td class="px-6 py-4 text-sm text-on-surface-variant">
+                        Pakal, Surabaya Barat
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-error-container text-on-error-container"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-error"
+                          ></span>
+                          Disconnected
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="bg-surface-container-low hover:bg-primary-fixed-dim/10 transition-colors cursor-pointer group"
+                    >
+                      <td
+                        class="px-6 py-4 font-mono text-sm text-secondary font-bold"
+                      >
+                        #PLN-4921-004
+                      </td>
+                      <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-xs"
+                          >
+                            DP
+                          </div>
+                          <a href="profile-pelanggan.html" class="font-medium text-primary hover:underline">Dedi Pratama</a>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="bg-surface-container px-2 py-1 rounded text-xs font-semibold"
+                          >R1/1300VA</span
+                        >
+                      </td>
+                      <td class="px-6 py-4 text-sm">1,300 VA</td>
+                      <td class="px-6 py-4 text-sm text-on-surface-variant">
+                        Sambikerep, Surabaya Barat
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-tertiary-container text-on-tertiary-container"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"
+                          ></span>
+                          Active
+                        </span>
+                      </td>
+                    </tr>
+                    <tr
+                      class="hover:bg-primary-fixed-dim/10 transition-colors cursor-pointer group border-b border-outline-variant/10"
+                    >
+                      <td
+                        class="px-6 py-4 font-mono text-sm text-secondary font-bold"
+                      >
+                        #PLN-4921-005
+                      </td>
+                      <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                          <div
+                            class="w-8 h-8 rounded-full bg-on-primary-container flex items-center justify-center text-white font-bold text-xs"
+                          >
+                            EK
+                          </div>
+                          <a href="profile-pelanggan.html" class="font-medium text-primary hover:underline">Eka Kusuma</a>
+                        </div>
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="bg-surface-container px-2 py-1 rounded text-xs font-semibold"
+                          >I3/6600VA</span
+                        >
+                      </td>
+                      <td class="px-6 py-4 text-sm">6,600 VA</td>
+                      <td class="px-6 py-4 text-sm text-on-surface-variant">
+                        Lakarsantri, Surabaya Barat
+                      </td>
+                      <td class="px-6 py-4">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-surface-container-high text-on-surface-variant"
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full bg-outline"
+                          ></span>
+                          Pending
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Pagination -->
+              <div
+                class="mt-auto px-6 py-4 border-t border-outline-variant/10 flex items-center justify-between"
+              >
+                <span class="text-xs text-on-surface-variant"
+                  >Menampilkan 1 sampai 5 dari 2.492 data</span
+                >
+                <div class="flex items-center gap-1">
+                  <button
+                    class="p-2 rounded hover:bg-surface-container transition-colors disabled:opacity-30"
+                    disabled=""
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >chevron_left</span
+                    >
+                  </button>
+                  <button
+                    class="w-8 h-8 rounded bg-primary text-white text-xs font-bold"
+                  >
+                    1
+                  </button>
+                  <button
+                    class="w-8 h-8 rounded hover:bg-surface-container text-xs font-medium"
+                  >
+                    2
+                  </button>
+                  <button
+                    class="w-8 h-8 rounded hover:bg-surface-container text-xs font-medium"
+                  >
+                    3
+                  </button>
+                  <span class="px-2 text-on-surface-variant">...</span>
+                  <button
+                    class="w-8 h-8 rounded hover:bg-surface-container text-xs font-medium"
+                  >
+                    498
+                  </button>
+                  <button
+                    class="p-2 rounded hover:bg-surface-container transition-colors"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >chevron_right</span
+                    >
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Detail Panel (Side Drawer Style) -->
+          <aside class="w-96 flex flex-col gap-6">
+            <div
+              class="bg-surface-container-lowest rounded-xl shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] border border-outline-variant/10 overflow-hidden flex flex-col h-full"
+            >
+              <div class="p-6 pb-0 flex justify-between items-start">
+                <div
+                  class="w-16 h-16 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-black text-2xl shadow-sm"
+                >
+                  AS
+                </div>
+                <button
+                  class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full"
+                >
+                  <span class="material-symbols-outlined">more_vert</span>
+                </button>
+              </div>
+              <div class="p-6 space-y-6 flex-1">
+                <div>
+                  <h3 class="text-xl font-bold text-primary">Aditya Saputra</h3>
+                  <p class="text-sm text-on-surface-variant">
+                    Pelanggan sejak Jan 2018
+                  </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="space-y-1">
+                    <span
+                      class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest"
+                      >ID Connection</span
+                    >
+                    <p class="font-mono text-xs font-bold text-secondary">
+                      534920000122
+                    </p>
+                  </div>
+                  <div class="space-y-1">
+                    <span
+                      class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest"
+                      >Phone</span
+                    >
+                    <p class="text-xs font-medium">+62 812-4455-9012</p>
+                  </div>
+                </div>
+                <div class="bg-surface-container-low p-4 rounded-xl space-y-4">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-medium text-on-surface-variant"
+                      >Saldo Energi</span
+                    >
+                    <span class="text-xs font-bold text-tertiary">PREPAID</span>
+                  </div>
+                  <div class="space-y-1">
+                    <div class="text-2xl font-black text-primary">
+                      142.50 kWh
+                    </div>
+                    <div
+                      class="w-full bg-outline-variant/20 h-1.5 rounded-full overflow-hidden"
+                    >
+                      <div class="bg-secondary h-full w-[65%]"></div>
+                    </div>
+                    <div
+                      class="flex justify-between text-[10px] font-bold text-on-surface-variant"
+                    >
+                      <span>Estimasi 12 hari tersisa</span>
+                      <span>Threshold: 20 kWh</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="space-y-3">
+                  <h4
+                    class="text-xs font-bold text-primary uppercase tracking-widest"
+                  >
+                    Riwayat Tagihan
+                  </h4>
+                  <div class="space-y-2">
+                    <div
+                      class="flex items-center justify-between p-3 rounded-lg border border-outline-variant/10 hover:border-secondary transition-colors"
+                    >
+                      <div>
+                        <p class="text-xs font-bold">Token Purchase #22941</p>
+                        <p class="text-[10px] text-on-surface-variant">
+                          Oct 12, 2023 • 09:44 AM
+                        </p>
+                      </div>
+                      <span class="text-xs font-black text-primary"
+                        >Rp 200,000</span
+                      >
+                    </div>
+                    <div
+                      class="flex items-center justify-between p-3 rounded-lg border border-outline-variant/10 hover:border-secondary transition-colors"
+                    >
+                      <div>
+                        <p class="text-xs font-bold">Token Purchase #22802</p>
+                        <p class="text-[10px] text-on-surface-variant">
+                          Sep 05, 2023 • 03:12 PM
+                        </p>
+                      </div>
+                      <span class="text-xs font-black text-primary"
+                        >Rp 100,000</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="h-40 rounded-xl overflow-hidden bg-surface-variant border border-outline-variant relative"
+                >
+                  <img
+                    class="w-full h-full object-cover grayscale contrast-125 opacity-40"
+                    data-alt="Satellite map view of a suburban neighborhood in Jakarta with grid lines and utility markers overlaid"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmKt06LMEk8WsYSYBTFkUMPAi7KoeWKS3IBwH-hjyXUR4SzIs-MkQVqj0RdG2GgmZ2322ZrOcFf0wsTe-j1Gjw46qi3OwS1yFpEMnXBoqF6Dvw-PCfz94nHvPOkpFb120xiN38U6uSRQ0-6BOPzb0CRnBF4d2H5wagDLbyBSgPAj7l0iWSvsb1EwdHRaS5cqJW_NDLdOqveM_13npO9aIykFa1sEL0iigIf-zr5SvCX5yerXXo2blwT04G9sUykPPZ8d_2eg6xSyE"
+                  />
+                  <div
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <div class="flex flex-col items-center">
+                      <span
+                        class="material-symbols-outlined text-secondary text-3xl animate-bounce"
+                        data-weight="fill"
+                        >location_on</span
+                      >
+                      <span
+                        class="bg-primary text-white text-[10px] px-2 py-0.5 rounded shadow-lg font-bold mt-1"
+                        >Point #A4-2</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-6 border-t border-outline-variant/10 grid grid-cols-2 gap-3"
+              >
+                <button
+                  class="bg-surface-container-high text-primary px-4 py-2 rounded-md text-xs font-bold hover:bg-surface-container-highest transition-colors"
+                >
+                  Edit Detail
+                </button>
+                <button
+                  class="bg-primary text-white px-4 py-2 rounded-md text-xs font-bold hover:opacity-90 transition-opacity"
+                >
+                  Menu Aksi
+                </button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

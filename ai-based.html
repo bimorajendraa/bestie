@@ -1,0 +1,586 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI Analysis - BESTIE</title>
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+          @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out both; }
+      .animate-fade-in { animation: fadeIn 0.4s ease-out both; }
+      tbody tr { animation: fadeInUp 0.4s ease-out both; }
+      tbody tr:nth-child(1) { animation-delay: 0.05s; }
+      tbody tr:nth-child(2) { animation-delay: 0.1s; }
+      tbody tr:nth-child(3) { animation-delay: 0.15s; }
+      tbody tr:nth-child(4) { animation-delay: 0.2s; }
+      tbody tr:nth-child(5) { animation-delay: 0.25s; }
+          body { font-family: "Inter", sans-serif; }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1d",
+              "on-tertiary-container": "#5c9af8",
+              background: "#f8f9fa",
+              "tertiary-fixed": "#d6e3ff",
+              "outline-variant": "#c4c6d2",
+              "on-primary-fixed-variant": "#224583",
+              "on-primary-container": "#7999dc",
+              "on-tertiary": "#ffffff",
+              "surface-container": "#edeeef",
+              "surface-dim": "#d9dadb",
+              "tertiary-fixed-dim": "#a9c7ff",
+              "surface-variant": "#e1e3e4",
+              "secondary-fixed-dim": "#9dcaff",
+              "on-primary-fixed": "#001a42",
+              "on-surface-variant": "#434750",
+              "on-error": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "primary-container": "#002f6c",
+              "on-secondary-container": "#075084",
+              "primary-fixed-dim": "#aec6ff",
+              "on-tertiary-fixed-variant": "#00468c",
+              "inverse-surface": "#2e3132",
+              "secondary-container": "#8ec2fe",
+              "on-tertiary-fixed": "#001b3d",
+              "inverse-primary": "#aec6ff",
+              error: "#ba1a1a",
+              outline: "#747781",
+              "secondary-fixed": "#d1e4ff",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed": "#001d35",
+              secondary: "#266197",
+              "primary-fixed": "#d8e2ff",
+              "surface-container-low": "#f3f4f5",
+              tertiary: "#001c3f",
+              "surface-tint": "#3c5d9c",
+              "on-background": "#191c1d",
+              primary: "#001b44",
+              "on-secondary-fixed-variant": "#00497c",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-bright": "#f8f9fa",
+              "tertiary-container": "#003165",
+              "on-error-container": "#93000a",
+              "surface-container-high": "#e7e8e9",
+              "error-container": "#ffdad6",
+              surface: "#f8f9fa",
+              "surface-container-highest": "#e1e3e4",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            fontFamily: {
+              headline: ["Inter"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-background font-body text-on-surface flex min-h-screen">
+    <!-- SideNavBar -->
+    <aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-slate-50/90 backdrop-blur-xl border-r border-slate-200/20 flex flex-col p-4 space-y-2 font-['Inter'] text-[0.875rem] leading-relaxed">
+      <div class="px-2 py-3 mb-4 flex flex-col items-center">
+        <img src="logo-bestie.jpg" alt="Bestie Logo" class="w-16 h-16 object-contain mb-1" />
+        <p class="text-[0.5rem] text-on-surface-variant font-medium text-center leading-tight opacity-70">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+      </div>
+      <nav class="flex-1 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="dashboard.html">
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="data-pelanggan.html">
+          <span class="material-symbols-outlined">database</span>
+          <span>Database</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="search.html">
+          <span class="material-symbols-outlined">search</span>
+          <span>Pencarian</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="watchlist.html">
+          <span class="material-symbols-outlined">visibility</span>
+          <span>Watchlist</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="report.html">
+          <span class="material-symbols-outlined">assessment</span>
+          <span>Laporan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 bg-white text-[#002F6C] font-bold shadow-sm rounded-lg transition-all duration-200" href="profile-pelanggan.html">
+          <span class="material-symbols-outlined">person_search</span>
+          <span>Profiling</span>
+        </a>
+      </nav>
+      <div class="pt-4 border-t border-slate-200/50 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">settings</span>
+          <span>Pengaturan</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
+          <span class="material-symbols-outlined">help_outline</span>
+          <span>Bantuan</span>
+        </a>
+      </div>
+    </aside>
+
+
+    <!-- Main Content Canvas -->
+    <main class="flex-1 ml-64 p-8">
+      <!-- TopNavBar -->
+      <header class="flex justify-between items-center w-full px-8 h-16 bg-white/80 backdrop-blur-md z-40 shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] sticky top-0">
+        <div class="flex items-center gap-6">
+          <div class="relative group">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+            <input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-80 focus:ring-2 focus:ring-primary-container transition-all" placeholder="Pencarian pelanggan..." type="text" />
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors relative">
+            <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+            <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+          </button>
+          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant">apps</span>
+          </button>
+          <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="Profil Analis" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUFkR74HRuGXAdKAy7qQsLITuIYB20nMHZ3Afli235xyII9vM_xHE9eraL_etCfkLy5wJcvTdDpaiIQ3S_VkmCrku32KEKoIEY5qKWire4ya2Zn6d1sHKcmI4oDObfN1lysq9LIJdN8ifNPcXJw1CdTJ1GzvYO6wezFWskAuaCeuZ3gkmFu8mQmilOGPA7IGkMIYZXZddc3qBcEbeMavvtVmMMvEy-4uH-GeP1OwXlFOcFJEiR7be78W0Xi5YzI93XoujZIFRqBU" />
+          </div>
+        </div>
+      </header>
+
+
+            <div class="p-8 space-y-8">
+                <!-- Header Section -->
+        <div class="flex justify-between items-end animate-fade-in">
+          <div>
+            <nav class="flex items-center gap-2 text-label-md text-on-surface-variant mb-2">
+              <span>Database</span>
+              <span class="material-symbols-outlined text-sm">chevron_right</span>
+              <span>Profiling</span>
+            </nav>
+            <h2 class="text-3xl font-extrabold tracking-tight text-primary">PT. Sumber Energi Nusantara</h2>
+            <p class="text-on-surface-variant">Pelanggan Korporat Tier-1 &bull; Surabaya Barat, ID</p>
+          </div>
+          <div class="flex gap-3">
+            <button class="px-4 py-2 bg-surface-container-high text-primary rounded-md text-sm font-semibold hover:bg-surface-variant transition-all">Buat Laporan</button>
+            <button class="px-4 py-2 bg-gradient-to-br from-primary to-primary-container text-white rounded-md text-sm font-semibold shadow-lg hover:opacity-90 transition-all">Perbarui Profiling</button>
+          </div>
+        </div>
+        <!-- Custom Tabbed Interface -->
+        <div class="bg-surface-container-low p-1 rounded-xl flex w-max">
+          <a href="profile-pelanggan.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Key Statistik</a>
+          <a href="analisis.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Analisis</a>
+          <a href="ai-based.html" class="px-6 py-2 text-sm font-bold bg-white text-primary rounded-lg shadow-sm inline-block">AI Based</a>
+          <a href="news.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Berita</a>
+          <a href="#" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Detail Statistik</a>
+          <a href="profile.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Profil</a>
+        </div>
+        </div>
+      <!-- Bento Layout -->
+      <div class="grid grid-cols-12 gap-6">
+        <!-- Section 1: Status TO Probing (Left Column) -->
+        <section class="col-span-12 lg:col-span-4 space-y-6">
+          <div class="bg-surface-container-low p-6 rounded-xl">
+            <h3
+              class="label-md uppercase tracking-[0.05em] text-on-surface-variant font-bold mb-6"
+            >
+              Status TO Probing
+            </h3>
+            <div class="space-y-4">
+              <!-- High Priority Card -->
+              <div
+                class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-error flex items-start gap-4 shadow-sm"
+              >
+                <div class="p-2 bg-error-container rounded-lg">
+                  <span
+                    class="material-symbols-outlined text-error"
+                    data-icon="priority_high"
+                    >priority_high</span
+                  >
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-bold text-primary">Node Delta-9</span>
+                    <span
+                      class="bg-error-container text-on-error-container text-[10px] px-2 py-0.5 rounded-full font-black"
+                      >HIGH</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant">
+                    Thermal variance exceeds safe operational parameters by 12%.
+                  </p>
+                </div>
+              </div>
+              <!-- Medium Priority Card -->
+              <div
+                class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-secondary flex items-start gap-4 shadow-sm"
+              >
+                <div class="p-2 bg-secondary-container rounded-lg">
+                  <span
+                    class="material-symbols-outlined text-on-secondary-container"
+                    data-icon="warning"
+                    >warning</span
+                  >
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-bold text-primary">Substation 42</span>
+                    <span
+                      class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-0.5 rounded-full font-black"
+                      >MEDIUM</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant">
+                    Predicted load spike during next 4-hour maintenance window.
+                  </p>
+                </div>
+              </div>
+              <!-- Low Priority Card -->
+              <div
+                class="bg-surface-container-lowest p-4 rounded-xl border-l-4 border-outline flex items-start gap-4 shadow-sm opacity-80"
+              >
+                <div class="p-2 bg-surface-container-high rounded-lg">
+                  <span
+                    class="material-symbols-outlined text-outline"
+                    data-icon="info"
+                    >info</span
+                  >
+                </div>
+                <div class="flex-1">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="font-bold text-primary">Relay Hub Gamma</span>
+                    <span
+                      class="bg-surface-container-high text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full font-black"
+                      >LOW</span
+                    >
+                  </div>
+                  <p class="text-xs text-on-surface-variant">
+                    Routine latency calibration required within 48 hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Abstract Visual Asset -->
+          <div class="h-64 rounded-xl overflow-hidden relative group">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent z-10"
+            ></div>
+            <img
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              data-alt="conceptual digital visualization of glowing circuit patterns and data nodes in dark blue aesthetic"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuANTsrDHOjocjzLdOxUuddc0kGvfYVxj5hfMlimiVLA0FFRFyMm3JKL84O96qkvoCsEpmuPowatUJkxXAz4B2gniSoYibWqJ4sT7mHmWjbUsVFuqkCbBJUgctNt90qwtdRfn8pGB89HMLa2JAqhbqZExB0PtVDOxjaMrpvZnKjAB-hwpgTLGg9mdE2DuIhfKNWIWtOMuxNFHpcDqyedRcVmMlgqNv0kNbIODPvzyec_aYLmSIr6-GwsO9znshrFnEf0h8t0WUNIMsY"
+            />
+            <div class="absolute bottom-4 left-4 z-20">
+              <p class="text-on-primary font-bold text-sm">
+                Real-time Grid Mapping
+              </p>
+              <p class="text-on-primary-container text-xs">
+                Analysis Engine v4.2.0
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Section 2: Insights from Key Indicators (Right Column Top) -->
+        <section
+          class="col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <div
+            class="col-span-1 md:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] border border-outline-variant/10"
+          >
+            <div class="flex items-center gap-2 mb-6">
+              <span
+                class="material-symbols-outlined text-secondary"
+                data-icon="auto_awesome"
+                >auto_awesome</span
+              >
+              <h3 class="headline-sm font-black text-primary">
+                Insights from Key Indicators
+              </h3>
+            </div>
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="w-1 h-12 bg-secondary rounded-full mt-1"></div>
+                <div>
+                  <h4 class="font-bold text-on-surface mb-1">
+                    Efficiency Optimization
+                  </h4>
+                  <p class="text-on-surface-variant leading-relaxed">
+                    Neural analysis indicates a potential
+                    <span class="text-secondary font-bold"
+                      >14.2% energy reclamation</span
+                    >
+                    opportunity by redistributing evening load from Sector 4 to
+                    Sector 9. The current asymmetric flow is causing parasitic
+                    heat loss in legacy conductors.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-1 h-12 bg-tertiary-container rounded-full mt-1"
+                ></div>
+                <div>
+                  <h4 class="font-bold text-on-surface mb-1">
+                    Preventative Maintenance
+                  </h4>
+                  <p class="text-on-surface-variant leading-relaxed">
+                    Vibration sensors at Main Station Alpha show harmonic
+                    patterns matching
+                    <span class="text-primary font-bold"
+                      >early-stage turbine wear</span
+                    >. Immediate inspection is recommended to prevent a 72-hour
+                    unscheduled downtime event next month.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section 3: Anomalies Detected (Right Column Bottom) -->
+          <div
+            class="col-span-1 md:col-span-2 bg-surface-container-low p-6 rounded-xl"
+          >
+            <div class="flex justify-between items-center mb-6">
+              <h3
+                class="label-md uppercase tracking-[0.05em] text-on-surface-variant font-bold"
+              >
+                Anomalies Detected
+              </h3>
+              <span
+                class="bg-error text-on-error text-[10px] px-3 py-1 rounded-full font-black animate-pulse"
+                >LIVE MONITORING</span
+              >
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr
+                    class="text-on-surface-variant label-md uppercase tracking-[0.05em] border-b border-outline-variant/20"
+                  >
+                    <th class="py-3 px-4 font-bold">Indicator</th>
+                    <th class="py-3 px-4 font-bold">Pattern Type</th>
+                    <th class="py-3 px-4 font-bold">Deviation</th>
+                    <th class="py-3 px-4 font-bold">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="text-sm">
+                  <tr
+                    class="bg-surface hover:bg-surface-container-high transition-colors"
+                  >
+                    <td
+                      class="py-4 px-4 flex items-center font-semibold text-primary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-error mr-3 text-[18px]"
+                        data-icon="running_with_errors"
+                        >running_with_errors</span
+                      >
+                      Frequency Jitter
+                    </td>
+                    <td class="py-4 px-4 text-on-surface-variant">
+                      Unstable Oscillation
+                    </td>
+                    <td class="py-4 px-4">
+                      <div class="flex items-center gap-2">
+                        <span class="text-error font-bold">+2.4Hz</span>
+                        <div
+                          class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"
+                        >
+                          <div class="h-full bg-error w-3/4"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4">
+                      <button
+                        class="text-primary font-bold text-xs hover:underline"
+                      >
+                        ISOLATE
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="bg-surface-container-low hover:bg-surface-container-high transition-colors"
+                  >
+                    <td
+                      class="py-4 px-4 flex items-center font-semibold text-primary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-secondary mr-3 text-[18px]"
+                        data-icon="fluorescent"
+                        >fluorescent</span
+                      >
+                      Voltage Drop
+                    </td>
+                    <td class="py-4 px-4 text-on-surface-variant">
+                      Sudden Attenuation
+                    </td>
+                    <td class="py-4 px-4">
+                      <div class="flex items-center gap-2">
+                        <span class="text-secondary font-bold">-14.2V</span>
+                        <div
+                          class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"
+                        >
+                          <div class="h-full bg-secondary w-1/2"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4">
+                      <button
+                        class="text-primary font-bold text-xs hover:underline"
+                      >
+                        PROBE
+                      </button>
+                    </td>
+                  </tr>
+                  <tr
+                    class="bg-surface hover:bg-surface-container-high transition-colors"
+                  >
+                    <td
+                      class="py-4 px-4 flex items-center font-semibold text-primary"
+                    >
+                      <span
+                        class="material-symbols-outlined text-error mr-3 text-[18px]"
+                        data-icon="wifi_off"
+                        >wifi_off</span
+                      >
+                      Packet Loss
+                    </td>
+                    <td class="py-4 px-4 text-on-surface-variant">
+                      Intermittent Link
+                    </td>
+                    <td class="py-4 px-4">
+                      <div class="flex items-center gap-2">
+                        <span class="text-error font-bold">12% Loss</span>
+                        <div
+                          class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"
+                        >
+                          <div class="h-full bg-error w-1/3"></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4">
+                      <button
+                        class="text-primary font-bold text-xs hover:underline"
+                      >
+                        REROUTE
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Floating Action Component (Suppressed on detail pages, but here used as "AI Status" footer) -->
+      <footer
+        class="mt-12 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"
+          ></div>
+          <span class="text-xs text-on-surface-variant font-medium"
+            >Core AI Engine:
+            <span class="text-primary font-bold"
+              >OPTIMAL OPERATIONAL STATUS</span
+            ></span
+          >
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="flex -space-x-2">
+            <img
+              class="w-8 h-8 rounded-full border-2 border-white object-cover"
+              data-alt="professional portrait of a male data analyst in a modern office"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvOzzLqmLo23njOkk2f7sCfWls6tQ_OEgQrXXVYAVSRfgikQMLz_GS9YjSLuagN-ofL_8i12neGa92pWultm3IwPqmzd9wDCtxsy8ViNbopmsqLsgxw6fij6hmnRYpJmFUNQbV6CIjdEZbAJ8IOiu_dK7iha3YDLH12orq93F4zFzo89mXOL0cEXIR7Xr-AgG6rhUbCGv9RTy8d9bmThuqkv-HsrgJ-TQvkbKuwNTtYG0NzNfIZZfZR5853gaDxy3pYsT-i1CCMTw"
+            />
+            <img
+              class="w-8 h-8 rounded-full border-2 border-white object-cover"
+              data-alt="headshot of a confident female engineer with slight smile"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm_oZ6NLL3QBLFZIBGVEuyQHFiEeTZTGRmxwrrdoLmJGt0yVbki3EiLSBC37TWLSaE0iJVr9GdsjRKxgLwNEIu4D7p6aGNh4fpaWN7j6LFO_NhKUvXuwGOitq9-8u3ZuilVNknKfVPV5N4_G66Zn77nEypdQj6__c34XENNs6pIdDTJNhhL3rOhCAgFDmivkXvT5-bNtA4SQkPS8YbnzhDjeXKzj_iFN-Vm8AcXo39qnq_BLYnuWa9ofmSsQUqfFFkPUajP4aBeq8"
+            />
+            <div
+              class="w-8 h-8 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-[10px] font-black text-on-surface-variant"
+            >
+              +4
+            </div>
+          </div>
+          <p class="text-[10px] text-on-surface-variant max-w-[200px]">
+            Reviewing analyst team: 6 agents currently monitoring these specific
+            profiling triggers.
+          </p>
+        </div>
+      </footer>
+    </main>
+    <!-- Contextual AI Pencarian Bar (Floating Glass UI) -->
+    <div
+      class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-xl px-4"
+    >
+      <div
+        class="glass-panel rounded-full p-2 shadow-2xl flex items-center border border-white/20"
+      >
+        <div class="pl-4 pr-3 text-secondary">
+          <span class="material-symbols-outlined">psychology</span>
+        </div>
+        <input
+          class="flex-1 bg-transparent border-none focus:ring-0 text-sm text-primary font-medium placeholder:text-slate-400"
+          placeholder="Ask AI about this analysis..."
+          type="text"
+        />
+        <button
+          class="bg-primary text-on-primary p-2 rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-transform"
+        >
+          <span class="material-symbols-outlined text-[20px]"
+            >arrow_forward</span
+          >
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
