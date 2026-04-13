@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BESTIE | Reminder Birthday</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+      .fade-up { animation: fadeInUp 0.5s ease-out both; }
+      tbody tr { animation: fadeInUp 0.4s ease-out both; }
+      tbody tr:nth-child(1) { animation-delay: 0.05s; }
+      tbody tr:nth-child(2) { animation-delay: 0.1s; }
+      tbody tr:nth-child(3) { animation-delay: 0.15s; }
+      tbody tr:nth-child(4) { animation-delay: 0.2s; }
+      tbody tr:nth-child(5) { animation-delay: 0.25s; }
+    </style>
+  </head>
+  <body class="bg-[#F5F6F8] text-slate-800 flex min-h-screen">
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col">
+      <div class="px-5 pt-6 pb-3 flex flex-col items-center">
+        <img src="logo-bestie.jpg" alt="BESTIE" class="w-14 h-14 object-contain mb-1" />
+        <p class="font-extrabold text-slate-800 text-base tracking-tight">BESTIE</p>
+        <p class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+      </div>
+      <nav class="flex-1 px-3 mt-4 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all" href="dashboard.html">
+          <span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="tanya-bestie.html">
+          <span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Tanya Bestie</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="data-pelanggan.html">
+          <span class="material-symbols-outlined text-[20px]">database</span><span>Database</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="report.html">
+          <span class="material-symbols-outlined text-[20px]">assignment</span><span>Kunjungan Probing</span>
+        </a>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="watchlist.html">
+          <span class="material-symbols-outlined text-[20px]">bookmark</span><span>Watchlist</span>
+        </a>
+      </nav>
+      <div class="px-4 py-4 border-t border-gray-100">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"><span class="material-symbols-outlined text-gray-500 text-[20px]">person</span></div>
+          <div><p class="text-sm font-semibold text-slate-800">Admin PLN</p><p class="text-[11px] text-gray-400">ULP Surabaya Barat</p></div>
+        </div>
+        <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
+          <span class="material-symbols-outlined text-[18px]">logout</span><span>Keluar</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="ml-[230px] flex-1 min-h-screen">
+      <header class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-100">
+        <a href="dashboard.html" class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium">
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span> Kembali
+        </a>
+        <div class="relative">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+          <input class="bg-gray-50 border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm w-72 focus:ring-2 focus:ring-teal-300 focus:border-teal-300 transition-all placeholder:text-gray-400" placeholder="Cari ID Pelanggan atau Nama Pelanggan" type="text" />
+        </div>
+      </header>
+
+      <div class="px-8 py-6 space-y-6">
+        <!-- Title + Month Selector -->
+        <div class="flex items-start justify-between">
+          <div>
+            <nav class="flex items-center gap-2 text-xs text-gray-400 mb-1">
+              <a href="dashboard.html" class="hover:text-teal-600 transition-colors">Dashboard</a>
+              <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+              <span class="text-teal-600 font-medium">Birthday</span>
+            </nav>
+            <h1 class="text-2xl font-bold text-slate-800 tracking-tight">Reminder Birthday Pelanggan</h1>
+            <p class="text-sm text-gray-400 mt-0.5">Bulan Keberlanjutan Hubungan Pelanggan</p>
+          </div>
+          <div class="flex items-center gap-2 border border-gray-200 rounded-lg px-1 py-1">
+            <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 transition-colors text-gray-400"><span class="material-symbols-outlined text-lg">chevron_left</span></button>
+            <span class="text-sm font-semibold text-slate-700 px-2">April 2024</span>
+            <button class="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 transition-colors text-gray-400"><span class="material-symbols-outlined text-lg">chevron_right</span></button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-12 gap-6">
+          <!-- Left Content -->
+          <div class="col-span-12 lg:col-span-8 space-y-6">
+            <!-- Stat Cards -->
+            <div class="grid grid-cols-3 gap-5 fade-up">
+              <div class="bg-white p-5 rounded-xl border border-gray-100">
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Total Ultah</p>
+                <h3 class="text-3xl font-bold text-slate-800">42</h3>
+                <p class="text-xs text-teal-600 font-bold uppercase mt-1">Pelanggan</p>
+              </div>
+              <div class="bg-white p-5 rounded-xl border border-gray-100">
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Minggu Ini</p>
+                <h3 class="text-3xl font-bold text-slate-800">12</h3>
+                <p class="text-xs text-teal-600 font-bold uppercase mt-1">Perayaan</p>
+              </div>
+              <div class="bg-white p-5 rounded-xl border border-gray-100">
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Ucapan Terkirim</p>
+                <h3 class="text-3xl font-bold text-slate-800">28</h3>
+                <p class="text-xs text-teal-600 font-medium mt-1">66% dari target</p>
+              </div>
+            </div>
+
+            <!-- Birthday Table -->
+            <div class="bg-white rounded-xl border border-gray-100 overflow-hidden fade-up">
+              <div class="px-6 py-4 flex items-center justify-between border-b border-gray-50">
+                <h3 class="font-bold text-slate-800">Daftar Pelanggan Berulang Tahun</h3>
+                <div class="flex items-center gap-3">
+                  <div class="flex items-center gap-2"><label class="text-xs text-gray-500">Tampilkan</label><select class="border border-gray-200 rounded-lg text-xs px-2 py-1.5 focus:ring-teal-300"><option>10</option></select></div>
+                  <button class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium border border-gray-200 rounded-lg text-gray-500 hover:bg-gray-50 transition-all"><span class="material-symbols-outlined text-[14px]">tune</span> ULP <span class="material-symbols-outlined text-[14px]">expand_more</span></button>
+                  <button class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium border border-gray-200 rounded-lg text-gray-500 hover:bg-gray-50 transition-all"><span class="material-symbols-outlined text-[14px]">tune</span> Pemakaian <span class="material-symbols-outlined text-[14px]">expand_more</span></button>
+                </div>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                  <thead>
+                    <tr class="bg-teal-50/50 border-b border-gray-100">
+                      <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider w-12">No</th>
+                      <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Nama Pelanggan</th>
+                      <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Tipe Pelanggan</th>
+                      <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Tanggal Lahir</th>
+                      <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Status</th>
+                      <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider w-12"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-sm">
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="px-6 py-4 text-gray-400">1</td>
+                      <td class="px-6 py-4 font-medium text-slate-700">PT Maju Mundur Sejahtera</td>
+                      <td class="px-6 py-4 text-gray-500">Industri</td>
+                      <td class="px-6 py-4 text-gray-500">12 April</td>
+                      <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase tracking-wider">Segera</span></td>
+                      <td class="px-6 py-4"><a href="profile-pelanggan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
+                    </tr>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="px-6 py-4 text-gray-400">2</td>
+                      <td class="px-6 py-4 font-medium text-slate-700">PT Maju Mundur Sejahtera</td>
+                      <td class="px-6 py-4 text-gray-500">Bisnis</td>
+                      <td class="px-6 py-4 text-gray-500">12 April</td>
+                      <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase tracking-wider">Segera</span></td>
+                      <td class="px-6 py-4"><a href="profile-pelanggan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
+                    </tr>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="px-6 py-4 text-gray-400">3</td>
+                      <td class="px-6 py-4 font-medium text-slate-700">PT Maju Mundur Sejahtera</td>
+                      <td class="px-6 py-4 text-gray-500">Industri</td>
+                      <td class="px-6 py-4 text-gray-500">12 April</td>
+                      <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase tracking-wider">Segera</span></td>
+                      <td class="px-6 py-4"><a href="profile-pelanggan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
+                    </tr>
+                    <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                      <td class="px-6 py-4 text-gray-400">4</td>
+                      <td class="px-6 py-4 font-medium text-slate-700">PT Maju Mundur Sejahtera</td>
+                      <td class="px-6 py-4 text-gray-500">Bisnis</td>
+                      <td class="px-6 py-4 text-gray-500">12 April</td>
+                      <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase tracking-wider">Segera</span></td>
+                      <td class="px-6 py-4"><a href="profile-pelanggan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
+                    </tr>
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                      <td class="px-6 py-4 text-gray-400">5</td>
+                      <td class="px-6 py-4 font-medium text-slate-700">PT Maju Mundur Sejahtera</td>
+                      <td class="px-6 py-4 text-gray-500">Industri</td>
+                      <td class="px-6 py-4 text-gray-500">12 April</td>
+                      <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase tracking-wider">Segera</span></td>
+                      <td class="px-6 py-4"><a href="profile-pelanggan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="px-6 py-4 border-t border-gray-50 flex items-center justify-between">
+                <p class="text-xs text-gray-400">Menampilkan <span class="font-semibold text-slate-700">5</span> dari <span class="font-semibold text-slate-700">42</span> pelanggan</p>
+                <div class="flex items-center gap-1">
+                  <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-400"><span class="material-symbols-outlined text-lg">chevron_left</span></button>
+                  <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-teal-500 text-white text-xs font-bold shadow-sm">1</button>
+                  <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-xs font-semibold text-gray-600">2</button>
+                  <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-xs font-semibold text-gray-600">3</button>
+                  <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-400"><span class="material-symbols-outlined text-lg">chevron_right</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Sidebar: Pejabat Terkait -->
+          <div class="col-span-12 lg:col-span-4">
+            <div class="bg-white rounded-xl p-5 border border-gray-100 fade-up sticky top-6">
+              <h4 class="font-bold text-slate-800 mb-4">Pejabat Terkait</h4>
+              <div class="space-y-4">
+                <div class="flex items-start justify-between">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mt-0.5"><span class="material-symbols-outlined text-gray-400 text-[16px]">person</span></div>
+                    <div>
+                      <p class="text-sm font-semibold text-slate-700">Bapak Eri Cahyadi</p>
+                      <p class="text-[11px] text-gray-400">Walikota Surabaya</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <button class="p-1 text-teal-500 hover:text-teal-600"><span class="material-symbols-outlined text-[16px]">chat</span></button>
+                    <button class="p-1 text-teal-500 hover:text-teal-600"><span class="material-symbols-outlined text-[16px]">mail</span></button>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mt-0.5"><span class="material-symbols-outlined text-gray-400 text-[16px]">person</span></div>
+                    <div>
+                      <p class="text-sm font-semibold text-slate-700">Edi Srimulyanti</p>
+                      <p class="text-[11px] text-gray-400">Direktur Retail dan Niaga</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <button class="p-1 text-teal-500 hover:text-teal-600"><span class="material-symbols-outlined text-[16px]">chat</span></button>
+                    <button class="p-1 text-teal-500 hover:text-teal-600"><span class="material-symbols-outlined text-[16px]">mail</span></button>
+                  </div>
+                </div>
+                <div class="flex items-start justify-between">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center mt-0.5"><span class="material-symbols-outlined text-gray-400 text-[16px]">person</span></div>
+                    <div>
+                      <p class="text-sm font-semibold text-slate-700">Sucipto Wahyudi</p>
+                      <p class="text-[11px] text-gray-400">EVP Pemasaran dan Pelayanan</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <button class="p-1 text-teal-500 hover:text-teal-600"><span class="material-symbols-outlined text-[16px]">chat</span></button>
+                    <button class="p-1 text-teal-500 hover:text-teal-600"><span class="material-symbols-outlined text-[16px]">mail</span></button>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="mt-5 flex items-center justify-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium border border-gray-200 rounded-lg px-4 py-2 w-full">
+                Lihat Semua <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
