@@ -1,598 +1,276 @@
 <!doctype html>
-
-<html class="light" lang="en">
+<html lang="id">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>BESTIE | Watchlist (TO Probing)</title>
+    <title>BESTIE | Watchlist</title>
+    <meta name="description" content="Watchlist pelanggan BESTIE — Monitor pelanggan prioritas" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "on-surface": "#191c1d",
-              "on-tertiary-container": "#5c9af8",
-              background: "#f8f9fa",
-              "tertiary-fixed": "#d6e3ff",
-              "outline-variant": "#c4c6d2",
-              "on-primary-fixed-variant": "#224583",
-              "on-primary-container": "#7999dc",
-              "on-tertiary": "#ffffff",
-              "surface-container": "#edeeef",
-              "surface-dim": "#d9dadb",
-              "tertiary-fixed-dim": "#a9c7ff",
-              "surface-variant": "#e1e3e4",
-              "secondary-fixed-dim": "#9dcaff",
-              "on-primary-fixed": "#001a42",
-              "on-surface-variant": "#434750",
-              "on-error": "#ffffff",
-              "surface-container-lowest": "#ffffff",
-              "on-secondary": "#ffffff",
-              "primary-container": "#002f6c",
-              "on-secondary-container": "#075084",
-              "primary-fixed-dim": "#aec6ff",
-              "on-tertiary-fixed-variant": "#00468c",
-              "inverse-surface": "#2e3132",
-              "secondary-container": "#8ec2fe",
-              "on-tertiary-fixed": "#001b3d",
-              "inverse-primary": "#aec6ff",
-              error: "#ba1a1a",
-              outline: "#747781",
-              "secondary-fixed": "#d1e4ff",
-              "on-primary": "#ffffff",
-              "on-secondary-fixed": "#001d35",
-              secondary: "#266197",
-              "primary-fixed": "#d8e2ff",
-              "surface-container-low": "#f3f4f5",
-              tertiary: "#001c3f",
-              "surface-tint": "#3c5d9c",
-              "on-background": "#191c1d",
-              primary: "#001b44",
-              "on-secondary-fixed-variant": "#00497c",
-              "inverse-on-surface": "#f0f1f2",
-              "surface-bright": "#f8f9fa",
-              "tertiary-container": "#003165",
-              "on-error-container": "#93000a",
-              "surface-container-high": "#e7e8e9",
-              "error-container": "#ffdad6",
-              surface: "#f8f9fa",
-              "surface-container-highest": "#e1e3e4",
-            },
-            borderRadius: {
-              DEFAULT: "0.125rem",
-              lg: "0.25rem",
-              xl: "0.5rem",
-              full: "0.75rem",
-            },
-            fontFamily: {
-              headline: ["Inter"],
-              body: ["Inter"],
-              label: ["Inter"],
-            },
-          },
-        },
-      };
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
-      }
-      .tonal-shift-right-edge {
-        border-right: 1px solid rgba(196, 198, 210, 0.2);
-      }
-      .scale-active-98:active {
-        transform: scale(0.98);
-      }
-          @keyframes fadeInUp {
+      body { font-family: 'Inter', sans-serif; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      @keyframes fadeInUp {
         from { opacity: 0; transform: translateY(12px); }
         to { opacity: 1; transform: translateY(0); }
       }
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out both; }
-      .animate-fade-in { animation: fadeIn 0.4s ease-out both; }
+      .fade-up { animation: fadeInUp 0.5s ease-out both; }
       tbody tr { animation: fadeInUp 0.4s ease-out both; }
       tbody tr:nth-child(1) { animation-delay: 0.05s; }
       tbody tr:nth-child(2) { animation-delay: 0.1s; }
       tbody tr:nth-child(3) { animation-delay: 0.15s; }
       tbody tr:nth-child(4) { animation-delay: 0.2s; }
       tbody tr:nth-child(5) { animation-delay: 0.25s; }
+      tbody tr:nth-child(6) { animation-delay: 0.3s; }
+      tbody tr:nth-child(7) { animation-delay: 0.35s; }
+      tbody tr:nth-child(8) { animation-delay: 0.4s; }
     </style>
   </head>
-  <body class="bg-background text-on-surface">
-    <!-- SideNavBar -->
-    <aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-slate-50/90 backdrop-blur-xl border-r border-slate-200/20 flex flex-col p-4 space-y-2 font-['Inter'] text-[0.875rem] leading-relaxed">
-      <div class="px-2 py-3 mb-4 flex flex-col items-center">
-        <img src="logo-bestie.jpg" alt="Bestie Logo" class="w-16 h-16 object-contain mb-1" />
-        <p class="text-[0.5rem] text-on-surface-variant font-medium text-center leading-tight opacity-70">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+  <body class="bg-[#F5F6F8] text-slate-800 flex min-h-screen">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col">
+      <div class="px-5 pt-6 pb-3 flex flex-col items-center">
+        <img src="logo-bestie.jpg" alt="BESTIE" class="w-14 h-14 object-contain mb-1" />
+        <p class="font-extrabold text-slate-800 text-base tracking-tight">BESTIE</p>
+        <p class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
       </div>
-      <nav class="flex-1 space-y-1">
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="dashboard.html">
-          <span class="material-symbols-outlined">dashboard</span>
-          <span>Dashboard</span>
+      <nav class="flex-1 px-3 mt-4 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="dashboard.html">
+          <span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="data-pelanggan.html">
-          <span class="material-symbols-outlined">database</span>
-          <span>Database</span>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="tanya-bestie.html">
+          <span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Tanya Bestie</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="search.html">
-          <span class="material-symbols-outlined">search</span>
-          <span>Pencarian</span>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="data-pelanggan.html">
+          <span class="material-symbols-outlined text-[20px]">database</span><span>Database</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2 bg-white text-[#002F6C] font-bold shadow-sm rounded-lg transition-all duration-200" href="watchlist.html">
-          <span class="material-symbols-outlined">visibility</span>
-          <span>Watchlist</span>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="report.html">
+          <span class="material-symbols-outlined text-[20px]">assignment</span><span>Kunjungan Probing</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="report.html">
-          <span class="material-symbols-outlined">assessment</span>
-          <span>Laporan</span>
-        </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="profile-pelanggan.html">
-          <span class="material-symbols-outlined">person_search</span>
-          <span>Profiling</span>
+        <a class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all" href="watchlist.html">
+          <span class="material-symbols-outlined text-[20px]">bookmark</span><span>Watchlist</span>
         </a>
       </nav>
-      <div class="pt-4 border-t border-slate-200/50 space-y-1">
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
-          <span class="material-symbols-outlined">settings</span>
-          <span>Pengaturan</span>
-        </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
-          <span class="material-symbols-outlined">help_outline</span>
-          <span>Bantuan</span>
+      <div class="px-4 py-4 border-t border-gray-100">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"><span class="material-symbols-outlined text-gray-500 text-[20px]">person</span></div>
+          <div>
+            <p class="text-sm font-semibold text-slate-800">Admin PLN</p>
+            <p class="text-[11px] text-gray-400">ULP Surabaya Barat</p>
+          </div>
+        </div>
+        <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
+          <span class="material-symbols-outlined text-[18px]">logout</span><span>Keluar</span>
         </a>
       </div>
     </aside>
-      <!-- TopNavBar -->
-      <header class="flex justify-between items-center w-full px-8 h-16 bg-white/80 backdrop-blur-md z-40 shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] sticky top-0">
-        <div class="flex items-center gap-6">
-          <div class="relative group">
-            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
-            <input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-80 focus:ring-2 focus:ring-primary-container transition-all" placeholder="Pencarian pelanggan..." type="text" />
-          </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="ml-[230px] flex-1 min-h-screen">
+      <!-- Top Bar -->
+      <header class="flex justify-between items-center px-8 py-5">
+        <div>
+          <nav class="flex items-center gap-2 text-xs text-gray-400 mb-1">
+            <a href="dashboard.html" class="hover:text-teal-600 transition-colors">Dashboard</a>
+            <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            <span class="text-teal-600 font-medium">Watchlist</span>
+          </nav>
+          <h1 class="text-2xl font-bold text-slate-800 tracking-tight">Watchlist Pelanggan</h1>
+          <p class="text-sm text-gray-400 mt-0.5">Daftar pelanggan yang sedang dipantau untuk evaluasi dan follow-up.</p>
         </div>
-        <div class="flex items-center gap-4">
-          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors relative">
-            <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
-            <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
-          </button>
-          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors">
-            <span class="material-symbols-outlined text-on-surface-variant">apps</span>
-          </button>
-          <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
-            <img alt="Profil Analis" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUFkR74HRuGXAdKAy7qQsLITuIYB20nMHZ3Afli235xyII9vM_xHE9eraL_etCfkLy5wJcvTdDpaiIQ3S_VkmCrku32KEKoIEY5qKWire4ya2Zn6d1sHKcmI4oDObfN1lysq9LIJdN8ifNPcXJw1CdTJ1GzvYO6wezFWskAuaCeuZ3gkmFu8mQmilOGPA7IGkMIYZXZddc3qBcEbeMavvtVmMMvEy-4uH-GeP1OwXlFOcFJEiR7be78W0Xi5YzI93XoujZIFRqBU" />
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+            <input class="bg-white border border-gray-200 rounded-xl py-2.5 pl-10 pr-4 text-sm w-64 focus:ring-2 focus:ring-teal-300 focus:border-teal-300 transition-all placeholder:text-gray-400" placeholder="Cari pelanggan..." type="text" />
           </div>
+          <button class="flex items-center gap-2 px-4 py-2.5 bg-teal-500 text-white font-semibold text-sm rounded-lg hover:bg-teal-600 active:scale-[0.98] transition-all shadow-sm">
+            <span class="material-symbols-outlined text-[16px]">add</span> Tambah ke Watchlist
+          </button>
         </div>
       </header>
 
-    <!-- Main Content Stage -->
-    <main class="pl-64 pt-16 min-h-screen">
-      <div class="p-8 max-w-7xl mx-auto">
-        <!-- Header Section -->
-        <div class="flex justify-between items-end mb-8">
-          <div>
-            <h2
-              class="text-[2.75rem] font-bold tracking-tighter text-primary leading-tight"
-            >
-              TO Probing Watchlist
-            </h2>
-            <p class="text-on-surface-variant font-medium mt-1">
-              Target prioritas tinggi untuk profiling konsumsi.
-            </p>
-          </div>
-          <button
-            class="flex items-center px-6 py-3 bg-gradient-to-br from-primary to-primary-container text-white rounded-xl shadow-lg hover:shadow-primary/20 transition-all scale-active-98 font-semibold"
-          >
-            <span class="material-symbols-outlined mr-2" data-icon="person_add"
-              >person_add</span
-            >
-            Tambah ke Watchlist
-          </button>
+      <div class="px-8 pb-8 space-y-6">
+        <!-- Filters -->
+        <div class="flex items-center gap-3 fade-up">
+          <button class="px-4 py-2 bg-teal-500 text-white text-xs font-semibold rounded-lg">Semua</button>
+          <button class="px-4 py-2 bg-white border border-gray-200 text-gray-500 text-xs font-semibold rounded-lg hover:bg-gray-50 transition-all">High Priority</button>
+          <button class="px-4 py-2 bg-white border border-gray-200 text-gray-500 text-xs font-semibold rounded-lg hover:bg-gray-50 transition-all">In Probing</button>
+          <button class="px-4 py-2 bg-white border border-gray-200 text-gray-500 text-xs font-semibold rounded-lg hover:bg-gray-50 transition-all">Monitored</button>
         </div>
-        <!-- Dashboard Stats Summary (Bento Minimal) -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
-          <div class="bg-surface-container-lowest p-6 rounded-xl border-none">
-            <p
-              class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4"
-            >
-              Probing Tertunda
-            </p>
-            <p class="text-4xl font-black text-primary">24</p>
-            <div
-              class="mt-4 flex items-center text-xs font-bold py-1 px-2 rounded-full bg-error-container text-error w-fit"
-            >
-              <span
-                class="material-symbols-outlined text-sm mr-1"
-                data-icon="trending_up"
-                >trending_up</span
-              >
-              +12% vs LY
+
+        <!-- Watchlist Table -->
+        <div class="bg-white rounded-xl border border-gray-100 overflow-hidden fade-up">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left" id="table-watchlist">
+              <thead>
+                <tr class="border-b border-gray-100">
+                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider w-12">No</th>
+                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Pelanggan</th>
+                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Tipe Pelanggan</th>
+                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">ULP</th>
+                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Scoring</th>
+                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Status</th>
+                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Ditambahkan</th>
+                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider w-20">Aksi</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm">
+                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                  <td class="px-6 py-4 text-gray-400">1</td>
+                  <td class="px-6 py-4">
+                    <a href="profile-pelanggan.html" class="font-medium text-slate-700 hover:text-teal-600 transition-colors">PT Maju Mundur Sejahtera</a>
+                    <p class="text-[11px] text-gray-400 mt-0.5">ID: 536710294812</p>
+                  </td>
+                  <td class="px-6 py-4 text-gray-500">Korporat</td>
+                  <td class="px-6 py-4 text-gray-500">Kebayoran Baru</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-teal-500 rounded-full" style="width: 87%"></div></div>
+                      <span class="text-xs font-bold text-teal-600">87%</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-red-600 bg-red-50 px-2.5 py-1 rounded-full uppercase tracking-wider">High Priority</span></td>
+                  <td class="px-6 py-4 text-gray-400 text-xs">12 Apr 2026</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-1">
+                      <a href="profile-pelanggan.html" class="p-1.5 text-gray-400 hover:text-teal-600 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">visibility</span></a>
+                      <button class="p-1.5 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                  <td class="px-6 py-4 text-gray-400">2</td>
+                  <td class="px-6 py-4">
+                    <a href="profile-pelanggan.html" class="font-medium text-slate-700 hover:text-teal-600 transition-colors">PT Global Tecknindo</a>
+                    <p class="text-[11px] text-gray-400 mt-0.5">ID: 536710881291</p>
+                  </td>
+                  <td class="px-6 py-4 text-gray-500">Korporat</td>
+                  <td class="px-6 py-4 text-gray-500">Menteng</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-teal-500 rounded-full" style="width: 76%"></div></div>
+                      <span class="text-xs font-bold text-teal-600">76%</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase tracking-wider">In Probing</span></td>
+                  <td class="px-6 py-4 text-gray-400 text-xs">10 Apr 2026</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-1">
+                      <a href="profile-pelanggan.html" class="p-1.5 text-gray-400 hover:text-teal-600 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">visibility</span></a>
+                      <button class="p-1.5 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                  <td class="px-6 py-4 text-gray-400">3</td>
+                  <td class="px-6 py-4">
+                    <a href="profile-pelanggan.html" class="font-medium text-slate-700 hover:text-teal-600 transition-colors">Suryo Atmojo</a>
+                    <p class="text-[11px] text-gray-400 mt-0.5">ID: 536710442120</p>
+                  </td>
+                  <td class="px-6 py-4 text-gray-500">Residensial</td>
+                  <td class="px-6 py-4 text-gray-500">Gubeng</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-amber-400 rounded-full" style="width: 62%"></div></div>
+                      <span class="text-xs font-bold text-amber-600">62%</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full uppercase tracking-wider">Monitored</span></td>
+                  <td class="px-6 py-4 text-gray-400 text-xs">8 Apr 2026</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-1">
+                      <a href="profile-pelanggan.html" class="p-1.5 text-gray-400 hover:text-teal-600 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">visibility</span></a>
+                      <button class="p-1.5 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                  <td class="px-6 py-4 text-gray-400">4</td>
+                  <td class="px-6 py-4">
+                    <a href="profile-pelanggan.html" class="font-medium text-slate-700 hover:text-teal-600 transition-colors">Indo-Cement Plant 4</a>
+                    <p class="text-[11px] text-gray-400 mt-0.5">ID: 536710990012</p>
+                  </td>
+                  <td class="px-6 py-4 text-gray-500">Industri</td>
+                  <td class="px-6 py-4 text-gray-500">Kebayoran Baru</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-red-400 rounded-full" style="width: 92%"></div></div>
+                      <span class="text-xs font-bold text-red-600">92%</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-red-600 bg-red-50 px-2.5 py-1 rounded-full uppercase tracking-wider">High Priority</span></td>
+                  <td class="px-6 py-4 text-gray-400 text-xs">5 Apr 2026</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-1">
+                      <a href="profile-pelanggan.html" class="p-1.5 text-gray-400 hover:text-teal-600 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">visibility</span></a>
+                      <button class="p-1.5 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                  <td class="px-6 py-4 text-gray-400">5</td>
+                  <td class="px-6 py-4">
+                    <a href="profile-pelanggan.html" class="font-medium text-slate-700 hover:text-teal-600 transition-colors">Bank Rakyat Office</a>
+                    <p class="text-[11px] text-gray-400 mt-0.5">ID: 536710222341</p>
+                  </td>
+                  <td class="px-6 py-4 text-gray-500">Komersial</td>
+                  <td class="px-6 py-4 text-gray-500">Menteng</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-teal-500 rounded-full" style="width: 71%"></div></div>
+                      <span class="text-xs font-bold text-teal-600">71%</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase tracking-wider">In Probing</span></td>
+                  <td class="px-6 py-4 text-gray-400 text-xs">3 Apr 2026</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-1">
+                      <a href="profile-pelanggan.html" class="p-1.5 text-gray-400 hover:text-teal-600 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">visibility</span></a>
+                      <button class="p-1.5 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50/50 transition-colors">
+                  <td class="px-6 py-4 text-gray-400">6</td>
+                  <td class="px-6 py-4">
+                    <a href="profile-pelanggan.html" class="font-medium text-slate-700 hover:text-teal-600 transition-colors">PT Sumber Energi Nusantara</a>
+                    <p class="text-[11px] text-gray-400 mt-0.5">ID: 536710555789</p>
+                  </td>
+                  <td class="px-6 py-4 text-gray-500">Korporat</td>
+                  <td class="px-6 py-4 text-gray-500">Gubeng</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                      <div class="w-20 h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full bg-teal-500 rounded-full" style="width: 84%"></div></div>
+                      <span class="text-xs font-bold text-teal-600">84%</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-red-600 bg-red-50 px-2.5 py-1 rounded-full uppercase tracking-wider">High Priority</span></td>
+                  <td class="px-6 py-4 text-gray-400 text-xs">1 Apr 2026</td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-1">
+                      <a href="profile-pelanggan.html" class="p-1.5 text-gray-400 hover:text-teal-600 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">visibility</span></a>
+                      <button class="p-1.5 text-gray-400 hover:text-red-500 transition-colors rounded-lg hover:bg-gray-50"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="px-6 py-4 border-t border-gray-50 flex items-center justify-between">
+            <p class="text-xs text-gray-400">Menampilkan <span class="font-semibold text-slate-700">1-6</span> dari <span class="font-semibold text-slate-700">24</span> pelanggan</p>
+            <div class="flex items-center gap-1">
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-400"><span class="material-symbols-outlined text-lg">chevron_left</span></button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-teal-500 text-white text-xs font-bold shadow-sm">1</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-xs font-semibold text-gray-600">2</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-xs font-semibold text-gray-600">3</button>
+              <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-400"><span class="material-symbols-outlined text-lg">chevron_right</span></button>
             </div>
-          </div>
-          <div class="bg-surface-container-lowest p-6 rounded-xl border-none">
-            <p
-              class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4"
-            >
-              Rata-rata Siklus Probing
-            </p>
-            <p class="text-4xl font-black text-primary">
-              4.2<span class="text-lg font-medium ml-1">days</span>
-            </p>
-            <div
-              class="mt-4 flex items-center text-xs font-bold py-1 px-2 rounded-full bg-tertiary-container text-on-tertiary-container w-fit"
-            >
-              <span
-                class="material-symbols-outlined text-sm mr-1"
-                data-icon="check_circle"
-                >check_circle</span
-              >
-              Optimal
-            </div>
-          </div>
-          <div
-            class="md:col-span-2 bg-surface-container-low p-6 rounded-xl relative overflow-hidden flex items-center justify-between"
-          >
-            <div>
-              <p
-                class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-4"
-              >
-                Indeks Integritas Jaringan
-              </p>
-              <p class="text-4xl font-black text-primary">98.4%</p>
-            </div>
-            <div
-              class="h-16 w-32 bg-primary/5 rounded-lg flex items-end p-1 gap-1"
-            >
-              <div class="flex-1 bg-primary/20 h-[60%] rounded-sm"></div>
-              <div class="flex-1 bg-primary/20 h-[75%] rounded-sm"></div>
-              <div class="flex-1 bg-primary/40 h-[90%] rounded-sm"></div>
-              <div class="flex-1 bg-primary/20 h-[65%] rounded-sm"></div>
-              <div class="flex-1 bg-primary/60 h-[100%] rounded-sm"></div>
-            </div>
-          </div>
-        </div>
-        <!-- Filter Bar -->
-        <div
-          class="bg-surface-container-low p-4 rounded-2xl flex items-center justify-between mb-6"
-        >
-          <div class="flex items-center space-x-2">
-            <button
-              class="px-4 py-2 bg-white rounded-lg text-sm font-bold text-primary shadow-sm"
-            >
-              Semua Catatan
-            </button>
-            <button
-              class="px-4 py-2 hover:bg-white/50 rounded-lg text-sm font-medium text-slate-500 transition-colors"
-            >
-              Komersial
-            </button>
-            <button
-              class="px-4 py-2 hover:bg-white/50 rounded-lg text-sm font-medium text-slate-500 transition-colors"
-            >
-              Residensial
-            </button>
-          </div>
-          <div class="flex items-center space-x-3">
-            <button
-              class="p-2 hover:bg-white rounded-lg text-slate-400 transition-colors"
-            >
-              <span class="material-symbols-outlined" data-icon="filter_list"
-                >filter_list</span
-              >
-            </button>
-            <button
-              class="p-2 hover:bg-white rounded-lg text-slate-400 transition-colors"
-            >
-              <span class="material-symbols-outlined" data-icon="sort"
-                >sort</span
-              >
-            </button>
-          </div>
-        </div>
-        <!-- Watchlist Items -->
-        <div class="space-y-4">
-          <!-- Item 1 -->
-          <div
-            class="bg-surface-container-lowest p-5 rounded-2xl group hover:shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] transition-all"
-          >
-            <div class="flex flex-wrap md:flex-nowrap gap-6 items-start">
-              <!-- Avatar/ID -->
-              <div
-                class="w-12 h-12 bg-primary-fixed-dim/30 rounded-xl flex items-center justify-center text-primary flex-shrink-0"
-              >
-                <span
-                  class="material-symbols-outlined"
-                  data-icon="domain"
-                  style="font-variation-settings: &quot;FILL&quot; 1"
-                  >domain</span
-                >
-              </div>
-              <!-- Customer Details -->
-              <div class="flex-1 min-w-[200px]">
-                <div class="flex items-center mb-1">
-                  <h3 class="font-bold text-lg text-primary mr-2">
-                    Metro Industrial Hub #402
-                  </h3>
-                  <span
-                    class="px-2 py-0.5 bg-error-container text-error text-[10px] font-black uppercase tracking-tighter rounded"
-                    >High Risk</span
-                  >
-                </div>
-                <p class="text-xs text-on-surface-variant mb-2">
-                  ID: 8829-X-TR | Phase 3 Grid Connector
-                </p>
-                <div
-                  class="flex items-center text-xs font-semibold text-slate-500 space-x-4"
-                >
-                  <span class="flex items-center"
-                    ><span
-                      class="material-symbols-outlined text-sm mr-1"
-                      data-icon="location_on"
-                      >location_on</span
-                    >Sukomanunggal, Surabaya Barat</span
-                  >
-                  <span class="flex items-center"
-                    ><span
-                      class="material-symbols-outlined text-sm mr-1"
-                      data-icon="bolt"
-                      >bolt</span
-                    >34.5 kW Current</span
-                  >
-                </div>
-              </div>
-              <!-- Notes Field (Quick Edit) -->
-              <div class="flex-1 min-w-[250px]">
-                <label
-                  class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1 block"
-                  >Catatan Internal</label
-                >
-                <textarea
-                  class="w-full bg-surface-container-low border-none rounded-lg text-sm text-on-surface placeholder:text-slate-400 focus:ring-1 focus:ring-primary/20 resize-none py-2 px-3"
-                  placeholder="Tambahkan catatan di sini..."
-                  rows="2"
-                >
-Sudden spike in late-night usage. Potential unauthorized grid bridging detected on Tuesday night.</textarea
-                >
-              </div>
-              <!-- Actions -->
-              <div class="flex flex-col space-y-2 justify-center">
-                <button
-                  class="px-4 py-2 bg-primary-container text-white text-xs font-bold rounded-lg hover:bg-primary transition-colors scale-active-98 whitespace-nowrap"
-                >
-                  Selesaikan Probing
-                </button>
-                <button
-                  class="px-4 py-2 bg-surface-container-high text-on-surface-variant text-xs font-bold rounded-lg hover:bg-error-container hover:text-error transition-colors scale-active-98 whitespace-nowrap"
-                >
-                  Hapus
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Item 2 -->
-          <div
-            class="bg-surface-container-lowest p-5 rounded-2xl group hover:shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] transition-all"
-          >
-            <div class="flex flex-wrap md:flex-nowrap gap-6 items-start">
-              <!-- Avatar/ID -->
-              <div
-                class="w-12 h-12 bg-secondary-container/30 rounded-xl flex items-center justify-center text-secondary flex-shrink-0"
-              >
-                <span
-                  class="material-symbols-outlined"
-                  data-icon="home"
-                  style="font-variation-settings: &quot;FILL&quot; 1"
-                  >home</span
-                >
-              </div>
-              <!-- Customer Details -->
-              <div class="flex-1 min-w-[200px]">
-                <div class="flex items-center mb-1">
-                  <h3 class="font-bold text-lg text-primary mr-2">
-                    The Heights Residence
-                  </h3>
-                  <span
-                    class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant text-[10px] font-black uppercase tracking-tighter rounded"
-                    >Medium Risk</span
-                  >
-                </div>
-                <p class="text-xs text-on-surface-variant mb-2">
-                  ID: 1044-Z-PL | West Residensial Grid
-                </p>
-                <div
-                  class="flex items-center text-xs font-semibold text-slate-500 space-x-4"
-                >
-                  <span class="flex items-center"
-                    ><span
-                      class="material-symbols-outlined text-sm mr-1"
-                      data-icon="location_on"
-                      >location_on</span
-                    >Dukuh Pakis, Surabaya Barat</span
-                  >
-                  <span class="flex items-center"
-                    ><span
-                      class="material-symbols-outlined text-sm mr-1"
-                      data-icon="bolt"
-                      >bolt</span
-                    >12.2 kW Current</span
-                  >
-                </div>
-              </div>
-              <!-- Notes Field (Quick Edit) -->
-              <div class="flex-1 min-w-[250px]">
-                <label
-                  class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1 block"
-                  >Catatan Internal</label
-                >
-                <textarea
-                  class="w-full bg-surface-container-low border-none rounded-lg text-sm text-on-surface placeholder:text-slate-400 focus:ring-1 focus:ring-primary/20 resize-none py-2 px-3"
-                  placeholder="Tambahkan catatan di sini..."
-                  rows="2"
-                >
-Meter bypass suspected. Consumption consistently lower than household capacity during peak hours.</textarea
-                >
-              </div>
-              <!-- Actions -->
-              <div class="flex flex-col space-y-2 justify-center">
-                <button
-                  class="px-4 py-2 bg-primary-container text-white text-xs font-bold rounded-lg hover:bg-primary transition-colors scale-active-98 whitespace-nowrap"
-                >
-                  Selesaikan Probing
-                </button>
-                <button
-                  class="px-4 py-2 bg-surface-container-high text-on-surface-variant text-xs font-bold rounded-lg hover:bg-error-container hover:text-error transition-colors scale-active-98 whitespace-nowrap"
-                >
-                  Hapus
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Item 3 -->
-          <div
-            class="bg-surface-container-lowest p-5 rounded-2xl group hover:shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] transition-all"
-          >
-            <div class="flex flex-wrap md:flex-nowrap gap-6 items-start">
-              <!-- Avatar/ID -->
-              <div
-                class="w-12 h-12 bg-primary-fixed-dim/30 rounded-xl flex items-center justify-center text-primary flex-shrink-0"
-              >
-                <span
-                  class="material-symbols-outlined"
-                  data-icon="storefront"
-                  style="font-variation-settings: &quot;FILL&quot; 1"
-                  >storefront</span
-                >
-              </div>
-              <!-- Customer Details -->
-              <div class="flex-1 min-w-[200px]">
-                <div class="flex items-center mb-1">
-                  <h3 class="font-bold text-lg text-primary mr-2">
-                    Urban Grocers Co.
-                  </h3>
-                  <span
-                    class="px-2 py-0.5 bg-error-container text-error text-[10px] font-black uppercase tracking-tighter rounded"
-                    >Flagged</span
-                  >
-                </div>
-                <p class="text-xs text-on-surface-variant mb-2">
-                  ID: 5591-B-MS | Komersial South Grid
-                </p>
-                <div
-                  class="flex items-center text-xs font-semibold text-slate-500 space-x-4"
-                >
-                  <span class="flex items-center"
-                    ><span
-                      class="material-symbols-outlined text-sm mr-1"
-                      data-icon="location_on"
-                      >location_on</span
-                    >Asemrowo, Surabaya Barat</span
-                  >
-                  <span class="flex items-center"
-                    ><span
-                      class="material-symbols-outlined text-sm mr-1"
-                      data-icon="bolt"
-                      >bolt</span
-                    >88.1 kW Current</span
-                  >
-                </div>
-              </div>
-              <!-- Notes Field (Quick Edit) -->
-              <div class="flex-1 min-w-[250px]">
-                <label
-                  class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-1 block"
-                  >Catatan Internal</label
-                >
-                <textarea
-                  class="w-full bg-surface-container-low border-none rounded-lg text-sm text-on-surface placeholder:text-slate-400 focus:ring-1 focus:ring-primary/20 resize-none py-2 px-3"
-                  placeholder="Tambahkan catatan di sini..."
-                  rows="2"
-                >
-Inconsistent harmonic distortion on phase C. Field officer investigation required for illegal tapping.</textarea
-                >
-              </div>
-              <!-- Actions -->
-              <div class="flex flex-col space-y-2 justify-center">
-                <button
-                  class="px-4 py-2 bg-primary-container text-white text-xs font-bold rounded-lg hover:bg-primary transition-colors scale-active-98 whitespace-nowrap"
-                >
-                  Selesaikan Probing
-                </button>
-                <button
-                  class="px-4 py-2 bg-surface-container-high text-on-surface-variant text-xs font-bold rounded-lg hover:bg-error-container hover:text-error transition-colors scale-active-98 whitespace-nowrap"
-                >
-                  Hapus
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Pagination/Footer -->
-        <div class="mt-8 flex items-center justify-between">
-          <p class="text-xs text-on-surface-variant font-medium">
-            Menampilkan 3 dari 24 pelanggan untuk probing
-          </p>
-          <div class="flex space-x-1">
-            <button
-              class="w-8 h-8 flex items-center justify-center rounded bg-white text-primary hover:bg-slate-100 border border-slate-200 transition-colors"
-            >
-              <span
-                class="material-symbols-outlined text-sm"
-                data-icon="chevron_left"
-                >chevron_left</span
-              >
-            </button>
-            <button
-              class="w-8 h-8 flex items-center justify-center rounded bg-primary text-white font-bold text-xs"
-            >
-              1
-            </button>
-            <button
-              class="w-8 h-8 flex items-center justify-center rounded bg-white text-on-surface-variant hover:bg-slate-100 border border-slate-200 text-xs font-bold transition-colors"
-            >
-              2
-            </button>
-            <button
-              class="w-8 h-8 flex items-center justify-center rounded bg-white text-on-surface-variant hover:bg-slate-100 border border-slate-200 text-xs font-bold transition-colors"
-            >
-              3
-            </button>
-            <button
-              class="w-8 h-8 flex items-center justify-center rounded bg-white text-primary hover:bg-slate-100 border border-slate-200 transition-colors"
-            >
-              <span
-                class="material-symbols-outlined text-sm"
-                data-icon="chevron_right"
-                >chevron_right</span
-              >
-            </button>
           </div>
         </div>
       </div>
     </main>
-    <!-- FAB (Suppressed on watchlist as per instruction but included here for potential sub-task focus) -->
-    <!-- Suppressing FAB on Details/Transactional screens - though this is a list, the primary action is already in the header and on cards -->
   </body>
 </html>

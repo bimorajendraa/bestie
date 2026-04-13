@@ -120,72 +120,54 @@
       tbody tr:nth-child(5) { animation-delay: 0.25s; }
     </style>
   </head>
-  <body class="bg-background text-on-surface flex min-h-screen">
-    <!-- SideNavBar -->
-    <aside class="h-screen w-64 fixed left-0 top-0 z-50 bg-slate-50/90 backdrop-blur-xl border-r border-slate-200/20 flex flex-col p-4 space-y-2 font-['Inter'] text-[0.875rem] leading-relaxed">
-      <div class="px-2 py-3 mb-4 flex flex-col items-center">
-        <img src="logo-bestie.jpg" alt="Bestie Logo" class="w-16 h-16 object-contain mb-1" />
-        <p class="text-[0.5rem] text-on-surface-variant font-medium text-center leading-tight opacity-70">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+  <body class="bg-[#F5F6F8] text-slate-800 flex min-h-screen">
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col">
+      <div class="px-5 pt-6 pb-3 flex flex-col items-center">
+        <img src="logo-bestie.jpg" alt="BESTIE" class="w-14 h-14 object-contain mb-1" />
+        <p class="font-extrabold text-slate-800 text-base tracking-tight">BESTIE</p>
+        <p class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
       </div>
-      <nav class="flex-1 space-y-1">
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="dashboard.html">
-          <span class="material-symbols-outlined">dashboard</span>
-          <span>Dashboard</span>
+      <nav class="flex-1 px-3 mt-4 space-y-1">
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="dashboard.html">
+          <span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="data-pelanggan.html">
-          <span class="material-symbols-outlined">database</span>
-          <span>Database</span>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="tanya-bestie.html">
+          <span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Tanya Bestie</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="search.html">
-          <span class="material-symbols-outlined">search</span>
-          <span>Pencarian</span>
+        <a class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all" href="data-pelanggan.html">
+          <span class="material-symbols-outlined text-[20px]">database</span><span>Database</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="watchlist.html">
-          <span class="material-symbols-outlined">visibility</span>
-          <span>Watchlist</span>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="report.html">
+          <span class="material-symbols-outlined text-[20px]">assignment</span><span>Kunjungan Probing</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="report.html">
-          <span class="material-symbols-outlined">assessment</span>
-          <span>Laporan</span>
-        </a>
-        <a class="flex items-center gap-3 px-3 py-2 bg-white text-[#002F6C] font-bold shadow-sm rounded-lg transition-all duration-200" href="profile-pelanggan.html">
-          <span class="material-symbols-outlined">person_search</span>
-          <span>Profiling</span>
+        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="watchlist.html">
+          <span class="material-symbols-outlined text-[20px]">bookmark</span><span>Watchlist</span>
         </a>
       </nav>
-      <div class="pt-4 border-t border-slate-200/50 space-y-1">
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
-          <span class="material-symbols-outlined">settings</span>
-          <span>Pengaturan</span>
-        </a>
-        <a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-[#002F6C] hover:bg-slate-200/50 transition-all duration-200 rounded-lg" href="#">
-          <span class="material-symbols-outlined">help_outline</span>
-          <span>Bantuan</span>
+      <div class="px-4 py-4 border-t border-gray-100">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"><span class="material-symbols-outlined text-gray-500 text-[20px]">person</span></div>
+          <div>
+            <p class="text-sm font-semibold text-slate-800">Admin PLN</p>
+            <p class="text-[11px] text-gray-400">ULP Surabaya Barat</p>
+          </div>
+        </div>
+        <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
+          <span class="material-symbols-outlined text-[18px]">logout</span><span>Keluar</span>
         </a>
       </div>
     </aside>
 
-
-    <main class="flex-1 ml-64 min-h-screen flex flex-col">
-      <!-- TopNavBar -->
-      <header class="flex justify-between items-center w-full px-8 h-16 bg-white/80 backdrop-blur-md z-40 shadow-[0_12px_32px_-4px_rgba(0,27,68,0.06)] sticky top-0">
-        <div class="flex items-center gap-6">
-          <div class="relative group">
-            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
-            <input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm w-80 focus:ring-2 focus:ring-primary-container transition-all" placeholder="Pencarian pelanggan..." type="text" />
-          </div>
-        </div>
-        <div class="flex items-center gap-4">
-          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors relative">
-            <span class="material-symbols-outlined text-on-surface-variant">notifications</span>
-            <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
-          </button>
-          <button class="p-2 rounded-full hover:bg-slate-100 transition-colors">
-            <span class="material-symbols-outlined text-on-surface-variant">apps</span>
-          </button>
-          <div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
-            <img alt="Profil Analis" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlUFkR74HRuGXAdKAy7qQsLITuIYB20nMHZ3Afli235xyII9vM_xHE9eraL_etCfkLy5wJcvTdDpaiIQ3S_VkmCrku32KEKoIEY5qKWire4ya2Zn6d1sHKcmI4oDObfN1lysq9LIJdN8ifNPcXJw1CdTJ1GzvYO6wezFWskAuaCeuZ3gkmFu8mQmilOGPA7IGkMIYZXZddc3qBcEbeMavvtVmMMvEy-4uH-GeP1OwXlFOcFJEiR7be78W0Xi5YzI93XoujZIFRqBU" />
-          </div>
+    <main class="flex-1 ml-[230px] min-h-screen flex flex-col">
+      <!-- Top Bar -->
+      <header class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-100">
+        <a href="data-pelanggan.html" class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium">
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span> Kembali
+        </a>
+        <div class="relative">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+          <input class="bg-gray-50 border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm w-72 focus:ring-2 focus:ring-teal-300 focus:border-teal-300 transition-all placeholder:text-gray-400" placeholder="Cari ID Pelanggan atau Nama Pelanggan" type="text" />
         </div>
       </header>
 
