@@ -34,23 +34,51 @@
         backdrop-filter: blur(24px);
         -webkit-backdrop-filter: blur(24px);
       }
-          @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(12px); }
-        to { opacity: 1; transform: translateY(0); }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
-      .animate-fade-in-up { animation: fadeInUp 0.5s ease-out both; }
-      .animate-fade-in { animation: fadeIn 0.4s ease-out both; }
-      tbody tr { animation: fadeInUp 0.4s ease-out both; }
-      tbody tr:nth-child(1) { animation-delay: 0.05s; }
-      tbody tr:nth-child(2) { animation-delay: 0.1s; }
-      tbody tr:nth-child(3) { animation-delay: 0.15s; }
-      tbody tr:nth-child(4) { animation-delay: 0.2s; }
-      tbody tr:nth-child(5) { animation-delay: 0.25s; }
-          body { font-family: "Inter", sans-serif; }
+      .animate-fade-in-up {
+        animation: fadeInUp 0.5s ease-out both;
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.4s ease-out both;
+      }
+      tbody tr {
+        animation: fadeInUp 0.4s ease-out both;
+      }
+      tbody tr:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      tbody tr:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      tbody tr:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      tbody tr:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      tbody tr:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
     </style>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
@@ -122,43 +150,89 @@
         },
       };
     </script>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body class="bg-[#F5F6F8] text-slate-800 flex min-h-screen">
     <!-- ===== SIDEBAR ===== -->
-    <aside class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col">
+    <aside
+      class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col"
+    >
       <div class="px-5 pt-6 pb-3 flex flex-col items-center">
-        <img src="logo-bestie.jpg" alt="BESTIE" class="w-14 h-14 object-contain mb-1" />
-        <p class="font-extrabold text-slate-800 text-base tracking-tight">BESTIE</p>
-        <p class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+        <img
+          src="logo-bestie.jpg"
+          alt="BESTIE"
+          class="w-14 h-14 object-contain mb-1"
+        />
+        <p class="font-extrabold text-slate-800 text-base tracking-tight">
+          BESTIE
+        </p>
+        <p
+          class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5"
+        >
+          Beyond Electricity Marketing with AI-based Customer Profiling
+          Management
+        </p>
       </div>
       <nav class="flex-1 px-3 mt-4 space-y-1">
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="dashboard.html">
-          <span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">dashboard</span
+          ><span>Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="tanya-bestie.html">
-          <span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Tanya Bestie</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="tanya-bestie.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">smart_toy</span
+          ><span>Tanya Bestie</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all" href="data-pelanggan.html">
-          <span class="material-symbols-outlined text-[20px]">database</span><span>Database</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all"
+          href="data-pelanggan.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">database</span
+          ><span>Database</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="report.html">
-          <span class="material-symbols-outlined text-[20px]">assignment</span><span>Kunjungan Probing</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="report.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">assignment</span
+          ><span>Kunjungan Probing</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="watchlist.html">
-          <span class="material-symbols-outlined text-[20px]">bookmark</span><span>Watchlist</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="watchlist.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">bookmark</span
+          ><span>Watchlist</span>
         </a>
       </nav>
       <div class="px-4 py-4 border-t border-gray-100">
         <div class="flex items-center gap-3 mb-3">
-          <div class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"><span class="material-symbols-outlined text-gray-500 text-[20px]">person</span></div>
+          <div
+            class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-gray-500 text-[20px]"
+              >person</span
+            >
+          </div>
           <div>
             <p class="text-sm font-semibold text-slate-800">Admin PLN</p>
             <p class="text-[11px] text-gray-400">ULP Surabaya Barat</p>
           </div>
         </div>
-        <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
-          <span class="material-symbols-outlined text-[18px]">logout</span><span>Keluar</span>
+        <a
+          href="index.html"
+          class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium"
+        >
+          <span class="material-symbols-outlined text-[18px]">logout</span
+          ><span>Keluar</span>
         </a>
       </div>
     </aside>
@@ -166,44 +240,95 @@
     <!-- Main Content Canvas -->
     <main class="flex-1 ml-[230px] p-8">
       <!-- Top Bar -->
-      <header class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-100 -mx-8 -mt-8 mb-0">
-        <a href="data-pelanggan.html" class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium">
-          <span class="material-symbols-outlined text-[18px]">arrow_back</span> Kembali
+      <header
+        class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-100 -mx-8 -mt-8 mb-0"
+      >
+        <a
+          href="data-pelanggan.html"
+          class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium"
+        >
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Kembali
         </a>
         <div class="relative">
-          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
-          <input class="bg-gray-50 border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm w-72 focus:ring-2 focus:ring-teal-300 focus:border-teal-300 transition-all placeholder:text-gray-400" placeholder="Cari ID Pelanggan atau Nama Pelanggan" type="text" />
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg"
+            >search</span
+          >
+          <input
+            class="bg-gray-50 border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm w-72 focus:ring-2 focus:ring-teal-300 focus:border-teal-300 transition-all placeholder:text-gray-400"
+            placeholder="Cari ID Pelanggan atau Nama Pelanggan"
+            type="text"
+          />
         </div>
       </header>
 
-
-            <div class="p-8 space-y-8">
-                <!-- Header Section -->
+      <div
+        class="px-8 pb-8 mt-8 space-y-6 flex-1 w-full max-w-full overflow-x-hidden"
+      >
+        <!-- Header Section -->
         <div class="flex justify-between items-end animate-fade-in">
           <div>
-            <nav class="flex items-center gap-2 text-label-md text-on-surface-variant mb-2">
+            <nav
+              class="flex items-center gap-2 text-label-md text-on-surface-variant mb-2"
+            >
               <span>Database</span>
-              <span class="material-symbols-outlined text-sm">chevron_right</span>
+              <span class="material-symbols-outlined text-sm"
+                >chevron_right</span
+              >
               <span>Profiling</span>
             </nav>
-            <h2 class="text-3xl font-extrabold tracking-tight text-primary">PT. Sumber Energi Nusantara</h2>
-            <p class="text-on-surface-variant">Pelanggan Korporat Tier-1 &bull; Surabaya Barat, ID</p>
+            <h2 class="text-3xl font-extrabold tracking-tight text-primary">
+              PT. Sumber Energi Nusantara
+            </h2>
+            <p class="text-on-surface-variant">
+              Pelanggan Korporat Tier-1 &bull; Surabaya Barat, ID
+            </p>
           </div>
           <div class="flex gap-3">
-            <button class="px-4 py-2 bg-surface-container-high text-primary rounded-md text-sm font-semibold hover:bg-surface-variant transition-all">Buat Laporan</button>
-            <button class="px-4 py-2 bg-gradient-to-br from-primary to-primary-container text-white rounded-md text-sm font-semibold shadow-lg hover:opacity-90 transition-all">Perbarui Profiling</button>
+            <button
+              class="px-4 py-2 bg-surface-container-high text-primary rounded-md text-sm font-semibold hover:bg-surface-variant transition-all"
+            >
+              Buat Laporan
+            </button>
+            <button
+              class="px-4 py-2 bg-gradient-to-br from-primary to-primary-container text-white rounded-md text-sm font-semibold shadow-lg hover:opacity-90 transition-all"
+            >
+              Perbarui Profiling
+            </button>
           </div>
         </div>
         <!-- Custom Tabbed Interface -->
-        <div class="bg-surface-container-low p-1 rounded-xl flex w-max">
-          <a href="profile-pelanggan.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Key Statistik</a>
-          <a href="analisis.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Analisis</a>
-          <a href="ai-based.html" class="px-6 py-2 text-sm font-bold bg-white text-primary rounded-lg shadow-sm inline-block">AI Based</a>
-          <a href="news.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Berita</a>
-          <a href="#" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Detail Statistik</a>
-          <a href="profile.html" class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block">Profil</a>
+        <div
+          class="bg-surface-container-low p-1 rounded-xl flex w-max max-w-full overflow-x-auto"
+        >
+          <a
+            href="profile-pelanggan.html"
+            class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block"
+            >Key Statistik</a
+          >
+          <a
+            href="analisis.html"
+            class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block"
+            >Detail Statistik</a
+          >
+          <a
+            href="ai-based.html"
+            class="px-6 py-2 text-sm font-bold bg-white text-primary rounded-lg shadow-sm inline-block"
+            >Analisis</a
+          >
+          <a
+            href="news.html"
+            class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block"
+            >Berita</a
+          >
+          <a
+            href="profile.html"
+            class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block"
+            >Profil</a
+          >
         </div>
-        </div>
+      </div>
       <!-- Bento Layout -->
       <div class="grid grid-cols-12 gap-6">
         <!-- Section 1: Status TO Probing (Left Column) -->
@@ -212,7 +337,7 @@
             <h3
               class="label-md uppercase tracking-[0.05em] text-on-surface-variant font-bold mb-6"
             >
-              Status TO Probing
+              Scoring Indicator Status
             </h3>
             <div class="space-y-4">
               <!-- High Priority Card -->
@@ -228,14 +353,17 @@
                 </div>
                 <div class="flex-1">
                   <div class="flex justify-between items-center mb-1">
-                    <span class="font-bold text-primary">Node Delta-9</span>
+                    <span class="font-bold text-primary"
+                      >Keandalan Jaringan</span
+                    >
                     <span
                       class="bg-error-container text-on-error-container text-[10px] px-2 py-0.5 rounded-full font-black"
-                      >HIGH</span
+                      >RISK</span
                     >
                   </div>
                   <p class="text-xs text-on-surface-variant">
-                    Thermal variance exceeds safe operational parameters by 12%.
+                    Tingkat gangguan mencapai 7 kali per tahun. Skor Penilaian:
+                    40%.
                   </p>
                 </div>
               </div>
@@ -252,14 +380,17 @@
                 </div>
                 <div class="flex-1">
                   <div class="flex justify-between items-center mb-1">
-                    <span class="font-bold text-primary">Substation 42</span>
+                    <span class="font-bold text-primary"
+                      >Kapasitas Penyulang</span
+                    >
                     <span
                       class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-0.5 rounded-full font-black"
-                      >MEDIUM</span
+                      >WARNING</span
                     >
                   </div>
                   <p class="text-xs text-on-surface-variant">
-                    Predicted load spike during next 4-hour maintenance window.
+                    Beban penyulang tersisa 15% dari batas maksimal daya salur.
+                    Skor: 20%.
                   </p>
                 </div>
               </div>
@@ -276,14 +407,17 @@
                 </div>
                 <div class="flex-1">
                   <div class="flex justify-between items-center mb-1">
-                    <span class="font-bold text-primary">Relay Hub Gamma</span>
+                    <span class="font-bold text-primary"
+                      >Growth Penjualan kWh</span
+                    >
                     <span
                       class="bg-surface-container-high text-on-surface-variant text-[10px] px-2 py-0.5 rounded-full font-black"
-                      >LOW</span
+                      >OPTIMAL</span
                     >
                   </div>
                   <p class="text-xs text-on-surface-variant">
-                    Routine latency calibration required within 48 hours.
+                    Pertumbuhan stabil pada kisaran 15% YoY. Skor Penilaian:
+                    80%.
                   </p>
                 </div>
               </div>
@@ -331,16 +465,15 @@
                 <div class="w-1 h-12 bg-secondary rounded-full mt-1"></div>
                 <div>
                   <h4 class="font-bold text-on-surface mb-1">
-                    Efficiency Optimization
+                    Evaluasi KVA Max
                   </h4>
                   <p class="text-on-surface-variant leading-relaxed">
-                    Neural analysis indicates a potential
-                    <span class="text-secondary font-bold"
-                      >14.2% energy reclamation</span
-                    >
-                    opportunity by redistributing evening load from Sector 4 to
-                    Sector 9. The current asymmetric flow is causing parasitic
-                    heat loss in legacy conductors.
+                    Rasio pemakaian daya puncak (KVA Max) terhadap Daya Kontrak
+                    berada pada rentang
+                    <span class="text-secondary font-bold">51% - 60%</span>. Hal
+                    ini menunjukkan utilitas yang cukup efisien namun masih
+                    memiliki ruang lebar untuk optimasi penggunaan lebih lanjut.
+                    Skor Penilaian: 20%.
                   </p>
                 </div>
               </div>
@@ -350,21 +483,22 @@
                 ></div>
                 <div>
                   <h4 class="font-bold text-on-surface mb-1">
-                    Preventative Maintenance
+                    Jam Nyala Pelanggan
                   </h4>
                   <p class="text-on-surface-variant leading-relaxed">
-                    Vibration sensors at Main Station Alpha show harmonic
-                    patterns matching
+                    Rata-rata penggunaan menyentuh
                     <span class="text-primary font-bold"
-                      >early-stage turbine wear</span
-                    >. Immediate inspection is recommended to prevent a 72-hour
-                    unscheduled downtime event next month.
+                      >450 Jam Nyala (JN)</span
+                    >
+                    dalam setahun terakhir. Intensitas penggunaan masuk dalam
+                    rentang 421 - 480 JN yang tergolong dalam kategori prospek
+                    pertumbuhan baik. Skor Penilaian: 60%.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Section 3: Anomalies Detected (Right Column Bottom) -->
+          <!-- Section 3: Monitoring Detail Indikator (Right Column Bottom) -->
           <div
             class="col-span-1 md:col-span-2 bg-surface-container-low p-6 rounded-xl"
           >
@@ -372,11 +506,11 @@
               <h3
                 class="label-md uppercase tracking-[0.05em] text-on-surface-variant font-bold"
               >
-                Anomalies Detected
+                Monitoring Detail Indikator
               </h3>
               <span
-                class="bg-error text-on-error text-[10px] px-3 py-1 rounded-full font-black animate-pulse"
-                >LIVE MONITORING</span
+                class="bg-tertiary-container text-on-tertiary-container text-[10px] px-3 py-1 rounded-full font-black"
+                >SCORING CALCULATED</span
               >
             </div>
             <div class="overflow-x-auto">
@@ -385,10 +519,10 @@
                   <tr
                     class="text-on-surface-variant label-md uppercase tracking-[0.05em] border-b border-outline-variant/20"
                   >
-                    <th class="py-3 px-4 font-bold">Indicator</th>
-                    <th class="py-3 px-4 font-bold">Pattern Type</th>
-                    <th class="py-3 px-4 font-bold">Deviation</th>
-                    <th class="py-3 px-4 font-bold">Action</th>
+                    <th class="py-3 px-4 font-bold">Key Indicator</th>
+                    <th class="py-3 px-4 font-bold">Nilai Aktual</th>
+                    <th class="py-3 px-4 font-bold">Skor (%)</th>
+                    <th class="py-3 px-4 font-bold">Status</th>
                   </tr>
                 </thead>
                 <tbody class="text-sm">
@@ -399,31 +533,29 @@
                       class="py-4 px-4 flex items-center font-semibold text-primary"
                     >
                       <span
-                        class="material-symbols-outlined text-error mr-3 text-[18px]"
-                        data-icon="running_with_errors"
-                        >running_with_errors</span
+                        class="material-symbols-outlined text-secondary mr-3 text-[18px]"
+                        data-icon="trending_up"
+                        >trending_up</span
                       >
-                      Frequency Jitter
+                      Growth Penjualan
                     </td>
                     <td class="py-4 px-4 text-on-surface-variant">
-                      Unstable Oscillation
+                      Kenaikan 15% YoY
                     </td>
                     <td class="py-4 px-4">
                       <div class="flex items-center gap-2">
-                        <span class="text-error font-bold">+2.4Hz</span>
+                        <span class="text-secondary font-bold">80%</span>
                         <div
                           class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"
                         >
-                          <div class="h-full bg-error w-3/4"></div>
+                          <div class="h-full bg-secondary w-4/5"></div>
                         </div>
                       </div>
                     </td>
                     <td class="py-4 px-4">
-                      <button
-                        class="text-primary font-bold text-xs hover:underline"
-                      >
-                        ISOLATE
-                      </button>
+                      <span class="text-secondary font-bold text-xs">
+                        OPTIMAL
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -433,31 +565,29 @@
                       class="py-4 px-4 flex items-center font-semibold text-primary"
                     >
                       <span
-                        class="material-symbols-outlined text-secondary mr-3 text-[18px]"
-                        data-icon="fluorescent"
-                        >fluorescent</span
+                        class="material-symbols-outlined text-error mr-3 text-[18px]"
+                        data-icon="warning"
+                        >warning</span
                       >
-                      Voltage Drop
+                      Keandalan Jaringan
                     </td>
                     <td class="py-4 px-4 text-on-surface-variant">
-                      Sudden Attenuation
+                      7 Kali Gangguan
                     </td>
                     <td class="py-4 px-4">
                       <div class="flex items-center gap-2">
-                        <span class="text-secondary font-bold">-14.2V</span>
+                        <span class="text-error font-bold">40%</span>
                         <div
                           class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"
                         >
-                          <div class="h-full bg-secondary w-1/2"></div>
+                          <div class="h-full bg-error w-2/5"></div>
                         </div>
                       </div>
                     </td>
                     <td class="py-4 px-4">
-                      <button
-                        class="text-primary font-bold text-xs hover:underline"
-                      >
-                        PROBE
-                      </button>
+                      <span class="text-error font-bold text-xs">
+                        PERLU INSPEKSI
+                      </span>
                     </td>
                   </tr>
                   <tr
@@ -467,31 +597,29 @@
                       class="py-4 px-4 flex items-center font-semibold text-primary"
                     >
                       <span
-                        class="material-symbols-outlined text-error mr-3 text-[18px]"
-                        data-icon="wifi_off"
-                        >wifi_off</span
+                        class="material-symbols-outlined text-tertiary-container mr-3 text-[18px]"
+                        data-icon="battery_charging_full"
+                        >battery_charging_full</span
                       >
-                      Packet Loss
+                      Kapasitas Penyulang
                     </td>
                     <td class="py-4 px-4 text-on-surface-variant">
-                      Intermittent Link
+                      Utilisasi 85%
                     </td>
                     <td class="py-4 px-4">
                       <div class="flex items-center gap-2">
-                        <span class="text-error font-bold">12% Loss</span>
+                        <span class="text-amber-500 font-bold">20%</span>
                         <div
                           class="w-16 h-1.5 bg-surface-variant rounded-full overflow-hidden"
                         >
-                          <div class="h-full bg-error w-1/3"></div>
+                          <div class="h-full bg-amber-500 w-1/5"></div>
                         </div>
                       </div>
                     </td>
                     <td class="py-4 px-4">
-                      <button
-                        class="text-primary font-bold text-xs hover:underline"
-                      >
-                        REROUTE
-                      </button>
+                      <span class="text-amber-500 font-bold text-xs">
+                        WARNING
+                      </span>
                     </td>
                   </tr>
                 </tbody>
