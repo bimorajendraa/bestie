@@ -6,60 +6,144 @@
     <title>BESTIE | Database Pelanggan</title>
     <meta name="description" content="Database Pelanggan BESTIE PLN" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      body { font-family: 'Inter', sans-serif; }
-      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
       @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(12px); }
-        to { opacity: 1; transform: translateY(0); }
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
       }
-      .fade-up { animation: fadeInUp 0.5s ease-out both; }
-      .fade-up-1 { animation-delay: 0.05s; }
-      .fade-up-2 { animation-delay: 0.1s; }
-      .fade-up-3 { animation-delay: 0.15s; }
+      .fade-up {
+        animation: fadeInUp 0.5s ease-out both;
+      }
+      .fade-up-1 {
+        animation-delay: 0.05s;
+      }
+      .fade-up-2 {
+        animation-delay: 0.1s;
+      }
+      .fade-up-3 {
+        animation-delay: 0.15s;
+      }
     </style>
   </head>
   <body class="bg-[#F5F6F8] text-slate-800 flex min-h-screen">
     <!-- ===== SIDEBAR ===== -->
-    <aside class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col">
+    <aside
+      class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col"
+    >
       <div class="px-5 pt-6 pb-3 flex flex-col items-center">
-        <img src="logo-bestie.jpg" alt="BESTIE" class="w-14 h-14 object-contain mb-1" />
-        <p class="font-extrabold text-slate-800 text-base tracking-tight">BESTIE</p>
-        <p class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+        <img
+          src="logo-bestie.jpg"
+          alt="BESTIE"
+          class="w-14 h-14 object-contain mb-1"
+        />
+        <p class="font-extrabold text-slate-800 text-base tracking-tight">
+          BESTIE
+        </p>
+        <p
+          class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5"
+        >
+          Beyond Electricity Marketing with AI-based Customer Profiling
+          Management
+        </p>
       </div>
       <nav class="flex-1 px-3 mt-4 space-y-1">
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="dashboard.html">
-          <span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">dashboard</span
+          ><span>Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="tanya-bestie.html">
-          <span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Tanya Bestie</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="tanya-bestie.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">smart_toy</span
+          ><span>Tanya Bestie</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all" href="data-pelanggan.html">
-          <span class="material-symbols-outlined text-[20px]">database</span><span>Database</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all"
+          href="data-pelanggan.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">database</span
+          ><span>Database</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="report.html">
-          <span class="material-symbols-outlined text-[20px]">assignment</span><span>Kunjungan Probing</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="report.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">assignment</span
+          ><span>Kunjungan Probing</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="watchlist.html">
-          <span class="material-symbols-outlined text-[20px]">bookmark</span><span>Watchlist</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="watchlist.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">bookmark</span
+          ><span>Watchlist</span>
         </a>
       </nav>
       <div class="px-4 py-4 border-t border-gray-100">
         <div class="flex items-center gap-3 mb-3">
-          <div class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"><span class="material-symbols-outlined text-gray-500 text-[20px]">person</span></div>
+          <div
+            class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-gray-500 text-[20px]"
+              >person</span
+            >
+          </div>
           <div>
-            <p class="text-sm font-semibold text-slate-800">Admin PLN</p>
-            <p class="text-[11px] text-gray-400">ULP Surabaya Barat</p>
+            <p class="text-sm font-semibold text-slate-800" data-user-name>
+              Admin PLN
+            </p>
+            <p class="text-[11px] text-gray-400">
+              <span data-user-role>Admin</span> •
+              <span data-user-unit>ULP Surabaya Barat</span>
+            </p>
           </div>
         </div>
-        <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
-          <span class="material-symbols-outlined text-[18px]">logout</span><span>Keluar</span>
+        <a
+          href="index.html"
+          onclick="
+            bestieLogout();
+            return false;
+          "
+          class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium"
+        >
+          <span class="material-symbols-outlined text-[18px]">logout</span
+          ><span>Keluar</span>
         </a>
       </div>
     </aside>
@@ -67,9 +151,15 @@
     <!-- ===== MAIN CONTENT ===== -->
     <main class="ml-[230px] flex-1 min-h-screen flex flex-col relative">
       <!-- Top Bar -->
-      <header class="flex justify-between items-center px-8 py-5 bg-white border-b border-gray-100">
-        <a href="dashboard.html" class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium border border-gray-200 rounded-lg px-3 py-1.5">
-          <span class="material-symbols-outlined text-[18px]">arrow_back</span> Kembali
+      <header
+        class="flex justify-between items-center px-8 py-5 bg-white border-b border-gray-100"
+      >
+        <a
+          href="dashboard.html"
+          class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium border border-gray-200 rounded-lg px-3 py-1.5"
+        >
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Kembali
         </a>
       </header>
 
@@ -77,144 +167,306 @@
         <!-- Header & Action -->
         <div class="flex justify-between items-end fade-up fade-up-1">
           <div>
-            <p class="text-[10px] uppercase font-bold text-sky-500 mb-1 tracking-wider text-teal-600">Database</p>
-            <h1 class="text-2xl font-bold text-slate-800 tracking-tight mb-1">Database Pelanggan</h1>
-            <p class="text-sm text-gray-500">Seluruh data pelanggan PLN yang terdaftar dalam sistem BESTIE.</p>
+            <p
+              class="text-[10px] uppercase font-bold text-sky-500 mb-1 tracking-wider text-teal-600"
+            >
+              Database
+            </p>
+            <h1 class="text-2xl font-bold text-slate-800 tracking-tight mb-1">
+              Database Pelanggan
+            </h1>
+            <p class="text-sm text-gray-500">
+              Seluruh data pelanggan PLN yang terdaftar dalam sistem BESTIE.
+            </p>
           </div>
-          <button onclick="document.getElementById('modal-tambah-pelanggan').classList.remove('hidden')" class="bg-[#008F9B] text-white flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors shadow shadow-teal-500/20 active:scale-95">
-            <span class="material-symbols-outlined text-[18px]">add</span> Tambah Data Pelanggan
+          <button
+            data-admin-only
+            onclick="
+              document
+                .getElementById('modal-tambah-pelanggan')
+                .classList.remove('hidden')
+            "
+            class="bg-[#008F9B] text-white flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-teal-700 transition-colors shadow shadow-teal-500/20 active:scale-95"
+          >
+            <span class="material-symbols-outlined text-[18px]">add</span>
+            Tambah Data Pelanggan
           </button>
         </div>
 
         <!-- Metric Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-up fade-up-2">
           <!-- Total Pelanggan -->
-          <div class="bg-white p-6 rounded-xl border border-gray-100 relative shadow-sm">
+          <div
+            class="bg-white p-6 rounded-xl border border-gray-100 relative shadow-sm"
+          >
             <div class="flex justify-between items-start mb-2">
-              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Total Pelanggan</p>
-              <div class="w-8 h-8 rounded bg-teal-50 flex items-center justify-center"><span class="material-symbols-outlined text-teal-600 text-[18px]">group</span></div>
+              <p
+                class="text-xs font-bold text-gray-400 uppercase tracking-wider"
+              >
+                Total Pelanggan
+              </p>
+              <div
+                class="w-8 h-8 rounded bg-teal-50 flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-teal-600 text-[18px]"
+                  >group</span
+                >
+              </div>
             </div>
-            <h3 class="text-3xl font-extrabold text-slate-800 tracking-tighter mb-2">124,592</h3>
-            <p class="text-xs font-medium text-teal-600 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> +2.4% <span class="text-gray-400 font-normal">dari bulan lalu</span></p>
+            <h3
+              id="metric-total-customers"
+              class="text-3xl font-extrabold text-slate-800 tracking-tighter mb-2"
+            >
+              124,592
+            </h3>
+            <p
+              class="text-xs font-medium text-teal-600 flex items-center gap-1"
+            >
+              <span class="material-symbols-outlined text-[14px]"
+                >trending_up</span
+              >
+              +2.4%
+              <span class="text-gray-400 font-normal">dari bulan lalu</span>
+            </p>
           </div>
 
           <!-- Pelanggan Industri -->
-          <div class="bg-white p-6 rounded-xl border border-gray-100 relative shadow-sm">
+          <div
+            class="bg-white p-6 rounded-xl border border-gray-100 relative shadow-sm"
+          >
             <div class="flex justify-between items-start mb-2">
-              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Pelanggan Industri</p>
-              <div class="w-8 h-8 rounded bg-purple-50 flex items-center justify-center"><span class="material-symbols-outlined text-purple-600 text-[18px]">factory</span></div>
+              <p
+                class="text-xs font-bold text-gray-400 uppercase tracking-wider"
+              >
+                Pelanggan Industri
+              </p>
+              <div
+                class="w-8 h-8 rounded bg-purple-50 flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-purple-600 text-[18px]"
+                  >factory</span
+                >
+              </div>
             </div>
-            <h3 class="text-3xl font-extrabold text-slate-800 tracking-tighter mb-2">8,230</h3>
-            <p class="text-xs font-medium text-slate-800">6.6% <span class="text-gray-400 font-normal">dari total</span></p>
+            <h3
+              id="metric-total-industri"
+              class="text-3xl font-extrabold text-slate-800 tracking-tighter mb-2"
+            >
+              8,230
+            </h3>
+            <p class="text-xs font-medium text-slate-800">
+              6.6% <span class="text-gray-400 font-normal">dari total</span>
+            </p>
           </div>
 
           <!-- Pelanggan Bisnis -->
-          <div class="bg-white p-6 rounded-xl border border-gray-100 relative shadow-sm">
+          <div
+            class="bg-white p-6 rounded-xl border border-gray-100 relative shadow-sm"
+          >
             <div class="flex justify-between items-start mb-2">
-              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Pelanggan Bisnis</p>
-              <div class="w-8 h-8 rounded bg-amber-50 flex items-center justify-center"><span class="material-symbols-outlined text-amber-500 text-[18px]">storefront</span></div>
+              <p
+                class="text-xs font-bold text-gray-400 uppercase tracking-wider"
+              >
+                Pelanggan Bisnis
+              </p>
+              <div
+                class="w-8 h-8 rounded bg-amber-50 flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-amber-500 text-[18px]"
+                  >storefront</span
+                >
+              </div>
             </div>
-            <h3 class="text-3xl font-extrabold text-slate-800 tracking-tighter mb-2">24,102</h3>
-            <p class="text-xs font-medium text-slate-800">19.3% <span class="text-gray-400 font-normal">dari total.</span></p>
+            <h3
+              id="metric-total-bisnis"
+              class="text-3xl font-extrabold text-slate-800 tracking-tighter mb-2"
+            >
+              24,102
+            </h3>
+            <p class="text-xs font-medium text-slate-800">
+              19.3% <span class="text-gray-400 font-normal">dari total.</span>
+            </p>
           </div>
         </div>
 
         <!-- Filter Card -->
-        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm fade-up fade-up-3">
+        <div
+          class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm fade-up fade-up-3"
+        >
           <div class="relative mb-6">
-            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">search</span>
-            <input class="bg-gray-50 border border-gray-100 rounded-lg py-3 pl-12 pr-4 text-sm w-full focus:ring-2 focus:ring-teal-300 focus:border-teal-300 transition-all placeholder:text-gray-400" placeholder="Cari ID Pelanggan atau Nama Pelanggan" type="text" />
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]"
+              >search</span
+            >
+            <input
+              id="search-customer"
+              class="bg-gray-50 border border-gray-100 rounded-lg py-3 pl-12 pr-4 text-sm w-full focus:ring-2 focus:ring-teal-300 focus:border-teal-300 transition-all placeholder:text-gray-400"
+              placeholder="Cari ID Pelanggan atau Nama Pelanggan"
+              type="text"
+            />
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-end">
             <!-- Filter: ULP -->
             <div class="md:col-span-3">
-              <label class="block text-[10px] font-bold text-gray-500 mb-2 uppercase">Unit Layanan (ULP)</label>
+              <label
+                class="block text-[10px] font-bold text-gray-500 mb-2 uppercase"
+                >Unit Layanan (ULP)</label
+              >
               <div class="relative">
-                <select class="w-full text-sm border border-gray-200 rounded-lg py-2.5 pl-3 pr-10 bg-white text-slate-700 outline-none focus:ring-2 focus:ring-teal-300 appearance-none cursor-pointer">
-                  <option>Kebon Jeruk</option>
+                <select
+                  id="filter-ulp"
+                  class="w-full text-sm border border-gray-200 rounded-lg py-2.5 pl-3 pr-10 bg-white text-slate-700 outline-none focus:ring-2 focus:ring-teal-300 appearance-none cursor-pointer"
+                >
+                  <option value="all">Semua ULP</option>
                   <option>Semua ULP</option>
                 </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
-                  <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >keyboard_arrow_down</span
+                  >
                 </div>
               </div>
             </div>
 
             <!-- Filter: Tipe -->
             <div class="md:col-span-3">
-              <label class="block text-[10px] font-bold text-gray-500 mb-2 uppercase">Tipe Pelanggan</label>
+              <label
+                class="block text-[10px] font-bold text-gray-500 mb-2 uppercase"
+                >Tipe Pelanggan</label
+              >
               <div class="relative">
-                <select class="w-full text-sm border border-gray-200 rounded-lg py-2.5 pl-3 pr-10 bg-white text-slate-700 outline-none focus:ring-2 focus:ring-teal-300 appearance-none cursor-pointer">
+                <select
+                  id="filter-customer-type"
+                  class="w-full text-sm border border-gray-200 rounded-lg py-2.5 pl-3 pr-10 bg-white text-slate-700 outline-none focus:ring-2 focus:ring-teal-300 appearance-none cursor-pointer"
+                >
+                  <option value="all">Semua Tipe</option>
                   <option>Industri</option>
+                  <option>Bisnis</option>
                   <option>Semua Tipe</option>
                 </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
-                  <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >keyboard_arrow_down</span
+                  >
                 </div>
               </div>
             </div>
 
             <!-- Filter: Gol Tarif -->
             <div class="md:col-span-3">
-              <label class="block text-[10px] font-bold text-gray-500 mb-2 uppercase">Golongan Tarif</label>
+              <label
+                class="block text-[10px] font-bold text-gray-500 mb-2 uppercase"
+                >Golongan Tarif</label
+              >
               <div class="relative">
-                <select class="w-full text-sm border border-gray-200 rounded-lg py-2.5 pl-3 pr-10 bg-white text-slate-700 outline-none focus:ring-2 focus:ring-teal-300 appearance-none cursor-pointer">
+                <select
+                  class="w-full text-sm border border-gray-200 rounded-lg py-2.5 pl-3 pr-10 bg-white text-slate-700 outline-none focus:ring-2 focus:ring-teal-300 appearance-none cursor-pointer"
+                >
                   <option>B-1 / 5.500 VA</option>
                   <option>Semua Golongan</option>
                 </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
-                  <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >keyboard_arrow_down</span
+                  >
                 </div>
               </div>
             </div>
 
             <!-- Filter: Sort -->
             <div class="md:col-span-2">
-              <label class="block text-[10px] font-bold text-gray-500 mb-2 uppercase">Urutkan</label>
+              <label
+                class="block text-[10px] font-bold text-gray-500 mb-2 uppercase"
+                >Urutkan</label
+              >
               <div class="relative">
-                <select class="w-full text-sm border border-gray-200 rounded-lg py-2.5 pl-3 pr-10 bg-white text-slate-700 outline-none focus:ring-2 focus:ring-teal-300 appearance-none cursor-pointer">
+                <select
+                  class="w-full text-sm border border-gray-200 rounded-lg py-2.5 pl-3 pr-10 bg-white text-slate-700 outline-none focus:ring-2 focus:ring-teal-300 appearance-none cursor-pointer"
+                >
                   <option>Default</option>
                   <option>Terbaru</option>
                 </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
-                  <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >keyboard_arrow_down</span
+                  >
                 </div>
               </div>
             </div>
 
             <!-- Reset -->
             <div class="md:col-span-1 flex justify-end">
-              <button class="flex items-center gap-1.5 text-sm text-teal-600 font-medium hover:text-teal-700 transition-colors py-2.5 w-full justify-center">
-                <span class="material-symbols-outlined text-[16px]">refresh</span> Reset Filter
+              <button
+                id="btn-reset-filter"
+                class="flex items-center gap-1.5 text-sm text-teal-600 font-medium hover:text-teal-700 transition-colors py-2.5 w-full justify-center"
+              >
+                <span class="material-symbols-outlined text-[16px]"
+                  >refresh</span
+                >
+                Reset Filter
               </button>
             </div>
           </div>
         </div>
 
         <div class="flex items-center gap-2 text-sm fade-up fade-up-3">
-          <span class="material-symbols-outlined text-teal-600 text-[20px]">manage_search</span>
-          <span class="text-slate-600">Menampilkan 2 hasil untuk <span class="bg-teal-50 text-teal-700 px-2 py-0.5 rounded font-medium">PT Maju Mundur Sejahtera</span></span>
+          <span class="material-symbols-outlined text-teal-600 text-[20px]"
+            >manage_search</span
+          >
+          <span class="text-slate-600"
+            >Menampilkan <span id="summary-result-count">0</span> hasil untuk
+            <span
+              id="summary-query-text"
+              class="bg-teal-50 text-teal-700 px-2 py-0.5 rounded font-medium"
+              >Semua Pelanggan</span
+            ></span
+          >
         </div>
 
         <!-- Table Card -->
-        <div class="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm fade-up fade-up-3">
-          <div class="px-6 py-5 flex items-center justify-between border-b border-gray-50">
+        <div
+          class="bg-white rounded-xl border border-gray-100 overflow-hidden shadow-sm fade-up fade-up-3"
+        >
+          <div
+            class="px-6 py-5 flex items-center justify-between border-b border-gray-50"
+          >
             <div>
-              <h2 class="text-base font-bold text-slate-800">Daftar Pelanggan</h2>
-              <p class="text-xs text-gray-400 mt-0.5">List seluruh daftar pelanggan PLN</p>
+              <h2 class="text-base font-bold text-slate-800">
+                Daftar Pelanggan
+              </h2>
+              <p class="text-xs text-gray-400 mt-0.5">
+                List seluruh daftar pelanggan PLN
+              </p>
             </div>
             <div class="flex items-center gap-6 text-[13px] text-slate-600">
               <div class="flex items-center gap-3">
                 <span class="text-gray-400">Sort by</span>
-                <select class="border border-gray-200 rounded-lg py-1.5 px-3 text-sm bg-white outline-none focus:ring-2 focus:ring-teal-300">
-                  <option>Terbaru</option>
+                <select
+                  id="sort-order"
+                  class="border border-gray-200 rounded-lg py-1.5 px-3 text-sm bg-white outline-none focus:ring-2 focus:ring-teal-300"
+                >
+                  <option value="name-asc">Nama A-Z</option>
                 </select>
               </div>
               <div class="flex items-center gap-3">
                 <span class="text-gray-400">Tampilkan</span>
-                <select class="border border-gray-200 rounded-lg py-1.5 px-3 text-sm bg-white outline-none focus:ring-2 focus:ring-teal-300">
-                  <option>5</option>
+                <select
+                  id="page-size"
+                  class="border border-gray-200 rounded-lg py-1.5 px-3 text-sm bg-white outline-none focus:ring-2 focus:ring-teal-300"
+                >
+                  <option value="10">10</option>
                 </select>
               </div>
             </div>
@@ -224,91 +476,147 @@
             <table class="w-full text-center text-sm">
               <thead class="bg-teal-50/50">
                 <tr class="border-b border-gray-100">
-                  <th class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider w-16">No</th>
-                  <th class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider text-left">Nama Pelanggan</th>
-                  <th class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider">ID Pelanggan</th>
-                  <th class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider">Tipe Pelanggan</th>
-                  <th class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider">ULP</th>
-                  <th class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider text-right pr-12">Gol. Tarif</th>
+                  <th
+                    class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider w-16"
+                  >
+                    No
+                  </th>
+                  <th
+                    class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider text-left"
+                  >
+                    Nama Pelanggan
+                  </th>
+                  <th
+                    class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider"
+                  >
+                    ID Pelanggan
+                  </th>
+                  <th
+                    class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider"
+                  >
+                    Tipe Pelanggan
+                  </th>
+                  <th
+                    class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider"
+                  >
+                    ULP
+                  </th>
+                  <th
+                    class="px-6 py-4 text-xs font-bold text-teal-800 uppercase tracking-wider text-right pr-12"
+                  >
+                    Gol. Tarif
+                  </th>
                 </tr>
               </thead>
-              <tbody class="text-[13px] text-slate-700">
-                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                  <td class="px-6 py-5 text-gray-400">1</td>
-                  <td class="px-6 py-5 font-bold text-slate-800 text-left">PT Maju Mundur Sejahtera</td>
-                  <td class="px-6 py-5 text-gray-500">536710294812</td>
-                  <td class="px-6 py-5 text-gray-500">Industri</td>
-                  <td class="px-6 py-5 text-gray-500">Kebon Jeruk</td>
-                  <td class="px-6 py-5 text-right flex items-center justify-end gap-5">
-                    <span class="font-bold bg-gray-100 text-slate-600 px-3 py-1 rounded-full text-[11px]">B-1 / 5.500 VA</span>
-                    <a href="profile-pelanggan.html" class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-teal-600 hover:bg-teal-50 hover:border-teal-200 transition-colors">
-                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                    </a>
-                  </td>
-                </tr>
-                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                  <td class="px-6 py-5 text-gray-400">2</td>
-                  <td class="px-6 py-5 font-bold text-slate-800 text-left">PT Maju Mundur Sejahtera</td>
-                  <td class="px-6 py-5 text-gray-500">536710294812</td>
-                  <td class="px-6 py-5 text-gray-500">Bisnis</td>
-                  <td class="px-6 py-5 text-gray-500">Kebon Jeruk</td>
-                  <td class="px-6 py-5 text-right flex items-center justify-end gap-5">
-                    <span class="font-bold bg-gray-100 text-slate-600 px-3 py-1 rounded-full text-[11px]">B-1 / 5.500 VA</span>
-                    <a href="profile-pelanggan.html" class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-teal-600 hover:bg-teal-50 hover:border-teal-200 transition-colors">
-                      <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
+              <tbody
+                id="customers-table-body"
+                class="text-[13px] text-slate-700"
+              ></tbody>
             </table>
           </div>
 
           <div class="px-6 py-4 flex items-center justify-between">
-            <p class="text-[13px] text-gray-500">Menampilkan 5 dari 42 pelanggan</p>
-            <div class="flex items-center gap-2">
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-gray-400 hover:bg-gray-50 transition-colors"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-teal-600 text-white font-medium text-sm shadow-sm">1</button>
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-slate-600 font-medium text-sm hover:bg-gray-50 transition-colors">2</button>
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-slate-600 font-medium text-sm hover:bg-gray-50 transition-colors">3</button>
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-slate-600 hover:bg-gray-50 transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+            <p id="pagination-info" class="text-[13px] text-gray-500">
+              Menampilkan 0-0 dari 0 pelanggan
+            </p>
+            <div id="pagination-controls" class="flex items-center gap-2">
+              <button
+                id="pagination-prev"
+                class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-gray-400 hover:bg-gray-50 transition-colors"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >chevron_left</span
+                >
+              </button>
+              <div id="pagination-pages" class="flex items-center gap-2"></div>
+              <button
+                id="pagination-next"
+                class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-slate-600 hover:bg-gray-50 transition-colors"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >chevron_right</span
+                >
+              </button>
             </div>
           </div>
         </div>
-
       </div>
     </main>
 
     <!-- Modal Tambah Data Pelanggan -->
-    <div id="modal-tambah-pelanggan" class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-[2px]">
-      <div class="bg-white rounded-2xl w-full max-w-[640px] shadow-2xl overflow-hidden animate-[fadeInUp_0.3s_ease-out]">
+    <div
+      id="modal-tambah-pelanggan"
+      class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-[2px]"
+    >
+      <div
+        class="bg-white rounded-2xl w-full max-w-[640px] shadow-2xl overflow-hidden animate-[fadeInUp_0.3s_ease-out]"
+      >
         <!-- Modal Header -->
         <div class="px-6 py-6 pb-2 relative">
-          <button onclick="document.getElementById('modal-tambah-pelanggan').classList.add('hidden')" class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors">
+          <button
+            onclick="
+              document
+                .getElementById('modal-tambah-pelanggan')
+                .classList.add('hidden')
+            "
+            class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors"
+          >
             <span class="material-symbols-outlined">close</span>
           </button>
-          <h2 class="text-xl font-bold text-slate-800">Tambah Data Pelanggan</h2>
-          <p class="text-[13px] text-gray-500 mt-1">Lengkapi formulir di bawah untuk mendaftar pelanggan baru.</p>
+          <h2 class="text-xl font-bold text-slate-800">
+            Tambah Data Pelanggan
+          </h2>
+          <p class="text-[13px] text-gray-500 mt-1">
+            Lengkapi formulir di bawah untuk mendaftar pelanggan baru.
+          </p>
         </div>
 
         <!-- Progress Stepper -->
         <div class="px-16 pt-6 pb-8">
-          <div class="relative flex items-center justify-between max-w-[400px] mx-auto">
+          <div
+            class="relative flex items-center justify-between max-w-[400px] mx-auto"
+          >
             <!-- connecting line bg -->
-            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-gray-200 -z-10"></div>
+            <div
+              class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-gray-200 -z-10"
+            ></div>
             <!-- connecting line progress -->
-            <div class="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-0.5 bg-[#008F9B] -z-10"></div>
-            
+            <div
+              class="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-0.5 bg-[#008F9B] -z-10"
+            ></div>
+
             <div class="flex flex-col items-center gap-2">
-              <div class="w-6 h-6 rounded-full bg-[#008F9B] text-white flex items-center justify-center text-xs font-bold shadow-md ring-4 ring-white">1</div>
-              <span class="text-[11px] font-bold text-[#008F9B] absolute top-8 text-center w-max">Data Dasar</span>
+              <div
+                class="w-6 h-6 rounded-full bg-[#008F9B] text-white flex items-center justify-center text-xs font-bold shadow-md ring-4 ring-white"
+              >
+                1
+              </div>
+              <span
+                class="text-[11px] font-bold text-[#008F9B] absolute top-8 text-center w-max"
+                >Data Dasar</span
+              >
             </div>
             <div class="flex flex-col items-center gap-2">
-              <div class="w-6 h-6 rounded-full bg-white border border-gray-200 text-gray-400 flex items-center justify-center text-xs font-bold ring-4 ring-white">2</div>
-              <span class="text-[11px] font-medium text-gray-400 absolute top-8 text-center w-max">Detail Pelanggan</span>
+              <div
+                class="w-6 h-6 rounded-full bg-white border border-gray-200 text-gray-400 flex items-center justify-center text-xs font-bold ring-4 ring-white"
+              >
+                2
+              </div>
+              <span
+                class="text-[11px] font-medium text-gray-400 absolute top-8 text-center w-max"
+                >Detail Pelanggan</span
+              >
             </div>
             <div class="flex flex-col items-center gap-2">
-              <div class="w-6 h-6 rounded-full bg-white border border-gray-200 text-gray-400 flex items-center justify-center text-xs font-bold ring-4 ring-white">3</div>
-              <span class="text-[11px] font-medium text-gray-400 absolute top-8 text-center w-max">Konfirmasi</span>
+              <div
+                class="w-6 h-6 rounded-full bg-white border border-gray-200 text-gray-400 flex items-center justify-center text-xs font-bold ring-4 ring-white"
+              >
+                3
+              </div>
+              <span
+                class="text-[11px] font-medium text-gray-400 absolute top-8 text-center w-max"
+                >Konfirmasi</span
+              >
             </div>
           </div>
         </div>
@@ -317,41 +625,71 @@
         <div class="px-8 pb-4 space-y-5">
           <!-- ID Pelanggan -->
           <div>
-            <label class="block text-[13px] font-bold text-slate-700 mb-1.5">ID Pelanggan</label>
-            <input type="text" placeholder="Masukkan ID pelanggan (11-12 digit)" class="w-full text-sm border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all placeholder:text-gray-400">
-            <p class="text-[11px] text-gray-400 italic mt-1.5">Gunakan 12 digit ID pelanggan untuk data yang lebih akurat.</p>
+            <label class="block text-[13px] font-bold text-slate-700 mb-1.5"
+              >ID Pelanggan</label
+            >
+            <input
+              type="text"
+              placeholder="Masukkan ID pelanggan (11-12 digit)"
+              class="w-full text-sm border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all placeholder:text-gray-400"
+            />
+            <p class="text-[11px] text-gray-400 italic mt-1.5">
+              Gunakan 12 digit ID pelanggan untuk data yang lebih akurat.
+            </p>
           </div>
 
           <!-- Nama Pelanggan -->
           <div>
-            <label class="block text-[13px] font-bold text-slate-700 mb-1.5">Nama Pelanggan</label>
-            <input type="text" placeholder="Masukkan nama pelanggan" class="w-full text-sm border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all placeholder:text-gray-400">
+            <label class="block text-[13px] font-bold text-slate-700 mb-1.5"
+              >Nama Pelanggan</label
+            >
+            <input
+              type="text"
+              placeholder="Masukkan nama pelanggan"
+              class="w-full text-sm border border-gray-200 rounded-xl py-3 px-4 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all placeholder:text-gray-400"
+            />
           </div>
 
           <div class="grid grid-cols-2 gap-5">
             <div>
-              <label class="block text-[13px] font-bold text-slate-700 mb-1.5">Tipe Pelanggan</label>
+              <label class="block text-[13px] font-bold text-slate-700 mb-1.5"
+                >Tipe Pelanggan</label
+              >
               <div class="relative">
-                <select class="w-full text-sm border border-gray-200 rounded-xl py-3 pl-4 pr-10 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all appearance-none cursor-pointer bg-white text-gray-500">
+                <select
+                  class="w-full text-sm border border-gray-200 rounded-xl py-3 pl-4 pr-10 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all appearance-none cursor-pointer bg-white text-gray-500"
+                >
                   <option>Pilih tipe</option>
                   <option>Industri</option>
                   <option>Bisnis</option>
                 </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
-                  <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >keyboard_arrow_down</span
+                  >
                 </div>
               </div>
             </div>
             <div>
-              <label class="block text-[13px] font-bold text-slate-700 mb-1.5">ULP</label>
+              <label class="block text-[13px] font-bold text-slate-700 mb-1.5"
+                >ULP</label
+              >
               <div class="relative">
-                <select class="w-full text-sm border border-gray-200 rounded-xl py-3 pl-4 pr-10 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all appearance-none cursor-pointer bg-white text-gray-500">
+                <select
+                  class="w-full text-sm border border-gray-200 rounded-xl py-3 pl-4 pr-10 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all appearance-none cursor-pointer bg-white text-gray-500"
+                >
                   <option>Pilih Unit Layanan</option>
                   <option>Kebon Jeruk</option>
                   <option>Surabaya Barat</option>
                 </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
-                  <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400"
+                >
+                  <span class="material-symbols-outlined text-[18px]"
+                    >keyboard_arrow_down</span
+                  >
                 </div>
               </div>
             </div>
@@ -359,32 +697,259 @@
 
           <!-- Golongan Tarif -->
           <div>
-            <label class="block text-[13px] font-bold text-slate-700 mb-1.5">Golongan Tarif</label>
+            <label class="block text-[13px] font-bold text-slate-700 mb-1.5"
+              >Golongan Tarif</label
+            >
             <div class="relative">
-              <select class="w-full text-sm border border-gray-200 rounded-xl py-3 pl-4 pr-10 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all appearance-none cursor-pointer bg-white text-gray-500">
+              <select
+                class="w-full text-sm border border-gray-200 rounded-xl py-3 pl-4 pr-10 outline-none focus:border-[#008F9B] focus:ring-2 focus:ring-teal-100 transition-all appearance-none cursor-pointer bg-white text-gray-500"
+              >
                 <option>Pilih golongan tarif</option>
                 <option>B-1 / 5.500 VA</option>
                 <option>I-1 / 11.000 VA</option>
               </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
-                <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+              <div
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >keyboard_arrow_down</span
+                >
               </div>
             </div>
           </div>
 
           <!-- Alert Info -->
           <div class="bg-[#EAF6F8] rounded-xl p-4 flex items-center gap-3">
-            <span class="material-symbols-outlined text-[#008F9B] text-[20px]">info</span>
-            <p class="text-[12px] text-[#006068]">Detail profil lengkap dapat diisi setelah data dasar tersimpan.</p>
+            <span class="material-symbols-outlined text-[#008F9B] text-[20px]"
+              >info</span
+            >
+            <p class="text-[12px] text-[#006068]">
+              Detail profil lengkap dapat diisi setelah data dasar tersimpan.
+            </p>
           </div>
         </div>
 
         <!-- Actions -->
-        <div class="px-8 py-5 border-t border-gray-100 flex items-center justify-center gap-4 bg-gray-50/50 mt-4 rounded-b-2xl">
-          <button onclick="document.getElementById('modal-tambah-pelanggan').classList.add('hidden')" class="px-8 py-2.5 rounded-xl text-sm font-bold text-slate-700 bg-white border border-gray-200 hover:bg-gray-50 transition-colors shadow-sm">Batal</button>
-          <button onclick="document.getElementById('modal-tambah-pelanggan').classList.add('hidden')" class="px-8 py-2.5 rounded-xl text-sm font-bold text-white bg-[#008F9B] hover:bg-teal-700 transition-colors shadow-md shadow-teal-600/20 active:scale-95">Berikutnya</button>
+        <div
+          class="px-8 py-5 border-t border-gray-100 flex items-center justify-center gap-4 bg-gray-50/50 mt-4 rounded-b-2xl"
+        >
+          <button
+            onclick="
+              document
+                .getElementById('modal-tambah-pelanggan')
+                .classList.add('hidden')
+            "
+            class="px-8 py-2.5 rounded-xl text-sm font-bold text-slate-700 bg-white border border-gray-200 hover:bg-gray-50 transition-colors shadow-sm"
+          >
+            Batal
+          </button>
+          <button
+            onclick="
+              document
+                .getElementById('modal-tambah-pelanggan')
+                .classList.add('hidden')
+            "
+            class="px-8 py-2.5 rounded-xl text-sm font-bold text-white bg-[#008F9B] hover:bg-teal-700 transition-colors shadow-md shadow-teal-600/20 active:scale-95"
+          >
+            Berikutnya
+          </button>
         </div>
       </div>
     </div>
+
+    <script src="data/bestie-customers.js"></script>
+    <script src="data/bestie-data.js"></script>
+    <script>
+      function bestieGetSession() {
+        try {
+          return JSON.parse(sessionStorage.getItem("bestieSession") || "null");
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function bestieLogout() {
+        sessionStorage.removeItem("bestieSession");
+        window.location.href = "index.html";
+      }
+
+      function updatePaginationButtons(state, goToPage) {
+        var pagesContainer = document.getElementById("pagination-pages");
+        pagesContainer.innerHTML = "";
+
+        for (var page = 1; page <= state.totalPages; page += 1) {
+          var button = document.createElement("button");
+          button.className =
+            page === state.currentPage
+              ? "w-8 h-8 flex items-center justify-center rounded-lg bg-teal-600 text-white font-medium text-sm shadow-sm"
+              : "w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-slate-600 font-medium text-sm hover:bg-gray-50 transition-colors";
+          button.textContent = String(page);
+          button.addEventListener("click", function (event) {
+            goToPage(Number(event.target.textContent));
+          });
+          pagesContainer.appendChild(button);
+        }
+
+        document.getElementById("pagination-prev").disabled =
+          state.currentPage <= 1;
+        document.getElementById("pagination-next").disabled =
+          state.currentPage >= state.totalPages;
+      }
+
+      async function initCustomerDatabasePage() {
+        var session = bestieGetSession();
+        var isAdmin = session && session.role === "admin";
+
+        var customers = await loadCustomers();
+        var tableBody = document.getElementById("customers-table-body");
+        var searchInput = document.getElementById("search-customer");
+        var ulpFilter = document.getElementById("filter-ulp");
+        var typeFilter = document.getElementById("filter-customer-type");
+        var resetButton = document.getElementById("btn-reset-filter");
+        var pageSizeSelect = document.getElementById("page-size");
+        var sortOrder = document.getElementById("sort-order");
+        var currentPage = 1;
+
+        var uniqueUlps = Array.from(
+          new Set(
+            customers.map(function (item) {
+              return item.ulp || "ULP Dummy";
+            }),
+          ),
+        ).sort(function (a, b) {
+          return String(a).localeCompare(String(b), "id", {
+            sensitivity: "base",
+          });
+        });
+        ulpFilter.innerHTML = '<option value="all">Semua ULP</option>';
+        uniqueUlps.forEach(function (ulp) {
+          var option = document.createElement("option");
+          option.value = ulp;
+          option.textContent = ulp;
+          ulpFilter.appendChild(option);
+        });
+
+        var metrics = computeMetrics(customers);
+        document.getElementById("metric-total-customers").textContent =
+          BESTIE_DATA.formatNumber(metrics.total);
+        document.getElementById("metric-total-industri").textContent =
+          BESTIE_DATA.formatNumber(metrics.totalIndustri);
+        document.getElementById("metric-total-bisnis").textContent =
+          BESTIE_DATA.formatNumber(metrics.totalBisnis);
+
+        function renderCurrentState() {
+          var workingSet = filterCustomers(customers, {
+            search: searchInput.value,
+            ulp: ulpFilter.value,
+            customerType: typeFilter.value,
+          });
+
+          if (sortOrder.value === "name-asc") {
+            workingSet = workingSet.sort(function (a, b) {
+              return String(a.customer_name || "").localeCompare(
+                String(b.customer_name || ""),
+                "id",
+                {
+                  sensitivity: "base",
+                },
+              );
+            });
+          }
+
+          var paged = paginateCustomers(
+            workingSet,
+            currentPage,
+            Number(pageSizeSelect.value) || 10,
+          );
+          currentPage = paged.currentPage;
+
+          renderTable({
+            rows: { search: searchInput.value || "Semua Pelanggan" },
+            tableBody: tableBody,
+            isAdmin: isAdmin,
+            paged: paged,
+            summaryQuery: document.getElementById("summary-query-text"),
+            summaryCount: document.getElementById("summary-result-count"),
+            paginationInfo: document.getElementById("pagination-info"),
+            emptyStateText:
+              "Data pelanggan tidak ditemukan untuk filter saat ini.",
+          });
+
+          updatePaginationButtons(paged, function (nextPage) {
+            currentPage = nextPage;
+            renderCurrentState();
+          });
+        }
+
+        searchInput.addEventListener("input", function () {
+          currentPage = 1;
+          renderCurrentState();
+        });
+        ulpFilter.addEventListener("change", function () {
+          currentPage = 1;
+          renderCurrentState();
+        });
+        typeFilter.addEventListener("change", function () {
+          currentPage = 1;
+          renderCurrentState();
+        });
+        pageSizeSelect.addEventListener("change", function () {
+          currentPage = 1;
+          renderCurrentState();
+        });
+        sortOrder.addEventListener("change", function () {
+          currentPage = 1;
+          renderCurrentState();
+        });
+        resetButton.addEventListener("click", function () {
+          searchInput.value = "";
+          ulpFilter.value = "all";
+          typeFilter.value = "all";
+          currentPage = 1;
+          renderCurrentState();
+        });
+
+        document
+          .getElementById("pagination-prev")
+          .addEventListener("click", function () {
+            currentPage = Math.max(1, currentPage - 1);
+            renderCurrentState();
+          });
+        document
+          .getElementById("pagination-next")
+          .addEventListener("click", function () {
+            currentPage = currentPage + 1;
+            renderCurrentState();
+          });
+
+        renderCurrentState();
+      }
+
+      (function initBestieSession() {
+        const session = bestieGetSession();
+        if (!session) {
+          window.location.href = "index.html";
+          return;
+        }
+
+        document.querySelectorAll("[data-user-name]").forEach((element) => {
+          element.textContent = session.name;
+        });
+        document.querySelectorAll("[data-user-role]").forEach((element) => {
+          element.textContent = session.role === "admin" ? "Admin" : "User";
+        });
+        document.querySelectorAll("[data-user-unit]").forEach((element) => {
+          element.textContent = session.unit;
+        });
+
+        if (session.role !== "admin") {
+          document.querySelectorAll("[data-admin-only]").forEach((element) => {
+            element.classList.add("hidden");
+          });
+        }
+
+        initCustomerDatabasePage();
+      })();
+    </script>
   </body>
 </html>

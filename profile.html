@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<html class="light" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -213,12 +213,21 @@
             >
           </div>
           <div>
-            <p class="text-sm font-semibold text-slate-800">Admin PLN</p>
-            <p class="text-[11px] text-gray-400">ULP Surabaya Barat</p>
+            <p class="text-sm font-semibold text-slate-800" data-user-name>
+              Admin PLN
+            </p>
+            <p class="text-[11px] text-gray-400">
+              <span data-user-role>Admin</span> •
+              <span data-user-unit>ULP Surabaya Barat</span>
+            </p>
           </div>
         </div>
         <a
           href="index.html"
+          onclick="
+            bestieLogout();
+            return false;
+          "
           class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium"
         >
           <span class="material-symbols-outlined text-[18px]">logout</span
@@ -294,7 +303,9 @@
           </div>
         </div>
         <!-- Custom Tabbed Interface -->
-        <div class="bg-surface-container-low p-1 rounded-xl flex w-max max-w-full overflow-x-auto">
+        <div
+          class="bg-surface-container-low p-1 rounded-xl flex w-max max-w-full overflow-x-auto"
+        >
           <a
             href="profile-pelanggan.html"
             class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block"
@@ -486,31 +497,50 @@
                 </div>
               </div>
             </div>
-            <!-- Consumption Map/Location (Contextual Card) -->
+            <!-- Koordinat Pelanggan -->
             <div
-              class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm h-64 relative group"
+              class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm h-64 relative group p-6 flex flex-col justify-between"
             >
               <div
-                class="absolute inset-0 bg-slate-900/10 z-10 pointer-events-none transition-colors group-hover:bg-transparent"
+                class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 pointer-events-none"
               ></div>
-              <div
-                class="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-md p-3 rounded-lg shadow-lg border border-slate-100"
-              >
-                <p
-                  class="text-[10px] font-bold text-on-surface-variant/60 uppercase mb-1"
+              <div class="relative z-10 flex items-start justify-between gap-4">
+                <div>
+                  <p
+                    class="text-[10px] font-bold text-on-surface-variant/60 uppercase mb-1"
+                  >
+                    Koordinat Pelanggan
+                  </p>
+                  <p class="text-sm font-bold text-on-surface">
+                    Kawasan Industri Jababeka V, Cikarang
+                  </p>
+                </div>
+                <span class="material-symbols-outlined text-primary text-3xl"
+                  >location_on</span
                 >
-                  Registered Address
-                </p>
-                <p class="text-xs font-bold text-on-surface">
-                  Kawasan Industri Jababeka V, Cikarang
-                </p>
               </div>
-              <img
-                alt="Industrial District Map View"
-                class="w-full h-full object-cover"
-                data-alt="stylized architectural site plan map of an industrial manufacturing complex with clean lines and subtle blue highlights"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF09VJB_pVPcgklw1DTPgrsE2mzO8IaQFdrTShr1AfGNdQwsieob1XclVdVVB9zb-CMbdlUXm2hVFLs2Oo8v3SfA2SEXEfhQEk1Z3L6ZJppCBKXJfDznTTYqI6XnSeJxnAW-6zm20PCQlIg0l6i7UP9BcQRnmqbvLixTcZXt3qS9LExOUfFNIfRNZM8D9KjYEoLASdeCkY8lWwhS7IzR7ojt01NQSSTN6nd_79JZTt-Sp6jh7j6X7SPymQE_mbnzUeCHCtnVi08ZI"
-              />
+              <div class="relative z-10 grid grid-cols-2 gap-3">
+                <div
+                  class="bg-white/85 backdrop-blur-md rounded-lg border border-slate-100 p-3"
+                >
+                  <p
+                    class="text-[10px] font-bold text-on-surface-variant/60 uppercase mb-1"
+                  >
+                    Latitude
+                  </p>
+                  <p class="text-sm font-bold text-primary">-6.3027</p>
+                </div>
+                <div
+                  class="bg-white/85 backdrop-blur-md rounded-lg border border-slate-100 p-3"
+                >
+                  <p
+                    class="text-[10px] font-bold text-on-surface-variant/60 uppercase mb-1"
+                  >
+                    Longitude
+                  </p>
+                  <p class="text-sm font-bold text-primary">107.1474</p>
+                </div>
+              </div>
             </div>
           </div>
           <!-- Secondary Column -->
@@ -678,6 +708,37 @@
         </div>
       </div>
     </main>
+    <script>
+      function bestieGetSession() {
+        try {
+          return JSON.parse(sessionStorage.getItem("bestieSession") || "null");
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function bestieLogout() {
+        sessionStorage.removeItem("bestieSession");
+        window.location.href = "index.html";
+      }
+
+      (function initBestieSession() {
+        const session = bestieGetSession();
+        if (!session) {
+          window.location.href = "index.html";
+          return;
+        }
+
+        document.querySelectorAll("[data-user-name]").forEach((element) => {
+          element.textContent = session.name;
+        });
+        document.querySelectorAll("[data-user-role]").forEach((element) => {
+          element.textContent = session.role === "admin" ? "Admin" : "User";
+        });
+        document.querySelectorAll("[data-user-unit]").forEach((element) => {
+          element.textContent = session.unit;
+        });
+      })();
+    </script>
   </body>
 </html>
-

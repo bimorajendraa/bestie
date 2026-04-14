@@ -5,59 +5,150 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>BESTIE | Kunjungan Probing</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      body { font-family: 'Inter', sans-serif; }
-      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-      @keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-      .fade-up { animation: fadeInUp 0.5s ease-out both; }
-      tbody tr { animation: fadeInUp 0.4s ease-out both; }
-      tbody tr:nth-child(1) { animation-delay: 0.05s; } tbody tr:nth-child(2) { animation-delay: 0.1s; }
-      tbody tr:nth-child(3) { animation-delay: 0.15s; } tbody tr:nth-child(4) { animation-delay: 0.2s; }
-      tbody tr:nth-child(5) { animation-delay: 0.25s; }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeInUp 0.5s ease-out both;
+      }
+      tbody tr {
+        animation: fadeInUp 0.4s ease-out both;
+      }
+      tbody tr:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      tbody tr:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      tbody tr:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      tbody tr:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      tbody tr:nth-child(5) {
+        animation-delay: 0.25s;
+      }
     </style>
   </head>
   <body class="bg-[#F5F6F8] text-slate-800 flex min-h-screen">
     <!-- ===== SIDEBAR ===== -->
-    <aside class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col">
+    <aside
+      class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col"
+    >
       <div class="px-5 pt-6 pb-3 flex flex-col items-center">
-        <img src="logo-bestie.jpg" alt="BESTIE" class="w-14 h-14 object-contain mb-1" />
-        <p class="font-extrabold text-slate-800 text-base tracking-tight">BESTIE</p>
-        <p class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+        <img
+          src="logo-bestie.jpg"
+          alt="BESTIE"
+          class="w-14 h-14 object-contain mb-1"
+        />
+        <p class="font-extrabold text-slate-800 text-base tracking-tight">
+          BESTIE
+        </p>
+        <p
+          class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5"
+        >
+          Beyond Electricity Marketing with AI-based Customer Profiling
+          Management
+        </p>
       </div>
       <nav class="flex-1 px-3 mt-4 space-y-1">
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="dashboard.html">
-          <span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">dashboard</span
+          ><span>Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="tanya-bestie.html">
-          <span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Tanya Bestie</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="tanya-bestie.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">smart_toy</span
+          ><span>Tanya Bestie</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="data-pelanggan.html">
-          <span class="material-symbols-outlined text-[20px]">database</span><span>Database</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="data-pelanggan.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">database</span
+          ><span>Database</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all" href="report.html">
-          <span class="material-symbols-outlined text-[20px]">assignment</span><span>Kunjungan Probing</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all"
+          href="report.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">assignment</span
+          ><span>Kunjungan Probing</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="watchlist.html">
-          <span class="material-symbols-outlined text-[20px]">bookmark</span><span>Watchlist</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="watchlist.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">bookmark</span
+          ><span>Watchlist</span>
         </a>
       </nav>
       <div class="px-4 py-4 border-t border-gray-100">
         <div class="flex items-center gap-3 mb-3">
-          <div class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"><span class="material-symbols-outlined text-gray-500 text-[20px]">person</span></div>
-          <div><p class="text-sm font-semibold text-slate-800">Admin PLN</p><p class="text-[11px] text-gray-400">ULP Surabaya Barat</p></div>
+          <div
+            class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-gray-500 text-[20px]"
+              >person</span
+            >
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-800">Admin PLN</p>
+            <p class="text-[11px] text-gray-400">ULP Surabaya Barat</p>
+          </div>
         </div>
-        <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
-          <span class="material-symbols-outlined text-[18px]">logout</span><span>Keluar</span>
+        <a
+          href="index.html"
+          class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium"
+        >
+          <span class="material-symbols-outlined text-[18px]">logout</span
+          ><span>Keluar</span>
         </a>
       </div>
     </aside>
 
     <main class="ml-[230px] flex-1 min-h-screen">
-      <header class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-100">
-        <a href="dashboard.html" class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium">
-          <span class="material-symbols-outlined text-[18px]">arrow_back</span> Kembali
+      <header
+        class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-100"
+      >
+        <a
+          href="dashboard.html"
+          class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium"
+        >
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Kembali
         </a>
       </header>
 
@@ -68,116 +159,179 @@
             <nav class="flex items-center gap-2 text-xs text-gray-400 mb-1">
               <span class="text-teal-600 font-medium">Kunjungan Probing</span>
             </nav>
-            <h1 class="text-2xl font-bold text-slate-800 tracking-tight">Riwayat Kunjungan Probing</h1>
-            <p class="text-sm text-gray-400 mt-0.5">Rekap seluruh kunjungan lapangan dan probing pelanggan.</p>
+            <h1 class="text-2xl font-bold text-slate-800 tracking-tight">
+              Riwayat Kunjungan Probing
+            </h1>
+            <p class="text-sm text-gray-400 mt-0.5">
+              Rekap seluruh kunjungan lapangan dan probing pelanggan.
+            </p>
           </div>
-          <button onclick="document.getElementById('modal-tambah').classList.remove('hidden')" class="flex items-center gap-2 px-5 py-2.5 bg-teal-500 text-white font-semibold text-sm rounded-lg hover:bg-teal-600 active:scale-[0.98] transition-all shadow-sm">
-            <span class="material-symbols-outlined text-[18px]">add</span> Tambah Kunjungan Probing
+          <button
+            onclick="
+              document.getElementById('modal-tambah').classList.remove('hidden')
+            "
+            class="flex items-center gap-2 px-5 py-2.5 bg-teal-500 text-white font-semibold text-sm rounded-lg hover:bg-teal-600 active:scale-[0.98] transition-all shadow-sm"
+          >
+            <span class="material-symbols-outlined text-[18px]">add</span>
+            Tambah Kunjungan Probing
           </button>
         </div>
 
         <!-- Stats Row -->
         <div class="grid grid-cols-12 gap-5 fade-up">
-          <div class="col-span-3 bg-white p-5 rounded-xl border border-gray-100">
-            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Kunjungan Probing</p>
-            <h3 class="text-3xl font-bold text-slate-800">12</h3>
+          <div
+            class="col-span-3 bg-white p-5 rounded-xl border border-gray-100"
+          >
+            <p
+              class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2"
+            >
+              Kunjungan Probing
+            </p>
+            <h3 class="text-3xl font-bold text-slate-800" id="reportTotalCount">
+              12
+            </h3>
             <p class="text-xs text-teal-600 font-medium mt-1">Bulan ini</p>
           </div>
-          <div class="col-span-3 bg-white p-5 rounded-xl border border-gray-100">
-            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Selesai</p>
-            <h3 class="text-3xl font-bold text-slate-800">8</h3>
-            <p class="text-xs text-teal-600 font-medium mt-1">Kunjungan selesai</p>
+          <div
+            class="col-span-3 bg-white p-5 rounded-xl border border-gray-100"
+          >
+            <p
+              class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2"
+            >
+              Selesai
+            </p>
+            <h3 class="text-3xl font-bold text-slate-800" id="reportDoneCount">
+              8
+            </h3>
+            <p class="text-xs text-teal-600 font-medium mt-1">
+              Kunjungan selesai
+            </p>
           </div>
-          <div class="col-span-3 bg-white p-5 rounded-xl border border-gray-100">
-            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Tertunda</p>
-            <h3 class="text-3xl font-bold text-amber-500">4</h3>
-            <p class="text-xs text-amber-500 font-medium mt-1">Kunjungan Tertunda</p>
+          <div
+            class="col-span-3 bg-white p-5 rounded-xl border border-gray-100"
+          >
+            <p
+              class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2"
+            >
+              Tertunda
+            </p>
+            <h3
+              class="text-3xl font-bold text-amber-500"
+              id="reportPendingCount"
+            >
+              4
+            </h3>
+            <p class="text-xs text-amber-500 font-medium mt-1">
+              Kunjungan Tertunda
+            </p>
           </div>
           <div class="col-span-3 relative">
             <div class="relative h-full">
-              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
-              <input class="w-full h-full bg-white border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-teal-300 focus:border-teal-300 transition-all placeholder:text-gray-400" placeholder="Cari ID Pelanggan atau Nama Pelanggan" type="text" />
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-lg"
+                >search</span
+              >
+              <input
+                id="reportSearchInput"
+                class="w-full h-full bg-white border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-teal-300 focus:border-teal-300 transition-all placeholder:text-gray-400"
+                placeholder="Cari ID Pelanggan atau Nama Pelanggan"
+                type="text"
+              />
             </div>
           </div>
         </div>
 
         <!-- Table -->
-        <div class="bg-white rounded-xl border border-gray-100 overflow-hidden fade-up">
-          <div class="px-6 py-4 flex items-center justify-between border-b border-gray-50">
+        <div
+          class="bg-white rounded-xl border border-gray-100 overflow-hidden fade-up"
+        >
+          <div
+            class="px-6 py-4 flex items-center justify-between border-b border-gray-50"
+          >
             <div class="flex items-center gap-3">
-              <div class="flex items-center gap-2"><label class="text-xs text-gray-500">Tampilkan</label><select class="border border-gray-200 rounded-lg text-xs px-2 py-1.5 focus:ring-teal-300"><option>5</option><option>10</option></select></div>
+              <div class="flex items-center gap-2">
+                <label class="text-xs text-gray-500">Tampilkan</label
+                ><select
+                  id="reportPageSize"
+                  class="border border-gray-200 rounded-lg text-xs px-2 py-1.5 focus:ring-teal-300"
+                >
+                  <option>5</option>
+                  <option>10</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="overflow-x-auto">
-            <table class="w-full text-left">
+            <table class="w-full text-left" id="reportTable">
               <thead>
                 <tr class="bg-teal-50/50 border-b border-gray-100">
-                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider w-12">No</th>
-                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Nama Pelanggan</th>
-                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">ULP</th>
-                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Status</th>
-                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Tanggal</th>
-                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider">Timestamps</th>
-                  <th class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider w-12"></th>
+                  <th
+                    class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider w-12"
+                  >
+                    No
+                  </th>
+                  <th
+                    class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider"
+                  >
+                    Nama Pelanggan
+                  </th>
+                  <th
+                    class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider"
+                  >
+                    ULP
+                  </th>
+                  <th
+                    class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider"
+                  >
+                    Tanggal
+                  </th>
+                  <th
+                    class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider"
+                  >
+                    Timestamps
+                  </th>
+                  <th
+                    class="px-6 py-3 text-xs font-bold text-teal-700 uppercase tracking-wider w-12"
+                  ></th>
                 </tr>
               </thead>
-              <tbody class="text-sm">
-                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                  <td class="px-6 py-4 text-gray-400">1</td>
-                  <td class="px-6 py-4 font-medium text-slate-700">PT. Global Tecknindo</td>
-                  <td class="px-6 py-4 text-gray-500">Kebayoran Baru</td>
-                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase">Selesai</span></td>
-                  <td class="px-6 py-4 text-gray-500">24 Oct 2024</td>
-                  <td class="px-6 py-4 text-gray-500">09:45 WIB</td>
-                  <td class="px-6 py-4"><a href="detail-kunjungan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
-                </tr>
-                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                  <td class="px-6 py-4 text-gray-400">2</td>
-                  <td class="px-6 py-4 font-medium text-slate-700">Suryo Atmojo</td>
-                  <td class="px-6 py-4 text-gray-500">Gubeng</td>
-                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase">Selesai</span></td>
-                  <td class="px-6 py-4 text-gray-500">24 Oct 2024</td>
-                  <td class="px-6 py-4 text-gray-500">09:45 WIB</td>
-                  <td class="px-6 py-4"><a href="detail-kunjungan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
-                </tr>
-                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                  <td class="px-6 py-4 text-gray-400">3</td>
-                  <td class="px-6 py-4 font-medium text-slate-700">Indo-Cement Plant 4</td>
-                  <td class="px-6 py-4 text-gray-500">Menteng</td>
-                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full uppercase">Tertunda</span></td>
-                  <td class="px-6 py-4 text-gray-500">24 Oct 2024</td>
-                  <td class="px-6 py-4 text-gray-500">09:45 WIB</td>
-                  <td class="px-6 py-4"><a href="detail-kunjungan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
-                </tr>
-                <tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
-                  <td class="px-6 py-4 text-gray-400">4</td>
-                  <td class="px-6 py-4 font-medium text-slate-700">Bank Rakyat Office</td>
-                  <td class="px-6 py-4 text-gray-500">Menteng</td>
-                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase">Selesai</span></td>
-                  <td class="px-6 py-4 text-gray-500">24 Oct 2024</td>
-                  <td class="px-6 py-4 text-gray-500">09:45 WIB</td>
-                  <td class="px-6 py-4"><a href="detail-kunjungan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
-                </tr>
-                <tr class="hover:bg-gray-50/50 transition-colors">
-                  <td class="px-6 py-4 text-gray-400">5</td>
-                  <td class="px-6 py-4 font-medium text-slate-700">PT Sumber Energi Nusantara</td>
-                  <td class="px-6 py-4 text-gray-500">Gubeng</td>
-                  <td class="px-6 py-4"><span class="text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full uppercase">Selesai</span></td>
-                  <td class="px-6 py-4 text-gray-500">24 Oct 2024</td>
-                  <td class="px-6 py-4 text-gray-500">09:45 WIB</td>
-                  <td class="px-6 py-4"><a href="detail-kunjungan.html" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>
-                </tr>
-              </tbody>
+              <tbody class="text-sm" id="reportBody"></tbody>
             </table>
           </div>
-          <div class="px-6 py-4 border-t border-gray-50 flex items-center justify-between">
-            <p class="text-xs text-gray-400">Menampilkan <span class="font-semibold text-slate-700">1-5</span> dari <span class="font-semibold text-slate-700">12</span> kunjungan</p>
+          <div
+            class="px-6 py-4 border-t border-gray-50 flex items-center justify-between"
+          >
+            <p class="text-xs text-gray-400" id="reportPaginationInfo">
+              Menampilkan 1-5 dari 12 kunjungan
+            </p>
             <div class="flex items-center gap-1">
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-400"><span class="material-symbols-outlined text-lg">chevron_left</span></button>
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-teal-500 text-white text-xs font-bold shadow-sm">1</button>
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-xs font-semibold text-gray-600">2</button>
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-xs font-semibold text-gray-600">3</button>
-              <button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-400"><span class="material-symbols-outlined text-lg">chevron_right</span></button>
+              <button
+                id="reportPrevPage"
+                class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-400"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >chevron_left</span
+                >
+              </button>
+              <button
+                id="reportCurrentPage"
+                class="w-8 h-8 flex items-center justify-center rounded-lg bg-teal-500 text-white text-xs font-bold shadow-sm"
+              >
+                1
+              </button>
+              <button
+                id="reportNextPage"
+                class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors text-gray-400"
+              >
+                <span class="material-symbols-outlined text-lg"
+                  >chevron_right</span
+                >
+              </button>
             </div>
           </div>
         </div>
@@ -185,26 +339,57 @@
     </main>
 
     <!-- ===== MODAL: Tambah Kunjungan Probing ===== -->
-    <div id="modal-tambah" class="hidden fixed inset-0 z-[100] flex items-center justify-center">
-      <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="document.getElementById('modal-tambah').classList.add('hidden')"></div>
-      <div class="relative bg-white rounded-2xl shadow-xl w-full max-w-lg mx-4 max-h-[90vh] overflow-y-auto">
-        <div class="px-6 pt-6 pb-4 flex items-start justify-between border-b border-gray-100">
+    <div
+      id="modal-tambah"
+      class="hidden fixed inset-0 z-[100] flex items-center justify-center"
+    >
+      <div
+        class="absolute inset-0 bg-black/40 backdrop-blur-sm"
+        onclick="
+          document.getElementById('modal-tambah').classList.add('hidden')
+        "
+      ></div>
+      <div
+        class="relative bg-white rounded-2xl shadow-xl w-full max-w-lg mx-4 max-h-[90vh] overflow-y-auto"
+      >
+        <div
+          class="px-6 pt-6 pb-4 flex items-start justify-between border-b border-gray-100"
+        >
           <div>
-            <h2 class="text-lg font-bold text-slate-800">Tambah Kunjungan Probing</h2>
-            <p class="text-sm text-gray-400 mt-0.5">Lengkapi formulir di bawah untuk mencatat hasil kunjungan.</p>
+            <h2 class="text-lg font-bold text-slate-800">
+              Tambah Kunjungan Probing
+            </h2>
+            <p class="text-sm text-gray-400 mt-0.5">
+              Lengkapi formulir di bawah untuk mencatat hasil kunjungan.
+            </p>
           </div>
-          <button onclick="document.getElementById('modal-tambah').classList.add('hidden')" class="p-1 text-gray-400 hover:text-gray-600 transition-colors">
+          <button
+            onclick="
+              document.getElementById('modal-tambah').classList.add('hidden')
+            "
+            class="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+          >
             <span class="material-symbols-outlined">close</span>
           </button>
         </div>
         <div class="px-6 py-5 space-y-5">
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Nama Pelanggan</label>
-            <input type="text" placeholder="Cari atau ketik nama pelanggan..." class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-teal-300 focus:border-teal-300" />
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+              >Nama Pelanggan</label
+            >
+            <input
+              type="text"
+              placeholder="Cari atau ketik nama pelanggan..."
+              class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-teal-300 focus:border-teal-300"
+            />
           </div>
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Unit Layanan Pelanggan (ULP)</label>
-            <select class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-500 focus:ring-2 focus:ring-teal-300 focus:border-teal-300">
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+              >Unit Layanan Pelanggan (ULP)</label
+            >
+            <select
+              class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-500 focus:ring-2 focus:ring-teal-300 focus:border-teal-300"
+            >
               <option>Pilih ULP</option>
               <option>ULP Kebayoran Baru</option>
               <option>ULP Menteng</option>
@@ -213,31 +398,266 @@
           </div>
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Tanggal Kunjungan</label>
-              <input type="date" class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-500 focus:ring-2 focus:ring-teal-300 focus:border-teal-300" />
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+                >Tanggal Kunjungan</label
+              >
+              <input
+                type="date"
+                class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-500 focus:ring-2 focus:ring-teal-300 focus:border-teal-300"
+              />
             </div>
             <div>
-              <label class="block text-sm font-semibold text-slate-700 mb-1.5">Waktu Kunjungan</label>
-              <input type="time" value="10:30" class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-500 focus:ring-2 focus:ring-teal-300 focus:border-teal-300" />
+              <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+                >Waktu Kunjungan</label
+              >
+              <input
+                type="time"
+                value="10:30"
+                class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm text-gray-500 focus:ring-2 focus:ring-teal-300 focus:border-teal-300"
+              />
             </div>
           </div>
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Catatan Probing</label>
-            <textarea rows="4" placeholder="Masukkan detail hasil kunjungan..." class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-teal-300 focus:border-teal-300 resize-none"></textarea>
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+              >Catatan Probing</label
+            >
+            <textarea
+              rows="4"
+              placeholder="Masukkan detail hasil kunjungan..."
+              class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-teal-300 focus:border-teal-300 resize-none"
+            ></textarea>
           </div>
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Unggah Foto</label>
-            <div class="border-2 border-dashed border-gray-200 rounded-xl p-8 flex flex-col items-center justify-center cursor-pointer hover:border-teal-300 hover:bg-teal-50/30 transition-all">
-              <span class="material-symbols-outlined text-gray-400 text-3xl mb-2">add_a_photo</span>
-              <p class="text-xs text-gray-400">Klik untuk unggah atau seret foto ke sini</p>
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5"
+              >Unggah Foto</label
+            >
+            <div
+              class="border-2 border-dashed border-gray-200 rounded-xl p-8 flex flex-col items-center justify-center cursor-pointer hover:border-teal-300 hover:bg-teal-50/30 transition-all"
+            >
+              <span
+                class="material-symbols-outlined text-gray-400 text-3xl mb-2"
+                >add_a_photo</span
+              >
+              <p class="text-xs text-gray-400">
+                Klik untuk unggah atau seret foto ke sini
+              </p>
             </div>
           </div>
         </div>
-        <div class="px-6 py-4 border-t border-gray-100 flex items-center justify-end gap-3">
-          <button onclick="document.getElementById('modal-tambah').classList.add('hidden')" class="px-6 py-2.5 border border-gray-200 text-gray-600 font-semibold text-sm rounded-xl hover:bg-gray-50 transition-all">Batal</button>
-          <button class="px-6 py-2.5 bg-teal-500 text-white font-semibold text-sm rounded-xl hover:bg-teal-600 active:scale-[0.98] transition-all shadow-sm">Simpan Kunjungan</button>
+        <div
+          class="px-6 py-4 border-t border-gray-100 flex items-center justify-end gap-3"
+        >
+          <button
+            onclick="
+              document.getElementById('modal-tambah').classList.add('hidden')
+            "
+            class="px-6 py-2.5 border border-gray-200 text-gray-600 font-semibold text-sm rounded-xl hover:bg-gray-50 transition-all"
+          >
+            Batal
+          </button>
+          <button
+            class="px-6 py-2.5 bg-teal-500 text-white font-semibold text-sm rounded-xl hover:bg-teal-600 active:scale-[0.98] transition-all shadow-sm"
+          >
+            Simpan Kunjungan
+          </button>
         </div>
       </div>
     </div>
+    <script src="data/bestie-customers.js"></script>
+    <script src="data/bestie-data.js"></script>
+    <script>
+      var bestieReportState = {
+        rows: [],
+        currentPage: 1,
+        pageSize: 5,
+        search: "",
+      };
+
+      function bestieFormatDate(value) {
+        var date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          return "-";
+        }
+        return date.toLocaleDateString("id-ID", {
+          day: "2-digit",
+          month: "short",
+          year: "numeric",
+        });
+      }
+
+      function buildVisitRows(customers) {
+        return customers.map(function (customer, index) {
+          var baseDate = new Date(2026, 3, 1 + index);
+          var score = Number(customer.watchlist_score || 0);
+          var isDone = score >= 70;
+
+          return {
+            customerId: customer.customer_id || "",
+            customerName: customer.customer_name || "-",
+            ulp: customer.ulp || "-",
+            status: isDone ? "Selesai" : "Tertunda",
+            date: bestieFormatDate(baseDate.toISOString()),
+            time:
+              String(8 + (index % 9)).padStart(2, "0") +
+              ":" +
+              (index % 2 === 0 ? "15" : "45") +
+              " WIB",
+          };
+        });
+      }
+
+      function renderReportRows() {
+        var body = document.getElementById("reportBody");
+        var info = document.getElementById("reportPaginationInfo");
+        var currentPage = document.getElementById("reportCurrentPage");
+        var prevButton = document.getElementById("reportPrevPage");
+        var nextButton = document.getElementById("reportNextPage");
+        if (!body || !info || !currentPage || !prevButton || !nextButton) {
+          return;
+        }
+
+        var filtered = bestieReportState.rows.filter(function (row) {
+          var keyword = bestieReportState.search;
+          if (!keyword) {
+            return true;
+          }
+          return (
+            String(row.customerId).toLowerCase().includes(keyword) ||
+            String(row.customerName).toLowerCase().includes(keyword)
+          );
+        });
+
+        var paged = window.BESTIE_DATA.paginateCustomers(
+          filtered,
+          bestieReportState.currentPage,
+          bestieReportState.pageSize,
+        );
+        bestieReportState.currentPage = paged.currentPage;
+
+        if (paged.items.length === 0) {
+          body.innerHTML =
+            '<tr><td colspan="7" class="px-6 py-8 text-center text-sm text-gray-500">Data kunjungan tidak ditemukan.</td></tr>';
+        } else {
+          body.innerHTML = paged.items
+            .map(function (row, idx) {
+              var isDone = row.status === "Selesai";
+              var statusClass = isDone
+                ? "text-teal-700 bg-teal-50"
+                : "text-amber-600 bg-amber-50";
+              var detailHref =
+                "detail-kunjungan.html?id=" +
+                encodeURIComponent(row.customerId || "");
+
+              return [
+                '<tr class="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">',
+                '  <td class="px-6 py-4 text-gray-400">' +
+                  (paged.startIndex + idx) +
+                  "</td>",
+                '  <td class="px-6 py-4 font-medium text-slate-700">' +
+                  row.customerName +
+                  "</td>",
+                '  <td class="px-6 py-4 text-gray-500">' + row.ulp + "</td>",
+                '  <td class="px-6 py-4"><span class="text-[10px] font-bold px-2.5 py-1 rounded-full uppercase ' +
+                  statusClass +
+                  '">' +
+                  row.status +
+                  "</span></td>",
+                '  <td class="px-6 py-4 text-gray-500">' + row.date + "</td>",
+                '  <td class="px-6 py-4 text-gray-500">' + row.time + "</td>",
+                '  <td class="px-6 py-4"><a href="' +
+                  detailHref +
+                  '" class="text-teal-600 hover:text-teal-700"><span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></td>',
+                "</tr>",
+              ].join("\n");
+            })
+            .join("\n");
+        }
+
+        info.textContent =
+          "Menampilkan " +
+          paged.startIndex +
+          "-" +
+          paged.endIndex +
+          " dari " +
+          paged.totalItems +
+          " kunjungan";
+
+        currentPage.textContent = String(paged.currentPage);
+        prevButton.disabled = paged.currentPage <= 1;
+        nextButton.disabled = paged.currentPage >= paged.totalPages;
+        prevButton.classList.toggle("opacity-40", prevButton.disabled);
+        nextButton.classList.toggle("opacity-40", nextButton.disabled);
+      }
+
+      async function initReportData() {
+        if (
+          !window.BESTIE_DATA ||
+          typeof window.BESTIE_DATA.loadCustomers !== "function"
+        ) {
+          return;
+        }
+
+        var customers = await window.BESTIE_DATA.loadCustomers();
+        var visits = buildVisitRows(customers);
+        var doneCount = visits.filter(function (item) {
+          return item.status === "Selesai";
+        }).length;
+
+        bestieReportState.rows = visits;
+
+        var totalEl = document.getElementById("reportTotalCount");
+        var doneEl = document.getElementById("reportDoneCount");
+        var pendingEl = document.getElementById("reportPendingCount");
+        if (totalEl) {
+          totalEl.textContent = String(visits.length);
+        }
+        if (doneEl) {
+          doneEl.textContent = String(doneCount);
+        }
+        if (pendingEl) {
+          pendingEl.textContent = String(
+            Math.max(0, visits.length - doneCount),
+          );
+        }
+
+        var searchInput = document.getElementById("reportSearchInput");
+        var pageSizeSelect = document.getElementById("reportPageSize");
+        var prevButton = document.getElementById("reportPrevPage");
+        var nextButton = document.getElementById("reportNextPage");
+
+        if (searchInput) {
+          searchInput.addEventListener("input", function () {
+            bestieReportState.search = String(searchInput.value || "")
+              .trim()
+              .toLowerCase();
+            bestieReportState.currentPage = 1;
+            renderReportRows();
+          });
+        }
+        if (pageSizeSelect) {
+          pageSizeSelect.addEventListener("change", function () {
+            bestieReportState.pageSize = Number(pageSizeSelect.value || 5);
+            bestieReportState.currentPage = 1;
+            renderReportRows();
+          });
+        }
+        if (prevButton) {
+          prevButton.addEventListener("click", function () {
+            bestieReportState.currentPage -= 1;
+            renderReportRows();
+          });
+        }
+        if (nextButton) {
+          nextButton.addEventListener("click", function () {
+            bestieReportState.currentPage += 1;
+            renderReportRows();
+          });
+        }
+
+        renderReportRows();
+      }
+
+      initReportData();
+    </script>
   </body>
 </html>

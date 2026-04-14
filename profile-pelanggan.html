@@ -14,10 +14,6 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
     <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -214,12 +210,21 @@
             >
           </div>
           <div>
-            <p class="text-sm font-semibold text-slate-800">Admin PLN</p>
-            <p class="text-[11px] text-gray-400">ULP Surabaya Barat</p>
+            <p class="text-sm font-semibold text-slate-800" data-user-name>
+              Admin PLN
+            </p>
+            <p class="text-[11px] text-gray-400">
+              <span data-user-role>Admin</span> •
+              <span data-user-unit>ULP Surabaya Barat</span>
+            </p>
           </div>
         </div>
         <a
           href="index.html"
+          onclick="
+            bestieLogout();
+            return false;
+          "
           class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium"
         >
           <span class="material-symbols-outlined text-[18px]">logout</span
@@ -228,7 +233,9 @@
       </div>
     </aside>
 
-    <main class="flex-1 ml-[230px] min-h-screen flex flex-col relative w-[calc(100%-230px)]">
+    <main
+      class="flex-1 ml-[230px] min-h-screen flex flex-col relative w-[calc(100%-230px)]"
+    >
       <!-- Top Bar -->
       <header
         class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-100"
@@ -253,7 +260,9 @@
         </div>
       </header>
 
-      <div class="px-8 pb-8 mt-8 space-y-6 flex-1 w-full max-w-full overflow-x-hidden">
+      <div
+        class="px-8 pb-8 mt-8 space-y-6 flex-1 w-full max-w-full overflow-x-hidden"
+      >
         <!-- Header Section -->
         <div class="flex justify-between items-end animate-fade-in">
           <div>
@@ -266,10 +275,13 @@
               >
               <span>Profiling</span>
             </nav>
-            <h2 class="text-3xl font-extrabold tracking-tight text-primary">
+            <h2
+              id="profile-customer-name"
+              class="text-3xl font-extrabold tracking-tight text-primary"
+            >
               PT. Sumber Energi Nusantara
             </h2>
-            <p class="text-on-surface-variant">
+            <p id="profile-customer-subtitle" class="text-on-surface-variant">
               Pelanggan Korporat Tier-1 &bull; Surabaya Barat, ID
             </p>
           </div>
@@ -287,7 +299,9 @@
           </div>
         </div>
         <!-- Custom Tabbed Interface -->
-        <div class="bg-surface-container-low p-1 rounded-xl flex w-max max-w-full overflow-x-auto">
+        <div
+          class="bg-surface-container-low p-1 rounded-xl flex w-max max-w-full overflow-x-auto"
+        >
           <a
             href="profile-pelanggan.html"
             class="px-6 py-2 text-sm font-bold bg-white text-primary rounded-lg shadow-sm inline-block"
@@ -319,53 +333,103 @@
           <!-- KPI Widgets Section -->
           <div class="col-span-12 grid grid-cols-4 gap-6">
             <!-- Widget 1: Penjualan Listrik -->
-            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-gray-100"
+            >
               <div class="flex justify-between items-start mb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Penjualan Listrik</span>
-                <span class="material-symbols-outlined text-teal-600 text-lg">electric_meter</span>
+                <span
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                  >Penjualan Listrik</span
+                >
+                <span class="material-symbols-outlined text-teal-600 text-lg"
+                  >electric_meter</span
+                >
               </div>
-              <div class="text-3xl font-extrabold text-slate-800 mb-2">482.1 <span class="text-sm font-medium text-gray-500">GWh</span></div>
+              <div class="text-3xl font-extrabold text-slate-800 mb-2">
+                482.1 <span class="text-sm font-medium text-gray-500">GWh</span>
+              </div>
               <div class="flex items-center gap-2">
-                <div class="inline-flex items-center gap-1 px-2 py-0.5 bg-teal-50 text-teal-700 text-[10px] font-bold rounded-full">
-                  <span class="material-symbols-outlined text-[12px]">trending_up</span> +12.4% Kuartal Ini
+                <div
+                  class="inline-flex items-center gap-1 px-2 py-0.5 bg-teal-50 text-teal-700 text-[10px] font-bold rounded-full"
+                >
+                  <span class="material-symbols-outlined text-[12px]"
+                    >trending_up</span
+                  >
+                  +12.4% Kuartal Ini
                 </div>
                 <span class="text-[10px] text-gray-400">Annualised</span>
               </div>
             </div>
 
             <!-- Widget 2: KVA Max Pemakaian -->
-            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-gray-100"
+            >
               <div class="flex justify-between items-start mb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">KVA Max Pemakaian</span>
-                <span class="material-symbols-outlined text-amber-500 text-lg">bolt</span>
+                <span
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                  >KVA Max Pemakaian</span
+                >
+                <span class="material-symbols-outlined text-amber-500 text-lg"
+                  >bolt</span
+                >
               </div>
-              <div class="text-3xl font-extrabold text-slate-800 mb-2">4,500 <span class="text-sm font-medium text-gray-500">kVA</span></div>
-              <div class="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-50 text-gray-500 text-[10px] font-bold rounded-full">
+              <div class="text-3xl font-extrabold text-slate-800 mb-2">
+                4,500 <span class="text-sm font-medium text-gray-500">kVA</span>
+              </div>
+              <div
+                class="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-50 text-gray-500 text-[10px] font-bold rounded-full"
+              >
                 Per Kuartal
               </div>
             </div>
 
             <!-- Widget 3: Gangguan Listrik -->
-            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-gray-100"
+            >
               <div class="flex justify-between items-start mb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Gangguan Listrik</span>
-                <span class="material-symbols-outlined text-red-500 text-lg">warning</span>
+                <span
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                  >Gangguan Listrik</span
+                >
+                <span class="material-symbols-outlined text-red-500 text-lg"
+                  >warning</span
+                >
               </div>
-              <div class="text-3xl font-extrabold text-slate-800 mb-2">2 <span class="text-sm font-medium text-gray-500">Kali</span></div>
-              <div class="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-50 text-gray-500 text-[10px] font-bold rounded-full">
+              <div class="text-3xl font-extrabold text-slate-800 mb-2">
+                2 <span class="text-sm font-medium text-gray-500">Kali</span>
+              </div>
+              <div
+                class="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-50 text-gray-500 text-[10px] font-bold rounded-full"
+              >
                 Per Kuartal
               </div>
             </div>
 
             <!-- Widget 4: Kapasitas Supply Penyulang -->
-            <div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-gray-100">
+            <div
+              class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-gray-100"
+            >
               <div class="flex justify-between items-start mb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Supply Penyulang</span>
-                <span class="material-symbols-outlined text-teal-600 text-lg">electrical_services</span>
+                <span
+                  class="text-xs font-bold uppercase tracking-wider text-slate-500"
+                  >Supply Penyulang</span
+                >
+                <span class="material-symbols-outlined text-teal-600 text-lg"
+                  >electrical_services</span
+                >
               </div>
-              <div class="text-3xl font-extrabold text-slate-800 mb-2">8,000 <span class="text-sm font-medium text-gray-500">kVA</span></div>
-              <div class="inline-flex items-center gap-1 px-2 py-0.5 bg-teal-50 text-teal-700 text-[10px] font-bold rounded-full">
-                <span class="material-symbols-outlined text-[12px]">check_circle</span> Current State
+              <div class="text-3xl font-extrabold text-slate-800 mb-2">
+                8,000 <span class="text-sm font-medium text-gray-500">kVA</span>
+              </div>
+              <div
+                class="inline-flex items-center gap-1 px-2 py-0.5 bg-teal-50 text-teal-700 text-[10px] font-bold rounded-full"
+              >
+                <span class="material-symbols-outlined text-[12px]"
+                  >check_circle</span
+                >
+                Current State
               </div>
             </div>
           </div>
@@ -575,28 +639,31 @@
               >
             </div>
             <div
-              class="w-full h-48 bg-surface-container rounded-lg overflow-hidden relative"
+              class="w-full h-48 bg-surface-container rounded-lg overflow-hidden relative p-5 flex flex-col justify-between"
             >
-              <div
-                class="absolute inset-0 bg-cover bg-center"
-                data-alt="minimalist topographical map of a city with highlighted industrial zones and infrastructure points"
-                data-location="Jakarta"
-                style="
-                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDAzv-M-3FBVNEjh-t9dbuL4I7ZWt0ltqijQf18CPoD-WX60DOLAm6RAprpZ3G5ooa__IffO0PNHxb6scs0gM2zeokNQm7L5yGJEuxDzD3aNB7y-vk3dqa9atSx0TPSFliiZPOA1XTV2ICLYBOB-e6Bu3DkAVBZ1Zl-VFsajC_EaOMB6wGgTOF86Qf7ZPGAT1YHwDKqXL8Br0_PCTVvxgqeFyLjjS0OnHTtMNtI-AJW3utFhkbLPOi3lbznGU3SmvwjLzBHYFOl-LI&quot;);
-                "
-              ></div>
-              <div
-                class="absolute top-4 right-4 bg-white/90 backdrop-blur p-3 rounded-lg shadow-xl flex flex-col gap-1"
-              >
-                <div
-                  class="text-[0.6rem] font-bold text-on-surface-variant uppercase"
+              <div class="absolute inset-0 bg-slate-900/5"></div>
+              <div class="relative z-10">
+                <p
+                  class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider mb-2"
                 >
-                  Network Health
-                </div>
-                <div class="text-xs font-black text-secondary">
-                  98.4% Nominal
-                </div>
+                  Location
+                </p>
+                <p id="profile-notes" class="text-sm font-bold text-primary">
+                  Koordinat pelanggan dipindahkan ke tab Profil.
+                </p>
+                <p class="text-xs text-on-surface-variant mt-2">
+                  Buka tab Profil untuk melihat alamat dan koordinat lengkap.
+                </p>
               </div>
+              <a
+                href="profile.html"
+                class="relative z-10 inline-flex items-center gap-2 w-max text-sm font-semibold text-secondary hover:text-primary transition-colors"
+              >
+                Buka tab Profil
+                <span class="material-symbols-outlined text-[18px]"
+                  >arrow_forward</span
+                >
+              </a>
             </div>
           </div>
           <div
@@ -642,6 +709,61 @@
         </div>
       </div>
     </main>
+    <script src="data/bestie-customers.js"></script>
+    <script src="data/bestie-data.js"></script>
+    <script>
+      function bestieGetSession() {
+        try {
+          return JSON.parse(sessionStorage.getItem("bestieSession") || "null");
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function bestieLogout() {
+        sessionStorage.removeItem("bestieSession");
+        window.location.href = "index.html";
+      }
+
+      async function initCustomerProfilePage() {
+        var params = new URLSearchParams(window.location.search);
+        var customerId = params.get("id");
+        var customers = await loadCustomers();
+
+        var selected = customers.find(function (item) {
+          return String(item.customer_id) === String(customerId || "");
+        });
+
+        if (!selected && customers.length > 0) {
+          selected = customers[0];
+        }
+
+        renderProfile(selected || {}, {
+          title: document.getElementById("profile-customer-name"),
+          subtitle: document.getElementById("profile-customer-subtitle"),
+          notes: document.getElementById("profile-notes"),
+        });
+      }
+
+      (function initBestieSession() {
+        const session = bestieGetSession();
+        if (!session) {
+          window.location.href = "index.html";
+          return;
+        }
+
+        document.querySelectorAll("[data-user-name]").forEach((element) => {
+          element.textContent = session.name;
+        });
+        document.querySelectorAll("[data-user-role]").forEach((element) => {
+          element.textContent = session.role === "admin" ? "Admin" : "User";
+        });
+        document.querySelectorAll("[data-user-unit]").forEach((element) => {
+          element.textContent = session.unit;
+        });
+
+        initCustomerProfilePage();
+      })();
+    </script>
   </body>
 </html>
-
