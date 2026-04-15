@@ -228,7 +228,7 @@
             </p>
             <p class="text-[11px] text-gray-400">
               <span data-user-role>Admin</span> •
-              <span data-user-unit>ULP Surabaya Barat</span>
+              <span data-user-unit>UP3 Surabaya Barat</span>
             </p>
           </div>
         </div>
@@ -287,10 +287,13 @@
               >
               <span>Profiling</span>
             </nav>
-            <h2 class="text-3xl font-extrabold tracking-tight text-primary">
+            <h2
+              id="profile-customer-name"
+              class="text-3xl font-extrabold tracking-tight text-primary"
+            >
               PT. Sumber Energi Nusantara
             </h2>
-            <p class="text-on-surface-variant">
+            <p id="profile-customer-subtitle" class="text-on-surface-variant">
               Pelanggan Korporat Tier-1 &bull; Surabaya Barat, ID
             </p>
           </div>
@@ -809,7 +812,45 @@
       </div>
     </div>
 
+    <script src="data/bestie-customers.js"></script>
+    <script src="data/bestie-data.js"></script>
     <script>
+      async function initCustomerHeader() {
+        if (
+          !window.BESTIE_DATA ||
+          typeof window.BESTIE_DATA.loadCustomers !== "function"
+        ) {
+          return;
+        }
+
+        var params = new URLSearchParams(window.location.search);
+        var customerId = params.get("id");
+        var customers = await window.BESTIE_DATA.loadCustomers();
+        var selected = customers.find(function (item) {
+          return String(item.customer_id) === String(customerId || "");
+        });
+
+        if (!selected && customers.length > 0) {
+          selected = customers[0];
+        }
+
+        var data = selected || {};
+        var title = document.getElementById("profile-customer-name");
+        var subtitle = document.getElementById("profile-customer-subtitle");
+
+        if (title) {
+          title.textContent = data.customer_name || title.textContent;
+        }
+        if (subtitle) {
+          subtitle.textContent =
+            (data.customer_type || "Pelanggan") +
+            " • " +
+            (data.city || "Surabaya Barat") +
+            " • ID " +
+            (data.customer_id || "-");
+        }
+      }
+
       function bestieGetSession() {
         try {
           return JSON.parse(sessionStorage.getItem("bestieSession") || "null");
@@ -839,6 +880,8 @@
         document.querySelectorAll("[data-user-unit]").forEach((element) => {
           element.textContent = session.unit;
         });
+
+        initCustomerHeader();
       })();
     </script>
   </body>

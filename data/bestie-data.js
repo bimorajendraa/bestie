@@ -18,8 +18,8 @@ function sortByCustomerName(customers) {
 
 async function loadCustomers() {
   var sources = [
-    "./data/bestie_dummy_customers_20.json",
     "./bestie_dummy_customers_20.json",
+    "./data/bestie_dummy_customers_20.json",
   ];
 
   for (var i = 0; i < sources.length; i += 1) {

@@ -216,7 +216,7 @@
           </div>
           <div>
             <p class="text-sm font-semibold text-slate-800">Admin PLN</p>
-            <p class="text-[11px] text-gray-400">ULP Surabaya Barat</p>
+            <p class="text-[11px] text-gray-400">UP3 Surabaya Barat</p>
           </div>
         </div>
         <a
@@ -256,7 +256,9 @@
       </header>
 
       <!-- Content Area -->
-      <div class="px-8 pb-8 mt-8 space-y-6 flex-1 w-full max-w-full overflow-x-hidden">
+      <div
+        class="px-8 pb-8 mt-8 space-y-6 flex-1 w-full max-w-full overflow-x-hidden"
+      >
         <!-- Header Section -->
         <div class="flex justify-between items-end animate-fade-in">
           <div>
@@ -269,10 +271,13 @@
               >
               <span>Profiling</span>
             </nav>
-            <h2 class="text-3xl font-extrabold tracking-tight text-primary">
+            <h2
+              id="profile-customer-name"
+              class="text-3xl font-extrabold tracking-tight text-primary"
+            >
               PT. Sumber Energi Nusantara
             </h2>
-            <p class="text-on-surface-variant">
+            <p id="profile-customer-subtitle" class="text-on-surface-variant">
               Pelanggan Korporat Tier-1 &bull; Surabaya Barat, ID
             </p>
           </div>
@@ -290,7 +295,9 @@
           </div>
         </div>
         <!-- Custom Tabbed Interface -->
-        <div class="bg-surface-container-low p-1 rounded-xl flex w-max max-w-full overflow-x-auto">
+        <div
+          class="bg-surface-container-low p-1 rounded-xl flex w-max max-w-full overflow-x-auto"
+        >
           <a
             href="profile-pelanggan.html"
             class="px-6 py-2 text-sm font-medium text-on-surface-variant hover:text-primary transition-colors inline-block"
@@ -676,6 +683,46 @@
     </main>
     <!-- FAB Action (Suppressed on this deep detail page per instructions, but placeholder logic included if needed) -->
     <!-- The FAB is suppressed because this is a deep detail/profiling screen as per the "Contextual FAB Suppression" rule -->
+    <script src="data/bestie-customers.js"></script>
+    <script src="data/bestie-data.js"></script>
+    <script>
+      async function initCustomerHeader() {
+        if (
+          !window.BESTIE_DATA ||
+          typeof window.BESTIE_DATA.loadCustomers !== "function"
+        ) {
+          return;
+        }
+
+        var params = new URLSearchParams(window.location.search);
+        var customerId = params.get("id");
+        var customers = await window.BESTIE_DATA.loadCustomers();
+        var selected = customers.find(function (item) {
+          return String(item.customer_id) === String(customerId || "");
+        });
+
+        if (!selected && customers.length > 0) {
+          selected = customers[0];
+        }
+
+        var data = selected || {};
+        var title = document.getElementById("profile-customer-name");
+        var subtitle = document.getElementById("profile-customer-subtitle");
+
+        if (title) {
+          title.textContent = data.customer_name || title.textContent;
+        }
+        if (subtitle) {
+          subtitle.textContent =
+            (data.customer_type || "Pelanggan") +
+            " • " +
+            (data.city || "Surabaya Barat") +
+            " • ID " +
+            (data.customer_id || "-");
+        }
+      }
+
+      initCustomerHeader();
+    </script>
   </body>
 </html>
-

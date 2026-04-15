@@ -218,7 +218,7 @@
             </p>
             <p class="text-[11px] text-gray-400">
               <span data-user-role>Admin</span> •
-              <span data-user-unit>ULP Surabaya Barat</span>
+              <span data-user-unit>UP3 Surabaya Barat</span>
             </p>
           </div>
         </div>
@@ -276,15 +276,20 @@
           <span class="material-symbols-outlined text-xs mx-2"
             >chevron_right</span
           >
-          <span class="text-primary font-semibold">IDPEL 532210098</span>
+          <span id="profile-breadcrumb-id" class="text-primary font-semibold"
+            >IDPEL 532210098</span
+          >
         </nav>
         <!-- Header Section -->
         <div class="flex justify-between items-end animate-fade-in">
           <div>
-            <h2 class="text-3xl font-extrabold tracking-tight text-primary">
+            <h2
+              id="profile-customer-name"
+              class="text-3xl font-extrabold tracking-tight text-primary"
+            >
               PT. Sumber Energi Nusantara
             </h2>
-            <p class="text-on-surface-variant">
+            <p id="profile-customer-subtitle" class="text-on-surface-variant">
               Pelanggan Korporat Tier-1 &bull; Surabaya Barat, ID
             </p>
           </div>
@@ -359,9 +364,10 @@
                     >Identitas Pelanggan (IDPEL)</label
                   >
                   <div
+                    id="profile-customer-id"
                     class="text-sm font-bold text-on-surface bg-surface-container-low px-4 py-3 rounded-lg flex items-center justify-between"
                   >
-                    532210098842
+                    <span id="profile-customer-id-value">532210098842</span>
                     <span
                       class="material-symbols-outlined text-sm cursor-pointer text-slate-400"
                       >content_copy</span
@@ -374,7 +380,10 @@
                     class="block text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-widest"
                     >Nama Resmi Pelanggan</label
                   >
-                  <div class="text-sm font-semibold text-on-surface px-1">
+                  <div
+                    id="profile-customer-official-name"
+                    class="text-sm font-semibold text-on-surface px-1"
+                  >
                     PT Maju Jaya Steel Tbk.
                   </div>
                 </div>
@@ -385,11 +394,17 @@
                     >Daya &amp; Golongan Tarif</label
                   >
                   <div class="flex items-center gap-3">
-                    <div class="text-sm font-bold text-on-surface px-1">
+                    <div
+                      id="profile-power-label"
+                      class="text-sm font-bold text-on-surface px-1"
+                    >
                       1,250 kVA
                     </div>
                     <span class="h-1 w-1 bg-slate-300 rounded-full"></span>
-                    <div class="text-sm font-medium text-secondary">
+                    <div
+                      id="profile-tariff-label"
+                      class="text-sm font-medium text-secondary"
+                    >
                       I3 / Industri Menengah
                     </div>
                   </div>
@@ -401,13 +416,16 @@
                     >Sektor Bidang Usaha</label
                   >
                   <div
+                    id="profile-industry-group"
                     class="flex items-center gap-2 text-sm font-semibold text-on-surface"
                   >
                     <span
                       class="material-symbols-outlined text-slate-400 text-sm"
                       >precision_manufacturing</span
                     >
-                    Heavy Metal &amp; Steel Manufacturing
+                    <span id="profile-industry-group-value"
+                      >Heavy Metal &amp; Steel Manufacturing</span
+                    >
                   </div>
                 </div>
                 <!-- Field: Kontrak -->
@@ -430,13 +448,16 @@
                     >HUT Perusahaan</label
                   >
                   <div
+                    id="profile-established-date"
                     class="flex items-center gap-2 text-sm font-semibold text-on-surface"
                   >
                     <span
                       class="material-symbols-outlined text-secondary text-sm"
                       >cake</span
                     >
-                    18 August (32nd Anniversary)
+                    <span id="profile-established-date-value"
+                      >18 August (32nd Anniversary)</span
+                    >
                   </div>
                 </div>
               </div>
@@ -486,7 +507,10 @@
                         class="block text-[10px] font-bold text-on-surface-variant/60 uppercase tracking-widest"
                         >Contact Person (PIC)</label
                       >
-                      <p class="text-sm font-bold text-on-surface">
+                      <p
+                        id="profile-contact-person"
+                        class="text-sm font-bold text-on-surface"
+                      >
                         Susanti Wijaya
                       </p>
                       <p class="text-[11px] text-on-surface-variant">
@@ -511,7 +535,10 @@
                   >
                     Koordinat Pelanggan
                   </p>
-                  <p class="text-sm font-bold text-on-surface">
+                  <p
+                    id="profile-area-cluster"
+                    class="text-sm font-bold text-on-surface"
+                  >
                     Kawasan Industri Jababeka V, Cikarang
                   </p>
                 </div>
@@ -581,7 +608,7 @@
                     >
                       Corporate Email
                     </p>
-                    <p class="text-sm font-semibold">
+                    <p id="profile-email" class="text-sm font-semibold">
                       info@majujayasteel.co.id
                     </p>
                   </div>
@@ -603,7 +630,6 @@
                 </div>
               </div>
             </div>
-            <!-- Usage Stats (Editorial Precision) -->
             <div class="bg-surface-container-low rounded-xl p-6 space-y-6">
               <h3
                 class="text-sm font-bold text-on-surface uppercase tracking-widest"
@@ -708,7 +734,128 @@
         </div>
       </div>
     </main>
+    <script src="data/bestie-customers.js"></script>
+    <script src="data/bestie-data.js"></script>
     <script>
+      function bestieFormatEstablishedDate(value) {
+        var date = new Date(value || "");
+        if (Number.isNaN(date.getTime())) {
+          return "-";
+        }
+        return date.toLocaleDateString("id-ID", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric",
+        });
+      }
+
+      function bindProfileCustomer(customer) {
+        var data = customer || {};
+        var customerId = data.customer_id || "532210098842";
+
+        var breadcrumbId = document.getElementById("profile-breadcrumb-id");
+        if (breadcrumbId) {
+          breadcrumbId.textContent = "IDPEL " + customerId;
+        }
+
+        var title = document.getElementById("profile-customer-name");
+        if (title) {
+          title.textContent = data.customer_name || title.textContent;
+        }
+
+        var subtitle = document.getElementById("profile-customer-subtitle");
+        if (subtitle) {
+          var subtitleValue =
+            (data.customer_type || "Pelanggan") +
+            " • " +
+            (data.city || "Surabaya Barat") +
+            ", ID " +
+            customerId;
+          subtitle.textContent = subtitleValue;
+        }
+
+        var idElement = document.getElementById("profile-customer-id-value");
+        if (idElement) {
+          idElement.textContent = customerId;
+        }
+
+        var officialName = document.getElementById(
+          "profile-customer-official-name",
+        );
+        if (officialName) {
+          officialName.textContent =
+            data.customer_name || officialName.textContent;
+        }
+
+        var powerLabel = document.getElementById("profile-power-label");
+        if (powerLabel) {
+          powerLabel.textContent = data.power_label || powerLabel.textContent;
+        }
+
+        var tariffLabel = document.getElementById("profile-tariff-label");
+        if (tariffLabel) {
+          tariffLabel.textContent =
+            data.tariff_label || tariffLabel.textContent;
+        }
+
+        var industryGroup = document.getElementById(
+          "profile-industry-group-value",
+        );
+        if (industryGroup) {
+          industryGroup.textContent =
+            data.industry_group || industryGroup.textContent;
+        }
+
+        var establishedDate = document.getElementById(
+          "profile-established-date-value",
+        );
+        if (establishedDate) {
+          var establishedText = data.established_date
+            ? bestieFormatEstablishedDate(data.established_date)
+            : establishedDate.textContent;
+          establishedDate.textContent = establishedText;
+        }
+
+        var contactPerson = document.getElementById("profile-contact-person");
+        if (contactPerson) {
+          contactPerson.textContent =
+            data.contact_person || contactPerson.textContent;
+        }
+
+        var email = document.getElementById("profile-email");
+        if (email) {
+          email.textContent = data.email || email.textContent;
+        }
+
+        var areaCluster = document.getElementById("profile-area-cluster");
+        if (areaCluster) {
+          areaCluster.textContent =
+            data.area_cluster || data.ulp || areaCluster.textContent;
+        }
+      }
+
+      async function initCustomerProfilePage() {
+        if (
+          !window.BESTIE_DATA ||
+          typeof window.BESTIE_DATA.loadCustomers !== "function"
+        ) {
+          return;
+        }
+
+        var params = new URLSearchParams(window.location.search);
+        var customerId = params.get("id");
+        var customers = await window.BESTIE_DATA.loadCustomers();
+        var selected = customers.find(function (item) {
+          return String(item.customer_id) === String(customerId || "");
+        });
+
+        if (!selected && customers.length > 0) {
+          selected = customers[0];
+        }
+
+        bindProfileCustomer(selected || {});
+      }
+
       function bestieGetSession() {
         try {
           return JSON.parse(sessionStorage.getItem("bestieSession") || "null");
@@ -738,6 +885,8 @@
         document.querySelectorAll("[data-user-unit]").forEach((element) => {
           element.textContent = session.unit;
         });
+
+        initCustomerProfilePage();
       })();
     </script>
   </body>

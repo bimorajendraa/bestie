@@ -5,55 +5,132 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>BESTIE | Detail Kunjungan</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      body { font-family: 'Inter', sans-serif; }
-      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-      @keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-      .fade-up { animation: fadeInUp 0.5s ease-out both; }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        animation: fadeInUp 0.5s ease-out both;
+      }
     </style>
   </head>
   <body class="bg-[#F5F6F8] text-slate-800 flex min-h-screen">
     <!-- ===== SIDEBAR ===== -->
-    <aside class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col">
+    <aside
+      class="h-screen w-[230px] fixed left-0 top-0 z-50 bg-white border-r border-gray-100 flex flex-col"
+    >
       <div class="px-5 pt-6 pb-3 flex flex-col items-center">
-        <img src="logo-bestie.jpg" alt="BESTIE" class="w-14 h-14 object-contain mb-1" />
-        <p class="font-extrabold text-slate-800 text-base tracking-tight">BESTIE</p>
-        <p class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5">Beyond Electricity Marketing with AI-based Customer Profiling Management</p>
+        <img
+          src="logo-bestie.jpg"
+          alt="BESTIE"
+          class="w-14 h-14 object-contain mb-1"
+        />
+        <p class="font-extrabold text-slate-800 text-base tracking-tight">
+          BESTIE
+        </p>
+        <p
+          class="text-[9px] text-gray-400 font-medium text-center leading-tight mt-0.5"
+        >
+          Beyond Electricity Marketing with AI-based Customer Profiling
+          Management
+        </p>
       </div>
       <nav class="flex-1 px-3 mt-4 space-y-1">
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="dashboard.html">
-          <span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="dashboard.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">dashboard</span
+          ><span>Dashboard</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="tanya-bestie.html">
-          <span class="material-symbols-outlined text-[20px]">smart_toy</span><span>Tanya Bestie</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="tanya-bestie.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">smart_toy</span
+          ><span>Tanya Bestie</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="data-pelanggan.html">
-          <span class="material-symbols-outlined text-[20px]">database</span><span>Database</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="data-pelanggan.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">database</span
+          ><span>Database</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all" href="report.html">
-          <span class="material-symbols-outlined text-[20px]">assignment</span><span>Kunjungan Probing</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 bg-teal-50 text-teal-700 font-semibold rounded-lg transition-all"
+          href="report.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">assignment</span
+          ><span>Kunjungan Probing</span>
         </a>
-        <a class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all" href="watchlist.html">
-          <span class="material-symbols-outlined text-[20px]">bookmark</span><span>Watchlist</span>
+        <a
+          class="flex items-center gap-3 px-3 py-2.5 text-gray-500 hover:bg-gray-50 hover:text-teal-700 rounded-lg transition-all"
+          href="watchlist.html"
+        >
+          <span class="material-symbols-outlined text-[20px]">bookmark</span
+          ><span>Watchlist</span>
         </a>
       </nav>
       <div class="px-4 py-4 border-t border-gray-100">
         <div class="flex items-center gap-3 mb-3">
-          <div class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"><span class="material-symbols-outlined text-gray-500 text-[20px]">person</span></div>
-          <div><p class="text-sm font-semibold text-slate-800">Admin PLN</p><p class="text-[11px] text-gray-400">ULP Surabaya Barat</p></div>
+          <div
+            class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-gray-500 text-[20px]"
+              >person</span
+            >
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-800">Admin PLN</p>
+            <p class="text-[11px] text-gray-400">UP3 Surabaya Barat</p>
+          </div>
         </div>
-        <a href="index.html" class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium">
-          <span class="material-symbols-outlined text-[18px]">logout</span><span>Keluar</span>
+        <a
+          href="index.html"
+          class="flex items-center gap-2 px-3 py-2 text-red-500 hover:bg-red-50 rounded-lg transition-all text-sm font-medium"
+        >
+          <span class="material-symbols-outlined text-[18px]">logout</span
+          ><span>Keluar</span>
         </a>
       </div>
     </aside>
 
     <main class="ml-[230px] flex-1 min-h-screen">
-      <header class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-100">
-        <a href="report.html" class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium">
-          <span class="material-symbols-outlined text-[18px]">arrow_back</span> Kembali
+      <header
+        class="flex justify-between items-center px-8 py-4 bg-white border-b border-gray-100"
+      >
+        <a
+          href="report.html"
+          class="flex items-center gap-2 text-sm text-gray-500 hover:text-teal-600 transition-colors font-medium"
+        >
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          Kembali
         </a>
       </header>
 
@@ -61,16 +138,34 @@
         <!-- Breadcrumb + Title -->
         <div class="fade-up">
           <nav class="flex items-center gap-2 text-xs text-gray-400 mb-2">
-            <a href="report.html" class="hover:text-teal-600 transition-colors">Kunjungan Probing</a>
-            <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            <a href="report.html" class="hover:text-teal-600 transition-colors"
+              >Kunjungan Probing</a
+            >
+            <span class="material-symbols-outlined text-[12px]"
+              >chevron_right</span
+            >
             <span class="text-teal-600 font-medium">Detail Kunjungan</span>
           </nav>
-          <h1 class="text-2xl font-bold text-slate-800 tracking-tight mb-3">PT Sumber Energi Nusantara</h1>
+          <h1 class="text-2xl font-bold text-slate-800 tracking-tight mb-3">
+            PT Sumber Energi Nusantara
+          </h1>
           <div class="grid grid-cols-4 gap-x-8 gap-y-2">
-            <div><p class="text-xs text-gray-400">ID Pelanggan</p><p class="text-sm font-semibold text-teal-600">536710294812</p></div>
-            <div><p class="text-xs text-gray-400">Unit Layanan Pelanggan</p><p class="text-sm font-semibold text-teal-600">ULP Gambir</p></div>
-            <div><p class="text-xs text-gray-400">Tipe</p><p class="text-sm font-semibold text-teal-600">Industri</p></div>
-            <div><p class="text-xs text-gray-400">Kategori Daya</p><p class="text-sm font-semibold text-teal-600">Tarif R1/450VA</p></div>
+            <div>
+              <p class="text-xs text-gray-400">ID Pelanggan</p>
+              <p class="text-sm font-semibold text-teal-600">536710294812</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Unit Layanan Pelanggan</p>
+              <p class="text-sm font-semibold text-teal-600">ULP Gambir</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Tipe</p>
+              <p class="text-sm font-semibold text-teal-600">Industri</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Kategori Daya</p>
+              <p class="text-sm font-semibold text-teal-600">Tarif R1/450VA</p>
+            </div>
           </div>
         </div>
 
@@ -78,31 +173,73 @@
         <div class="bg-white rounded-xl border border-gray-100 p-5 fade-up">
           <div class="grid grid-cols-4 gap-6">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-teal-600 text-xl">calendar_today</span></div>
+              <div
+                class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-teal-600 text-xl"
+                  >calendar_today</span
+                >
+              </div>
               <div>
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Tanggal Kunjungan</p>
+                <p
+                  class="text-[10px] font-bold text-gray-400 uppercase tracking-wider"
+                >
+                  Tanggal Kunjungan
+                </p>
                 <p class="text-sm font-bold text-slate-800">15 Oktober 2024</p>
               </div>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-teal-600 text-xl">schedule</span></div>
+              <div
+                class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-teal-600 text-xl"
+                  >schedule</span
+                >
+              </div>
               <div>
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Waktu Pelaporan</p>
+                <p
+                  class="text-[10px] font-bold text-gray-400 uppercase tracking-wider"
+                >
+                  Waktu Pelaporan
+                </p>
                 <p class="text-sm font-bold text-slate-800">09:32 WIB</p>
               </div>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-teal-600 text-xl">person</span></div>
+              <div
+                class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-teal-600 text-xl"
+                  >person</span
+                >
+              </div>
               <div>
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Petugas Lapangan</p>
+                <p
+                  class="text-[10px] font-bold text-gray-400 uppercase tracking-wider"
+                >
+                  Petugas Lapangan
+                </p>
                 <p class="text-sm font-bold text-slate-800">Ahmad Riza</p>
               </div>
             </div>
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center"><span class="material-symbols-outlined text-teal-600 text-xl">location_on</span></div>
+              <div
+                class="w-10 h-10 bg-teal-50 rounded-lg flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-teal-600 text-xl"
+                  >location_on</span
+                >
+              </div>
               <div>
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Lokasi Koordinat</p>
-                <p class="text-sm font-bold text-slate-800">-6.1754, 106.8272</p>
+                <p
+                  class="text-[10px] font-bold text-gray-400 uppercase tracking-wider"
+                >
+                  Lokasi Koordinat
+                </p>
+                <p class="text-sm font-bold text-slate-800">
+                  -6.1754, 106.8272
+                </p>
               </div>
             </div>
           </div>
@@ -112,22 +249,41 @@
         <div class="fade-up">
           <div class="flex items-center justify-between mb-3">
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-teal-600 text-lg">edit_note</span>
+              <span class="material-symbols-outlined text-teal-600 text-lg"
+                >edit_note</span
+              >
               <h3 class="font-bold text-slate-800">Catatan Probing</h3>
             </div>
-            <button class="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-lg text-sm text-gray-500 hover:bg-gray-50 transition-all font-medium">
-              <span class="material-symbols-outlined text-[16px]">edit</span> Edit Catatan
+            <button
+              class="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-lg text-sm text-gray-500 hover:bg-gray-50 transition-all font-medium"
+            >
+              <span class="material-symbols-outlined text-[16px]">edit</span>
+              Edit Catatan
             </button>
           </div>
           <div class="bg-white rounded-xl border border-gray-100 p-6">
             <p class="text-sm text-slate-600 leading-relaxed">
-              Telah dilakukan kunjungan lapangan pada lokasi PT Sumber Energi Nusantara untuk melakukan validasi data pemakaian listrik dan profiling kapasitas produksi. Berdasarkan hasil wawancara dengan manajemen operasional, saat ini perusahaan sedang melakukan peningkatan kapasitas produksi sebesar 15% dari tahun sebelumnya.
+              Telah dilakukan kunjungan lapangan pada lokasi PT Sumber Energi
+              Nusantara untuk melakukan validasi data pemakaian listrik dan
+              profiling kapasitas produksi. Berdasarkan hasil wawancara dengan
+              manajemen operasional, saat ini perusahaan sedang melakukan
+              peningkatan kapasitas produksi sebesar 15% dari tahun sebelumnya.
             </p>
             <p class="text-sm text-slate-600 leading-relaxed mt-4">
-              Kondisi instalasi listrik di lokasi terpantau dalam keadaan baik dan terawat. Terdapat beberapa titik pemakaian daya yang sangat fluktuatif selama jam operasional puncak (10:00 - 14:00). Pelanggan menunjukkan ketertarikan pada program Layanan Premium PLN untuk memastikan kestabilan suplai daya guna mendukung operasional mesin produksi baru yang sensitif terhadap fluktuasi tegangan.
+              Kondisi instalasi listrik di lokasi terpantau dalam keadaan baik
+              dan terawat. Terdapat beberapa titik pemakaian daya yang sangat
+              fluktuatif selama jam operasional puncak (10:00 - 14:00).
+              Pelanggan menunjukkan ketertarikan pada program Layanan Premium
+              PLN untuk memastikan kestabilan suplai daya guna mendukung
+              operasional mesin produksi baru yang sensitif terhadap fluktuasi
+              tegangan.
             </p>
             <p class="text-sm text-slate-600 leading-relaxed mt-4">
-              Rekomendasi tindak lanjut adalah pengajuan penawaran program Premium Bronze atau Silver dengan estimasi kenaikan pendapatan bagi PLN sebesar 8-12% dari total tagihan bulanan pelanggan saat ini. Dokumen pendukung foto lokasi dan capture alat ukur telah dilampirkan dalam sistem internal.
+              Rekomendasi tindak lanjut adalah pengajuan penawaran program
+              Premium Bronze atau Silver dengan estimasi kenaikan pendapatan
+              bagi PLN sebesar 8-12% dari total tagihan bulanan pelanggan saat
+              ini. Dokumen pendukung foto lokasi dan capture alat ukur telah
+              dilampirkan dalam sistem internal.
             </p>
           </div>
         </div>
@@ -135,35 +291,73 @@
         <!-- Lampiran Foto -->
         <div class="fade-up">
           <h3 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
-            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Lampiran Foto</span>
+            <span
+              class="text-[10px] font-bold text-gray-400 uppercase tracking-wider"
+              >Lampiran Foto</span
+            >
           </h3>
           <div class="grid grid-cols-4 gap-4">
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden relative group cursor-pointer">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-start p-3">
-                <span class="material-symbols-outlined text-white text-lg">zoom_in</span>
+            <div
+              class="aspect-video bg-gray-200 rounded-xl overflow-hidden relative group cursor-pointer"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-start p-3"
+              >
+                <span class="material-symbols-outlined text-white text-lg"
+                  >zoom_in</span
+                >
               </div>
-              <div class="w-full h-full bg-gradient-to-br from-orange-300 to-amber-600 flex items-center justify-center">
-                <span class="material-symbols-outlined text-white/50 text-4xl">image</span>
-              </div>
-            </div>
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden relative group cursor-pointer">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-start p-3">
-                <span class="material-symbols-outlined text-white text-lg">zoom_in</span>
-              </div>
-              <div class="w-full h-full bg-gradient-to-br from-teal-300 to-cyan-600 flex items-center justify-center">
-                <span class="material-symbols-outlined text-white/50 text-4xl">image</span>
-              </div>
-            </div>
-            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden relative group cursor-pointer">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-start p-3">
-                <span class="material-symbols-outlined text-white text-lg">zoom_in</span>
-              </div>
-              <div class="w-full h-full bg-gradient-to-br from-slate-300 to-gray-500 flex items-center justify-center">
-                <span class="material-symbols-outlined text-white/50 text-4xl">image</span>
+              <div
+                class="w-full h-full bg-gradient-to-br from-orange-300 to-amber-600 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-white/50 text-4xl"
+                  >image</span
+                >
               </div>
             </div>
-            <div class="aspect-video bg-white border-2 border-dashed border-gray-200 rounded-xl flex flex-col items-center justify-center cursor-pointer hover:border-teal-300 hover:bg-teal-50/30 transition-all">
-              <span class="material-symbols-outlined text-gray-400 text-2xl mb-1">add_a_photo</span>
+            <div
+              class="aspect-video bg-gray-200 rounded-xl overflow-hidden relative group cursor-pointer"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-start p-3"
+              >
+                <span class="material-symbols-outlined text-white text-lg"
+                  >zoom_in</span
+                >
+              </div>
+              <div
+                class="w-full h-full bg-gradient-to-br from-teal-300 to-cyan-600 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-white/50 text-4xl"
+                  >image</span
+                >
+              </div>
+            </div>
+            <div
+              class="aspect-video bg-gray-200 rounded-xl overflow-hidden relative group cursor-pointer"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-start p-3"
+              >
+                <span class="material-symbols-outlined text-white text-lg"
+                  >zoom_in</span
+                >
+              </div>
+              <div
+                class="w-full h-full bg-gradient-to-br from-slate-300 to-gray-500 flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-white/50 text-4xl"
+                  >image</span
+                >
+              </div>
+            </div>
+            <div
+              class="aspect-video bg-white border-2 border-dashed border-gray-200 rounded-xl flex flex-col items-center justify-center cursor-pointer hover:border-teal-300 hover:bg-teal-50/30 transition-all"
+            >
+              <span
+                class="material-symbols-outlined text-gray-400 text-2xl mb-1"
+                >add_a_photo</span
+              >
               <span class="text-xs text-gray-400 font-medium">Tambah Foto</span>
             </div>
           </div>
